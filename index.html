@@ -8,13 +8,104 @@
   <meta name="keywords" content="photo scanning Buffalo NY, digitize photos, scan old photos, photo preservation WNY, mail-in photo scanning" />
   <meta name="author" content="Photo Scanning Studio" />
   <title>Photo Scanning Studio - Buffalo NY | Digitize Your Memories</title>
-  <link rel="canonical" href="https://www.photoscanningstudio.com/" />
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo_reduced_60.png" type="image/png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f1e7;
+      color: #2e1e0f;
+    }
+
+    .banner {
+      background-image: url('photo3.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      padding: 20px 40px;
+      gap: 30px;
+      color: white;
+    }
+
+    .banner img {
+      height: 100px;
+      width: auto;
+    }
+
+    .banner h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .banner p {
+      font-size: 1.1em;
+      margin: 5px 0 0;
+    }
+
+    .hero, .services, .pricing, .gallery, .testimonials, .contact, .map-section, .pickup-service {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .photos {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .photos img {
+      width: 250px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background-color: #fff8ec;
+      border: 1px solid #e4c99b;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+    }
+
+    .testimonial-card footer {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #3e2a1c;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <img src="banner.png" alt="Photo Scanning Studio Banner - Preserving Memories" style="width: 100%; height: auto; display: block;">
+
+  <header class="banner">
+    <img src="logo_reduced_60.png" alt="Photo Scanning Studio Logo">
+    <div>
+      <h1>Photo Scanning Studio</h1>
+      <p>Buffalo, NY | Digitizing Your Memories</p>
+    </div>
   </header>
 
   <section class="hero">
@@ -42,7 +133,6 @@
       <li><strong>Over 2000 scans:</strong> $0.12 per scan</li>
     </ul>
     <p>Each scan includes a second enhanced copy at no extra charge.</p>
-    <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
     <p>Turnaround times typically range from 3–7 days depending on volume.</p>
   </section>
 
@@ -58,12 +148,11 @@
   <section class="testimonials">
     <h2>What Our Customers Say</h2>
     <div class="testimonial-grid">
-      <div class="testimonial-card five-star"><p>★★★★★ "Absolutely outstanding! Every photo was crystal clear and the enhanced versions blew me away. Will be recommending Dan to all my friends."</p><footer>– Lisa M.</footer></div>
-      <div class="testimonial-card five-star"><p>★★★★★ "Dan did a phenomenal job scanning my family's albums. Everything was organized perfectly and delivered on time."</p><footer>– Rachel B.</footer></div>
-      <div class="testimonial-card five-star"><p>★★★★★ "This is hands down the best scanning service I’ve ever used. The results were better than expected."</p><footer>– Omar T.</footer></div>
-      <div class="testimonial-card five-star"><p>★★★★★ "My photos came out better than the originals. I’m thrilled! The color and sharpness were amazing."</p><footer>– Emily C.</footer></div>
+      <div class="testimonial-card"><p>"Absolutely outstanding! Every photo was crystal clear and the enhanced versions blew me away."</p><footer>– Lisa M.</footer></div>
+      <div class="testimonial-card"><p>"Dan did a phenomenal job scanning my family's albums. Everything was organized perfectly and delivered on time."</p><footer>– Rachel B.</footer></div>
+      <div class="testimonial-card"><p>"The results were better than expected. Will use again!"</p><footer>– Omar T.</footer></div>
+      <div class="testimonial-card"><p>"My photos came out better than the originals. I’m thrilled!"</p><footer>– Emily C.</footer></div>
     </div>
-    <a href="all-testimonials.html">→ View All Testimonials</a>
   </section>
 
   <section class="contact">
@@ -82,14 +171,14 @@
 
   <section class="map-section">
     <h2>Our Location</h2>
-    <p>We’re located at <strong>5309 Roberts Road, Hamburg, NY 14075</strong>. View our location on the map below:</p>
+    <p>5309 Roberts Road, Hamburg, NY 14075</p>
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.8414417405637!2d-78.86248142410944!3d42.72048647117765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d374b9d12b6535%3A0xcea569f2bfb7e028!2s5309%20Roberts%20Rd%2C%20Hamburg%2C%20NY%2014075!5e0!3m2!1sen!2sus!4v1718849999999!5m2!1sen!2sus"
       width="100%" height="300" style="border:0;" allowfullscreen loading="lazy">
     </iframe>
   </section>
 
-  <footer class="footer">
+  <footer>
     <p>&copy; 2025 Photo Scanning Studio — Buffalo, NY</p>
   </footer>
 </body>
