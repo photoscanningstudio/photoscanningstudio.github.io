@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+is that the same as whats in canvas?:  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,60 +7,91 @@
   <meta name="keywords" content="photo scanning Buffalo NY, digitize photos, scan old photos, photo preservation WNY, mail-in photo scanning" />
   <meta name="author" content="Photo Scanning Studio" />
   <title>Photo Scanning Studio - Buffalo NY | Digitize Your Memories</title>
-  <link rel="icon" href="logo_reduced_60.png" type="image/png">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      background: #fffaf5;
-    }
-
-    .banner {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      background: url('photo3.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .banner-content {
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px 40px;
-      border-radius: 8px;
-      color: #fff;
-    }
-
-    .banner-logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-
-    h2 {
-      font-size: 1.2em;
-      font-weight: normal;
-    }
-  </style>
+  <link rel="canonical" href="https://www.photoscanningstudio.com/" />
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="banner">
-    <img src="logo_reduced_60.png" alt="Photo Scanning Studio Logo" class="banner-logo">
-    <div class="banner-content">
-      <h1>Photo Scanning Studio</h1>
-      <h2>Preserving Memories in Buffalo, NY and Beyond</h2>
+  <header class="header">
+    <img src="banner.png" alt="Photo Scanning Studio Banner - Preserving Memories" style="width: 100%; height: auto; display: block;">
+  </header>
+
+  <section class="hero">
+    <h2>Scan Your Photos. Save Your Stories.</h2>
+    <p>We digitize your printed photos with care and precision. Local pickup available in Buffalo — or mail them in from anywhere in the U.S.</p>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>High-resolution 600 DPI photo scanning</li>
+      <li>Color correction and enhancement included</li>
+      <li>USB or secure cloud delivery</li>
+      <li>Pickup/drop-off in WNY</li>
+      <li>Mail-in options available</li>
+    </ul>
+  </section>
+
+  <section class="pricing">
+    <h2>Pricing</h2>
+    <ul>
+      <li><strong>Minimum Order:</strong> $50 for 250 scans</li>
+      <li><strong>250 – 1000 scans:</strong> $0.20 per scan</li>
+      <li><strong>1000 – 2000 scans:</strong> $0.15 per scan</li>
+      <li><strong>Over 2000 scans:</strong> $0.12 per scan</li>
+    </ul>
+    <p>Each scan includes a second enhanced copy at no extra charge.</p>
+    <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
+    <p>Turnaround times typically range from 3–7 days depending on volume.</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Sample Memories</h2>
+    <div class="photos">
+      <img src="photo1.jpg" alt="Stack of vintage photographs" />
+      <img src="photo2.jpg" alt="Family photos laid out" />
+      <img src="photo3.jpg" alt="Old sepia photo collection with writing" />
     </div>
+  </section>
+
+  <section class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="testimonial-grid">
+    <div class="testimonial-card five-star"><p>"Absolutely outstanding! Every photo was crystal clear and the enhanced versions blew me away. Will be recommending Dan to all my friends."</p><footer>– Lisa M.</footer></div>
+    <div class="testimonial-card five-star"><p>"Dan did a phenomenal job scanning my family's albums. Everything was organized perfectly and delivered on time."</p><footer>– Rachel B.</footer></div>
+    <div class="testimonial-card five-star"><p>"This is hands down the best scanning service I’ve ever used. The results were better than expected."</p><footer>– Omar T.</footer></div>
+    <div class="testimonial-card five-star"><p>"My photos came out better than the originals. I’m thrilled! The color and sharpness were amazing."</p><footer>– Emily C.</footer></div>
+    <a href="all-testimonials.html">→ View All Testimonials</a>
   </div>
+</section>
+
+  <section class="blog">
+    <h2>From the Blog</h2>
+    <ul>
+      <li><a href="blog/week-47.html">Week 47: The Emotional Value of Photos</a></li>
+      <li><a href="blog/week-46.html">Week 46: Transforming Family History</a></li>
+      <li><a href="blog/week-45.html">Week 45: Legacy Building with Scanning</a></li>
+      <li><a href="blog/index.html">→ View All Posts</a></li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/yourID" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email us directly at: <a href="mailto:photoscanningstudio@gmail.com">photoscanningstudio@gmail.com</a></p>
+    <iframe src="https://www.google.com/maps/embed?..." width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Photo Scanning Studio — Buffalo, NY</p>
+  </footer>
 </body>
 </html>
