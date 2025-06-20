@@ -11,15 +11,17 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  max-height: 250px;
+  object-fit: cover;
 }
 
 .hero, .services, .pricing, .gallery, .testimonials, .contact, .map-section, .pickup-service {
   padding: 40px 20px;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
-.hero h2, .services h2, .pricing h2, .gallery h2, .testimonials h2, .contact h2, .pickup-service h2 {
+.hero h2, .services h2, .pricing h2, .gallery h2, .testimonials h2, .contact h2, .pickup-service h2, .map-section h2 {
   color: #5c3b1e;
   border-bottom: 2px solid #d8a05e;
   padding-bottom: 8px;
@@ -44,9 +46,10 @@ ul {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* Testimonial cards */
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
@@ -97,4 +100,23 @@ footer {
   text-align: center;
   padding: 20px 10px;
   margin-top: 40px;
+}
+
+/* Star colors */
+.five-star::before {
+  content: "★★★★★";
+  color: #e0b02e;
+  display: block;
+}
+
+.four-half-star::before {
+  content: "★★★★½";
+  color: #e0b02e;
+  display: block;
+}
+
+.four-star::before {
+  content: "★★★★";
+  color: #e0b02e;
+  display: block;
 }
