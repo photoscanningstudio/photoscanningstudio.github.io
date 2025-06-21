@@ -368,3 +368,33 @@ footer a:hover {
   text-align: center;
 }
 
+.featured-blog-card {
+  background-color: #fff3e3;
+  border: 2px solid #e0b87a;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.featured-blog-card h3 {
+  margin-top: 0;
+  color: #5c3b1e;
+  font-size: 1.5rem;
+}
+
+.featured-blog-card p {
+  font-size: 1rem;
+  color: #3e2a1c;
+  margin: 10px 0 15px 0;
+}
+
+.featured-blog-card a {
+  text-decoration: none;
+  color: #b46e28;
+  font-weight: bold;
+}
+
+.featured-blog-card a:hover {
+  text-decoration: underline;
+}
