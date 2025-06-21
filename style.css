@@ -358,3 +358,13 @@ footer a:hover {
   font-size: 0.95rem;
   color: #6a4c2a;
 }
+
+.blog-subheading {
+  font-size: 1rem;
+  color: #6a4c2a;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
