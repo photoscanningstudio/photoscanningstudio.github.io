@@ -93,7 +93,7 @@ function displayRecentBlogs() {
   });
 }
 
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
   displayFeaturedBlog();
   displayRecentBlogs();
-};
+});
