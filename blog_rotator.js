@@ -68,6 +68,7 @@ function displayFeaturedBlog() {
   const index = getCurrentWeekIndex();
   const blog = blogData[index];
   const container = document.getElementById("featured-blog-container");
+  if (!container) return;
   container.innerHTML = `
     <div class="featured-blog-card">
       <h3>Week ${blog.week} – ${blog.title}</h3>
@@ -81,6 +82,7 @@ function displayRecentBlogs() {
   const index = getCurrentWeekIndex();
   const recent = blogData.slice(Math.max(0, index - 4), index).reverse();
   const container = document.getElementById("recent-blogs-container");
+  if (!container) return;
   recent.forEach(blog => {
     container.innerHTML += `
       <a href="${blog.file}" class="blog-card">
@@ -91,5 +93,7 @@ function displayRecentBlogs() {
   });
 }
 
-displayFeaturedBlog();
-displayRecentBlogs();
+window.onload = function () {
+  displayFeaturedBlog();
+  displayRecentBlogs();
+};
