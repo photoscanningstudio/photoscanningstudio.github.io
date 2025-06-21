@@ -30,11 +30,6 @@
     "priceRange": "$"
   }
   </script>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional photo scanning services in Buffalo, NY. Digitize your memories with fast turnaround and enhanced quality. Serving Western New York and nationwide by mail." />
-  <meta name="keywords" content="photo scanning Buffalo NY, digitize photos, scan old photos, photo preservation WNY, mail-in photo scanning" />
-  <meta name="author" content="Photo Scanning Studio" />
   <title>Photo Scanning Studio - Buffalo NY | Digitize Your Memories</title>
   <link rel="canonical" href="https://www.photoscanningstudio.com/" />
   <link rel="icon" href="logo.png" type="image/png" />
@@ -42,7 +37,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <header class="banner">
     <div class="banner-overlay">
@@ -53,7 +47,6 @@
     </div>
     <div class="scroll-down">&#x2193;</div>
   </header>
-
   <nav class="navbar">
     <ul>
       <li><a href="#services">Services</a></li>
@@ -63,13 +56,11 @@
       <li><a href="#contact">🖼️ Digitize My Photos</a></li>
     </ul>
   </nav>
-
   <section class="hero">
     <h2>Scan Your Photos. Save Your Stories.</h2>
     <p>We digitize your printed photos with care and precision. Local pickup available in Buffalo — or mail them in from anywhere in the U.S.</p>
     <a class="cta-button" href="#contact"><span class="cta-icon">📸</span><span class="cta-text">Digitize My Photos</span></a>
   </section>
-
   <section class="services" id="services">
     <h2>Our Services</h2>
     <ul>
@@ -80,7 +71,6 @@
       <li>Mail-in options available</li>
     </ul>
   </section>
-
   <section class="pricing" id="pricing">
     <h2>Pricing</h2>
     <ul>
@@ -93,7 +83,6 @@
     <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
     <p>Turnaround times typically range from 3–7 days depending on volume.</p>
   </section>
-
   <section class="gallery" id="gallery">
     <h2>Sample Memories</h2>
     <div class="photos">
@@ -102,7 +91,6 @@
       <img src="photo3.jpg" alt="Old sepia photo collection with writing" />
     </div>
   </section>
-
   <section class="testimonials" id="testimonials">
     <h2>What Our Customers Say</h2>
     <div class="testimonial-grid">
@@ -110,20 +98,11 @@
       <div class="testimonial-card five-star"><p>"Dan did a phenomenal job scanning my family's albums. Everything was organized perfectly and delivered on time."</p><footer>– Rachel B.</footer></div>
       <div class="testimonial-card five-star"><p>"This is hands down the best scanning service I’ve ever used. The results were better than expected."</p><footer>– Omar T.</footer></div>
       <div class="testimonial-card five-star"><p>"My photos came out better than the originals. I’m thrilled! The color and sharpness were amazing."</p><footer>– Emily C.</footer></div>
-<div class="testimonial-card five-star">
-  <p>"Very professional and fast. I mailed in my photos and had everything back perfectly digitized within a week."</p>
-  <footer>– Mark R.</footer>
-</div>
-
-<div class="testimonial-card five-star">
-  <p>"Incredible detail and service. The scanned versions look better than the real thing!"</p>
-  <footer>– Sarah T.</footer>
-</div>
-      
+      <div class="testimonial-card five-star"><p>"Very professional and fast. I mailed in my photos and had everything back perfectly digitized within a week."</p><footer>– Mark R.</footer></div>
+      <div class="testimonial-card five-star"><p>"Incredible detail and service. The scanned versions look better than the real thing!"</p><footer>– Sarah T.</footer></div>
     </div>
     <a href="all-testimonials.html">→ View All Testimonials</a>
   </section>
-
   <section class="faq">
     <h2>Frequently Asked Questions</h2>
     <h3>How long does scanning take?</h3>
@@ -131,65 +110,13 @@
     <h3>Can I drop off my photos?</h3>
     <p>Yes! We offer local drop-off and pickup in Buffalo, NY.</p>
   </section>
-
- <section class="blog">
-  <h2>Weekly Blog Highlights</h2>
-  <p class="blog-subheading">📅 Updated Weekly – Explore a new tip every Monday</p>
-
-  <div id="featured-blog-container"></div>
- <div id="recent-blogs-container" class="blog-grid">
-  <!-- This will be dynamically populated by JavaScript -->
-</div>
-
-</section>
-
-<script>
-  const blogData = [
-    { week: 1, title: "Preparing Your Photos for Scanning", preview: "Here’s how to sort, clean, and prepare old photos for best results..." },
-    { week: 2, title: "Color Correction vs Restoration", preview: "We’ll walk you through what’s included when we enhance your photos..." },
-    { week: 3, title: "Why 600 DPI Scanning Matters", preview: "Higher DPI means more detail and futureproof archiving..." },
-    { week: 4, title: "How We Handle Fragile Photos", preview: "Acidic paper, torn edges, stuck albums — no problem..." },
-    { week: 5, title: "Digitizing for Birthdays & Anniversaries", preview: "Make an unforgettable gift from a lifetime of memories..." },
-    { week: 6, title: "Preserving Polaroids", preview: "Polaroid film degrades — but digitizing stops the clock..." }
-    // Add more blog posts up to week 47 if needed
-  ];
-
-  const today = new Date();
-  const weekNum = Math.max(1, Math.min(52, Math.ceil(((today - new Date(today.getFullYear(),0,1)) / 86400000 + today.getDay() + 1) / 7)));
-  const featured = blogData.find(b => b.week === weekNum) || blogData[0];
-
-  const recent = blogData
-    .filter(b => b.week < featured.week)
-    .slice(-3)
-    .reverse();
-
-  // Featured
-  document.getElementById("featured-blog-container").innerHTML = `
-    <div class="featured-blog-card">
-      <h3>Week ${featured.week} – ${featured.title}</h3>
-      <p>${featured.preview}</p>
-      <a href="blog/week-${featured.week}.html">Read More →</a>
-    </div>
-  `;
-
-  // Recent
-  document.getElementById("recent-blogs-container").innerHTML = recent.map(b => `
-    <a href="blog/week-${b.week}.html" class="blog-card">
-      <h4>Week ${b.week}</h4>
-      <p>${b.preview}</p>
-    </a>
-  `).join('');
-</script>
-
-
-
-  <div style="display:none;">
-    <h2>All Blog Posts (For SEO)</h2>
-    <ul>
-      <li><a href="blog/week-47.html">Week 47 - Blog Post Title Placeholder</a></li>
-    </ul>
-  </div>
-
+  <section class="blog">
+    <h2>Weekly Blog Highlights</h2>
+    <p class="blog-subheading">📅 Updated Weekly – Explore a new tip every Monday</p>
+    <div id="featured-blog-container"></div>
+    <div id="recent-blogs-container" class="blog-grid"></div>
+  </section>
+  <script src="blog-rotator.js"></script>
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <form action="https://formspree.io/f/mleayzde" method="POST">
@@ -203,15 +130,27 @@
     </form>
     <p>Email us directly at: <a href="mailto:photoscanningstudio@gmail.com">photoscanningstudio@gmail.com</a></p>
   </section>
-
   <section class="map-section">
     <h2>Our Location</h2>
     <p>We’re located at <strong>5309 Roberts Road, Hamburg, NY 14075</strong>. View our location on the map below:</p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.8414417405637!2d-78.86248142410944!3d42.72048647117765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d374b9d12b6535%3A0xcea569f2bfb7e028!2s5309%20Roberts%20Rd%2C%20Hamburg%2C%20NY%2014075!5e0!3m2!1sen!2sus!4v1718849999999!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   </section>
-
   <footer class="footer">
     <p>© 2025 Photo Scanning Studio — Buffalo, NY</p>
   </footer>
+  <div style="display:none;">
+  <h2>All Blog Posts (For SEO)</h2>
+  <ul>
+    <li><a href="blog/week-1.html">Week 1 - Preparing Your Photos for Scanning</a></li>
+    <li><a href="blog/week-2.html">Week 2 - Color Correction vs Restoration</a></li>
+    <li><a href="blog/week-3.html">Week 3 - Why 600 DPI Scanning Matters</a></li>
+    <li><a href="blog/week-4.html">Week 4 - How We Handle Fragile Photos</a></li>
+    <li><a href="blog/week-5.html">Week 5 - Digitizing for Birthdays & Anniversaries</a></li>
+    <li><a href="blog/week-6.html">Week 6 - Preserving Polaroids</a></li>
+    <!-- Continue through all your blogs -->
+    <li><a href="blog/week-52.html">Week 52 - Final Touches: Archiving and Gifting Tips</a></li>
+  </ul>
+</div>
+
 </body>
 </html>
