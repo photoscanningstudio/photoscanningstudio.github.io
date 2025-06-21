@@ -299,10 +299,23 @@ ul {
 /* Footer */
 footer {
   background-color: #3e2a1c;
-  color: white;
+  color: #fff8ec;
   text-align: center;
-  padding: 20px 10px;
-  margin-top: 40px;
+  padding: 30px 20px;
+  font-size: 0.95rem;
+  font-family: 'Playfair Display', serif;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+footer a {
+  color: #e0b02e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Typography */
