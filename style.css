@@ -202,13 +202,26 @@ ul {
   gap: 20px;
 }
 
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .testimonial-card {
   background-color: #fff8ec;
   border: 1px solid #e4c99b;
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: fadeZoom 0.6s ease forwards;
 }
+
 
 .testimonial-card p {
   font-style: italic;
