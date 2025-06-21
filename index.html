@@ -132,36 +132,52 @@
     <p>Yes! We offer local drop-off and pickup in Buffalo, NY.</p>
   </section>
 
-  <section class="blog">
+ <section class="blog">
   <h2>Weekly Blog Highlights</h2>
-    <p class="blog-subheading">📅 Updated Weekly – Explore a new tip every Monday</p>
-    
- <div class="featured-blog-card">
-  <h3>Week 5 – Blog Post Title Placeholder</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed velit quis justo elementum feugiat. Integer vitae augue a nunc tristique...</p>
-  <a href="blog/week-5.html">Read More →</a>
-</div>
+  <p class="blog-subheading">📅 Updated Weekly – Explore a new tip every Monday</p>
 
-<div class="blog-grid">
-  <a href="blog/week-4.html" class="blog-card">
-    <h4>Week 4</h4>
-    <p>Donec accumsan sapien sed orci pretium. Discover how we handled fragile photos...</p>
-  </a>
-  <a href="blog/week-3.html" class="blog-card">
-    <h4>Week 3</h4>
-    <p>Ever wonder why 600 DPI is important? Here's a quick breakdown...</p>
-  </a>
-  <a href="blog/week-2.html" class="blog-card">
-    <h4>Week 2</h4>
-    <p>We digitized over 1,000 family memories for a 90th birthday surprise...</p>
-  </a>
-  <a href="blog/week-1.html" class="blog-card">
-    <h4>Week 1</h4>
-    <p>What to do before mailing us your photos — a quick checklist...</p>
-  </a>
-</div>
-
+  <div id="featured-blog-container"></div>
+  <div id="recent-blogs-container" class="blog-grid"></div>
 </section>
+
+<script>
+  const blogData = [
+    { week: 1, title: "Preparing Your Photos for Scanning", preview: "Here’s how to sort, clean, and prepare old photos for best results..." },
+    { week: 2, title: "Color Correction vs Restoration", preview: "We’ll walk you through what’s included when we enhance your photos..." },
+    { week: 3, title: "Why 600 DPI Scanning Matters", preview: "Higher DPI means more detail and futureproof archiving..." },
+    { week: 4, title: "How We Handle Fragile Photos", preview: "Acidic paper, torn edges, stuck albums — no problem..." },
+    { week: 5, title: "Digitizing for Birthdays & Anniversaries", preview: "Make an unforgettable gift from a lifetime of memories..." },
+    { week: 6, title: "Preserving Polaroids", preview: "Polaroid film degrades — but digitizing stops the clock..." }
+    // Add more blog posts up to week 47 if needed
+  ];
+
+  const today = new Date();
+  const weekNum = Math.max(1, Math.min(52, Math.ceil(((today - new Date(today.getFullYear(),0,1)) / 86400000 + today.getDay() + 1) / 7)));
+  const featured = blogData.find(b => b.week === weekNum) || blogData[0];
+
+  const recent = blogData
+    .filter(b => b.week < featured.week)
+    .slice(-3)
+    .reverse();
+
+  // Featured
+  document.getElementById("featured-blog-container").innerHTML = `
+    <div class="featured-blog-card">
+      <h3>Week ${featured.week} – ${featured.title}</h3>
+      <p>${featured.preview}</p>
+      <a href="blog/week-${featured.week}.html">Read More →</a>
+    </div>
+  `;
+
+  // Recent
+  document.getElementById("recent-blogs-container").innerHTML = recent.map(b => `
+    <a href="blog/week-${b.week}.html" class="blog-card">
+      <h4>Week ${b.week}</h4>
+      <p>${b.preview}</p>
+    </a>
+  `).join('');
+</script>
+
 
 
   <div style="display:none;">
