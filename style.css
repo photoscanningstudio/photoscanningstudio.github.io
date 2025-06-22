@@ -165,18 +165,32 @@ section h2 {
 .cta-icon { font-size: 1.3rem; }
 .cta-text { line-height: 1; }
 
-/* Gallery */
-.photos {
-  display: flex;
+/* Updated Enhanced Gallery */
+.enhanced-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-items: center;
 }
 
-.photos img {
-  width: 250px;
+.enhanced-gallery a {
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.enhanced-gallery a:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.enhanced-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Testimonials */
