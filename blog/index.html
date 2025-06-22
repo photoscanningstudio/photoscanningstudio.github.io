@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Photo Scanning Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Blog: Photo Preservation Tips</title>
+  <meta name="description" content="Explore our 52-week blog series on photo preservation, scanning, organizing, and protecting your family’s memories in Buffalo & WNY.">
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    body {
+      background-color: #f8f1e7;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #2e1e0f;
+    }
+
+    .blog-index-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: #5c3b1e;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .blog-link {
+      background-color: #fff8ec;
+      border: 1px solid #e4c99b;
+      padding: 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #2e1e0f;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .blog-link:hover {
+      background-color: #fdf3e3;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .blog-link strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #b46e28;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 40px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #b46e28;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <h1>Weekly Blog: Photo Preservation Tips</h1>
-  <ul>
+  <div class="blog-index-container">
+    <h1>Weekly Blog: Photo Preservation Tips</h1>
+    <div class="blog-grid">
     <li><a href="week-47.html">Week 47: The Emotional Value of Photos: Preserving Memories With Care</a></li>
     <li><a href="week-46.html">Week 46: The Digital Era: Transforming Family History Through Photos</a></li>
     <li><a href="week-45.html">Week 45: The Preservation Project: Photo Scanning and Legacy Building</a></li>
@@ -54,6 +123,8 @@
     <li><a href="week-3.html">Week 3: The Best Photo Scanning Equipment for Home Use</a></li>
     <li><a href="week-2.html">Week 2: 5 Ways to Keep Your Memories Safe From Disaster</a></li>
     <li><a href="week-1.html">Week 1: The Importance of Digitizing Family Photos</a></li>
-  </ul>
+ </div>
+    <a class="back-home" href="../index.html">← Back to Home</a>
+  </div>
 </body>
 </html>
