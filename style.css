@@ -302,6 +302,18 @@ footer a:hover {
   color: #6a4c2a;
 }
 
+.read-more {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #b46e28;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
 .blog-subheading {
   font-size: 1rem;
   color: #6a4c2a;
