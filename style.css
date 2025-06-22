@@ -38,15 +38,6 @@ body {
   justify-content: center;
 }
 
-.banner-logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  height: 60px;
-  width: auto;
-  z-index: 3;
-}
-
 @keyframes fadeInUp {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
@@ -89,19 +80,32 @@ body {
 .navbar {
   background-color: #fff4dd;
   border-bottom: 1px solid #d8a05e;
-  padding: 10px 0;
-  text-align: center;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
 }
 
 .navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  gap: 20px;
 }
 
 .navbar li {
   display: inline-block;
-  margin: 0 15px;
 }
 
 .navbar a {
