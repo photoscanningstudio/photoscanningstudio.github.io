@@ -127,7 +127,7 @@ body {
 
 /* Sections */
 section, .hero, .services, .pricing, .gallery, .testimonials, .contact, .map-section, .pickup-service, .faq, .blog {
-  padding: 40px 20px;
+  padding: 28px 20px; /* Reduced from 40px */
   max-width: 1000px;
   margin: auto;
 }
