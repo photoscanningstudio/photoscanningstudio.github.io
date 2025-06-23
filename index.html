@@ -91,6 +91,56 @@
   <p>Turnaround times typically range from 3–7 days depending on volume.</p>
 </section>
 
+  </section> <!-- existing pricing section ends here -->
+
+<!-- 👇 INSERT CALCULATOR CODE HERE -->
+
+<section class="pricing-calculator" style="background-color: #f8f1e7; padding: 40px 20px; max-width: 800px; margin: auto;">
+  <h2 style="color: #5c3b1e; border-bottom: 2px solid #d8a05e; padding-bottom: 8px; margin-bottom: 20px;">Estimate Your Price</h2>
+
+  <label for="scanCount" style="font-weight: bold;">Enter number of photos to scan:</label><br />
+  <input type="number" id="scanCount" placeholder="e.g., 750" style="padding: 10px; width: 100%; max-width: 300px; margin-top: 8px; margin-bottom: 16px; font-size: 1rem;" /><br />
+
+  <label><input type="checkbox" id="friendDiscount" /> Apply 15% “Bring a Friend” discount</label><br /><br />
+
+  <button onclick="calculatePrice()" style="background-color: #5c3b1e; color: white; padding: 10px 20px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Calculate</button>
+
+  <div id="result" style="margin-top: 20px; font-size: 1.1rem; font-weight: bold;"></div>
+
+  <p style="font-size: 0.9rem; color: #333; margin-top: 10px;">
+    <em>All scans include free enhancements and high-resolution digital copies.<br />
+    No extra charge for Polaroids, slides, or large-format prints.</em>
+  </p>
+</section>
+
+<script>
+  function calculatePrice() {
+    const scans = parseInt(document.getElementById('scanCount').value) || 0;
+    const applyDiscount = document.getElementById('friendDiscount').checked;
+
+    let pricePerScan = 0;
+    if (scans < 250) {
+      document.getElementById('result').innerHTML = "Minimum order is $50 for up to 250 scans.";
+      return;
+    } else if (scans <= 1000) {
+      pricePerScan = 0.20;
+    } else if (scans <= 2000) {
+      pricePerScan = 0.15;
+    } else {
+      pricePerScan = 0.12;
+    }
+
+    let total = scans * pricePerScan;
+
+    if (applyDiscount) {
+      total *= 0.85;
+    }
+
+    document.getElementById('result').innerHTML = `Estimated Price: $${total.toFixed(2)}`;
+  }
+</script>
+
+
 <section class="gallery" id="gallery">
   <h2>Sample Enhancements</h2>
   <div class="enhanced-gallery">
