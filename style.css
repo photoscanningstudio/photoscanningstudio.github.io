@@ -37,6 +37,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+.banner-subheading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #f9f9f9;
+}
 
 .branding {
   display: flex;
