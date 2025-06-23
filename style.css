@@ -221,6 +221,28 @@ section h2 {
   margin-top: 10px;
 }
 
+.view-all-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: #b46e28;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #fff3e3;
+  border: 1px solid #e4c99b;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.view-all-link:hover {
+  color: #fff8ec;
+  background-color: #b46e28;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-decoration: none;
+}
+
 /* Contact Form */
 .contact form {
   display: flex;
