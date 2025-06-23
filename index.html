@@ -228,10 +228,16 @@
   <div id="featured-blog-container"></div>
   <div id="recent-blogs-container" class="blog-grid"></div>
 </section>
-
+  
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
-  <form action="https://formspree.io/f/movwkjde" method="POST">
+  <form action="https://formspree.io/f/movwkjde" method="POST"
+        onsubmit="gtag('event', 'form_submission', {
+          event_category: 'Contact',
+          event_label: 'Contact Form Submitted',
+          value: 1
+        });">
+        
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required />
 
@@ -248,7 +254,13 @@
   </form>
 
   <p>Email us directly at: 
-    <a href="mailto:photoscanningstudio@gmail.com?subject=Photo%20Scanning%20Inquiry%20from%3A%20_________&body=Name%3A%0APhone%3A" target="_blank" rel="noopener">
+    <a href="mailto:photoscanningstudio@gmail.com?subject=Photo%20Scanning%20Inquiry%20from%3A%20_________&body=Name%3A%0APhone%3A"
+       target="_blank" rel="noopener"
+       onclick="gtag('event', 'click', {
+         event_category: 'Contact',
+         event_label: 'Email Link Clicked',
+         value: 1
+       });">
       📧 photoscanningstudio@gmail.com
     </a>
   </p>
@@ -264,19 +276,19 @@
 
 <section class="map-section">
   <h2>Our Location</h2>
-
   <p>We’re located at <strong>5309 Roberts Road, Hamburg, NY 14075</strong>. View our location on the map below:</p>
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.8414417405637!2d-78.86248142410944!3d42.72048647117765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d374b9d12b6535%3A0xcea569f2bfb7e028!2s5309%20Roberts%20Rd%2C%20Hamburg%2C%20NY%2014075!5e0!3m2!1sen!2sus!4v1718849999999!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.8414417405637!2d-78.86248142410944!3d42.72048647117765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d374b9d12b6535%3A0xcea569f2bfb7e028!2s5309%20Roberts%20Rd%2C%20Hamburg%2C%20NY%2014075!5e0!3m2!1sen!2sus!4v1718849999999!5m2!1sen!2sus"
+    width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </section>
 
 <footer class="footer">
   <nav class="footer-nav">
     <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#services" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Services' });">Services</a></li>
+      <li><a href="#pricing" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Pricing' });">Pricing</a></li>
+      <li><a href="#gallery" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Gallery' });">Gallery</a></li>
+      <li><a href="#testimonials" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Testimonials' });">Testimonials</a></li>
+      <li><a href="#contact" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Contact' });">Contact</a></li>
     </ul>
   </nav>
   <p>© 2025 Photo Scanning Studio — Buffalo, NY</p>
