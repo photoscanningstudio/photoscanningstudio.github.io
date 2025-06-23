@@ -451,3 +451,31 @@ footer a:hover {
   .hero-logo { height: 70px; }
   .branding { flex-direction: column; }
 }
+
+.footer-nav {
+  margin-bottom: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-nav li {
+  display: inline;
+}
+
+.footer-nav a {
+  color: #fff8ec;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
