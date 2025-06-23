@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Top-level pages -->
+  <url><loc>https://photoscanningstudio.github.io/</loc></url>
+  <url><loc>https://photoscanningstudio.github.io/faq.html</loc></url>
+  <url><loc>https://photoscanningstudio.github.io/all-testimonials.html</loc></url>
+  <url><loc>https://photoscanningstudio.github.io/thank-you.html</loc></url>
+
+  <!-- Blog archive -->
   <url><loc>https://photoscanningstudio.github.io/blog/week-1.html</loc></url>
   <url><loc>https://photoscanningstudio.github.io/blog/week-2.html</loc></url>
   <url><loc>https://photoscanningstudio.github.io/blog/week-3.html</loc></url>
