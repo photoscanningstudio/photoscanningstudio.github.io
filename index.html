@@ -78,6 +78,8 @@
   </ul>
 </section>
 
+<!-- Everything above stays the same -->
+
 <section class="pricing" id="pricing">
   <h2>Pricing</h2>
   <ul>
@@ -89,28 +91,25 @@
   <p>Each scan includes a second enhanced copy at no extra charge.</p>
   <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
   <p>Turnaround times typically range from 3–7 days depending on volume.</p>
-</section>
 
-  </section> <!-- existing pricing section ends here -->
+  <!-- 👇 Calculator is now embedded inside the pricing section -->
+  <div style="margin-top: 24px; border-top: 1px solid #d8a05e; padding-top: 20px;">
+    <h3 style="color: #5c3b1e; margin-bottom: 10px;">Estimate Your Price</h3>
 
-<!-- 👇 INSERT CALCULATOR CODE HERE -->
+    <label for="scanCount" style="font-weight: bold;">Enter number of photos to scan:</label><br />
+    <input type="number" id="scanCount" placeholder="e.g., 750" style="padding: 10px; width: 100%; max-width: 300px; margin-top: 8px; margin-bottom: 16px; font-size: 1rem;" /><br />
 
-<section class="pricing-calculator" style="background-color: #f8f1e7; padding: 40px 20px; max-width: 800px; margin: auto;">
-  <h2 style="color: #5c3b1e; border-bottom: 2px solid #d8a05e; padding-bottom: 8px; margin-bottom: 20px;">Estimate Your Price</h2>
+    <label><input type="checkbox" id="friendDiscount" /> Apply 15% “Bring a Friend” discount</label><br /><br />
 
-  <label for="scanCount" style="font-weight: bold;">Enter number of photos to scan:</label><br />
-  <input type="number" id="scanCount" placeholder="e.g., 750" style="padding: 10px; width: 100%; max-width: 300px; margin-top: 8px; margin-bottom: 16px; font-size: 1rem;" /><br />
+    <button onclick="calculatePrice()" style="background-color: #5c3b1e; color: white; padding: 10px 20px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Calculate</button>
 
-  <label><input type="checkbox" id="friendDiscount" /> Apply 15% “Bring a Friend” discount</label><br /><br />
+    <div id="result" style="margin-top: 20px; font-size: 1.1rem; font-weight: bold;"></div>
 
-  <button onclick="calculatePrice()" style="background-color: #5c3b1e; color: white; padding: 10px 20px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Calculate</button>
-
-  <div id="result" style="margin-top: 20px; font-size: 1.1rem; font-weight: bold;"></div>
-
-  <p style="font-size: 0.9rem; color: #333; margin-top: 10px;">
-    <em>All scans include free enhancements and high-resolution digital copies.<br />
-    No extra charge for Polaroids, slides, or large-format prints.</em>
-  </p>
+    <p style="font-size: 0.9rem; color: #333; margin-top: 10px;">
+      <em>All scans include free enhancements and high-resolution digital copies.<br />
+      No extra charge for Polaroids, slides, or large-format prints.</em>
+    </p>
+  </div>
 </section>
 
 <script>
@@ -131,7 +130,6 @@
     }
 
     let total = scans * pricePerScan;
-
     if (applyDiscount) {
       total *= 0.85;
     }
@@ -140,6 +138,7 @@
   }
 </script>
 
+<!-- Everything below stays the same -->
 
 <section class="gallery" id="gallery">
   <h2>Sample Enhancements</h2>
@@ -150,6 +149,7 @@
     <a href="zoo.jpg" target="_blank"><img src="zoo.jpg" alt="Enhanced zoo photo" /></a>
   </div>
 </section>
+
 
 <section class="testimonials" id="testimonials">
   <h2>What Our Customers Say</h2>
