@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Photo Scanning Hamburg NY | Digitize Old Photos in Buffalo, Erie County & Surrounding New York Areas</title>
-  <meta name="description" content="Preserve your memories! We scan and digitize photos, slides & albums in Hamburg, Buffalo & all WNY. Free local pickup or mail-in service. Get started today!" />
-  <meta name="keywords" content="photo scanning Hamburg NY, scan old family photos Buffalo, digitize printed pictures Orchard Park, Erie County photo service, slide scanning West Seneca, picture scanning Cheektowaga, Polaroid scan East Aurora, vintage photo restoration Eden, mail-in photo scanning NY, local photo digitizing Blasdell, restore old pictures Angola, image scanning Springville, archival digitization Lancaster, family photo conversion Depew, photo enhancement Colden, Western New York photo scanning, WNY digitize prints" />
+  <meta name="description" content="Preserve your memories! We scan and digitize photos & albums in Hamburg, Buffalo & all WNY. Free local pickup or mail-in service. Get started today!" />
+  <meta name="keywords" content="photo scanning Hamburg NY, scan old family photos Buffalo, digitize printed pictures Orchard Park, Erie County photo service, picture scanning Cheektowaga, Polaroid scan East Aurora, vintage photo restoration Eden, mail-in photo scanning NY, local photo digitizing Blasdell, restore old pictures Angola, image scanning Springville, archival digitization Lancaster, family photo conversion Depew, photo enhancement Colden, Western New York photo scanning, WNY digitize prints" />
   <meta name="author" content="Photo Scanning Studio" />
   <meta property="og:title" content="Photo Scanning Hamburg NY | Digitize Old Photos in Buffalo & Erie County" />
-  <meta property="og:description" content="Scan and digitize photos, albums, and slides for families across Buffalo, Hamburg, Orchard Park, and Erie County NY. Fast local service & mail-in option." />
+  <meta property="og:description" content="Scan and digitize photos and albums for families across Buffalo, Hamburg, Orchard Park, and Erie County NY. Fast local service & mail-in option." />
   <meta property="og:image" content="https://www.photoscanningstudio.com/photo3.webp" />
   <meta property="og:url" content="https://www.photoscanningstudio.com/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -113,9 +113,9 @@
   <h2>Our Services</h2>
   <ul>
     <li>High-resolution 600 DPI photo scanning</li>
-    <li>Color correction and enhancement included</li>
-    <li>USB ($20) or secure cloud delivery (FREE)</li>
-    <li>Pickup/drop-off in WNY</li>
+    <li>Automatic color/contrast/clarity enhancement included (no manual restoration)</li>
+    <li>USB ($20) or secure cloud delivery (FREE, files kept online 1 month)</li>
+    <li>Pickup/drop-off in WNY (see radius below)</li>
     <li>Mail-in options available</li>
   </ul>
   <p>Curious about costs? See our <a href="#pricing">photo scanning pricing</a> and try the price calculator. Want examples? Visit our <a href="#gallery">enhancement gallery</a>.</p>
@@ -128,11 +128,12 @@
     <li><strong>250 – 1000 scans:</strong> $0.20 per scan</li>
     <li><strong>1000 – 2000 scans:</strong> $0.15 per scan</li>
     <li><strong>Over 2000 scans:</strong> $0.12 per scan</li>
+    <li><strong>Very large orders (10,000+):</strong> minimum price capped at $0.10 per scan</li>
   </ul>
-  <p>Each scan includes a second enhanced copy at no extra charge.</p>
+  <p>Each scan includes a second enhanced copy at no extra charge (automatic improvements from our scanner).</p>
   <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
   <p>Turnaround times typically range from 5–10 days depending on volume.</p>
-  <p>All pricing includes free enhancements—see the <a href="#gallery">before-and-after gallery</a> for real examples. Questions? Visit the <a href="#faq">FAQ</a> or <a href="#contact">contact us</a>.</p>
+  <p>All pricing includes automatic enhancements—see the <a href="#gallery">before-and-after gallery</a> for real examples. Questions? Visit the <a href="#faq">FAQ</a> or <a href="#contact">contact us</a>.</p>
 
   <!-- Calculator inside pricing section -->
   <div style="margin-top: 24px; border-top: 1px solid #d8a05e; padding-top: 20px;">
@@ -141,15 +142,15 @@
     <label for="scanCount" style="font-weight: bold;">Enter number of photos to scan:</label><br />
     <input type="number" id="scanCount" placeholder="e.g., 750" style="padding: 10px; width: 100%; max-width: 300px; margin-top: 8px; margin-bottom: 16px; font-size: 1rem;" /><br />
 
-    <label><input type="checkbox" id="friendDiscount" /> Apply 15% “Bring a Friend” discount</label><br /><br />
+    <label><input type="checkbox" id="friendDiscount" /> Apply 15% “Bring a Friend” discount (applies to your order and your friend's order)</label><br /><br />
 
     <button onclick="calculatePrice()" style="background-color: #5c3b1e; color: white; padding: 10px 20px; border: none; font-size: 1rem; cursor: pointer; border-radius: 6px;">Calculate</button>
 
     <div id="result" style="margin-top: 20px; font-size: 1.1rem; font-weight: bold;"></div>
 
     <p style="font-size: 0.9rem; color: #333; margin-top: 10px;">
-      <em>All scans include free enhancements and high-resolution digital copies.<br />
-      No extra charge for Polaroids, slides, or large-format prints.</em>
+      <em>All scans include automatic enhancements and high-resolution digital copies.<br />
+      No extra charge for Polaroids or large-format prints. (We do not scan slides or negatives.)</em>
     </p>
   </div>
 </section>
@@ -163,6 +164,8 @@
     if (scans < 250) {
       document.getElementById('result').innerHTML = "Minimum order is $50 for up to 250 scans.";
       return;
+    } else if (scans >= 10000) {
+      pricePerScan = 0.10; // very large orders cap
     } else if (scans <= 1000) {
       pricePerScan = 0.20;
     } else if (scans <= 2000) {
@@ -176,7 +179,7 @@
       total *= 0.85;
     }
 
-    document.getElementById('result').innerHTML = `Estimated Price: $${total.toFixed(2)}`;
+    document.getElementById('result').innerHTML = `Estimated Price: $${total.toFixed(2)} (${scans} photos @ $${pricePerScan.toFixed(2)}/scan${applyDiscount?", with 15% Bring-a-Friend discount":""})`;
   }
 </script>
 
@@ -242,7 +245,7 @@
 
   <div class="faq-item">
     <h3>Can I drop off my photos?</h3>
-    <p>Yes — free pickup/drop-off is available in Hamburg NY and surrounding areas.</p>
+    <p>Yes — free pickup/drop-off is available in Hamburg NY; $20 within a 40-mile radius of Hamburg.</p>
   </div>
 
   <div class="faq-item">
@@ -301,7 +304,7 @@
   <h2>Pickup &amp; Drop-off Service</h2>
   <ul>
     <li><strong>Free</strong> within Hamburg, NY</li>
-    <li><strong>$20</strong> fee for surrounding areas</li>
+    <li><strong>$20</strong> within a <strong>40-mile radius</strong> of Hamburg</li>
   </ul>
 </section>
 
@@ -391,9 +394,11 @@
 <!-- FREE, NO-SERVER FAQ CHAT WIDGET -->
 <!-- ============================= -->
 <style>
-  .pss-chat-btn{position:fixed;right:18px;bottom:18px;z-index:9999;background:#0ea5e9;color:#fff;border:none;border-radius:9999px;padding:14px 18px;font:600 14px/1.2 system-ui,Arial;box-shadow:0 6px 20px rgba(2,132,199,.35);cursor:pointer}
-  .pss-chat-btn:hover{transform:translateY(-1px)}
-  .pss-chat-window{position:fixed;right:18px;bottom:78px;width:340px;max-width:92vw;height:460px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;z-index:9999}
+  .pss-chat-btn{position:fixed;right:18px;bottom:18px;z-index:9999;background:transparent;border:none;padding:0;cursor:pointer}
+  .pss-chat-btn img{width:88px;height:auto;filter:drop-shadow(0 6px 18px rgba(0,0,0,.25));animation:bob 3.2s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+  .pss-chat-window{position:fixed;right:18px;bottom:118px;width:340px;max-width:92vw;height:460px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;z-index:9999}
   .pss-chat-header{background:#0284c7;color:#fff;padding:12px 14px;font:600 14px/1.3 system-ui,Arial;display:flex;justify-content:space-between;align-items:center}
   .pss-chat-body{padding:12px;gap:10px;display:flex;flex-direction:column;overflow:auto}
   .pss-bubble{max-width:85%;padding:10px 12px;border-radius:12px;font:14px/1.35 system-ui,Arial}
@@ -406,7 +411,9 @@
   .pss-send{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:10px 14px;font:600 13px/1.2 system-ui,Arial;cursor:pointer}
 </style>
 
-<button id="pssChatBtn" class="pss-chat-btn" aria-haspopup="dialog" aria-controls="pssChatWin">💬 Chat about scanning</button>
+<button id="pssChatBtn" class="pss-chat-btn" aria-haspopup="dialog" aria-controls="pssChatWin">
+  <img src="waving-photographer.png" alt="Chat with Photo Scanning Studio (friendly photographer icon)">
+</button>
 
 <div id="pssChatWin" class="pss-chat-window" role="dialog" aria-modal="true" aria-label="Photo Scanning Studio Chat">
   <div class="pss-chat-header">
@@ -415,7 +422,7 @@
   </div>
   <div id="pssBody" class="pss-chat-body">
     <div class="pss-bubble bot">
-      Hi! Ask me anything about photo scanning—pricing, turnaround, pickup, mail-in, or delivery options. 👋
+      Hi! I’m your friendly scanning assistant 👋 Ask me anything about pricing, turnaround, pickup, mail-in, delivery, or anything else!
     </div>
     <div id="pssSuggest" class="pss-suggest"></div>
   </div>
@@ -426,43 +433,80 @@
 </div>
 
 <script>
-  // --- Minimal FAQ knowledge base (edit anytime) ---
+  // --- Expanded knowledge base (initial set). We'll keep growing this. ---
   const PSS_FAQ = [
-    { q: "What are your prices?", 
-      a: "Our current pricing: Minimum order $50 (covers first 250 scans). 250–1000 scans: $0.20/scan, 1000–2000: $0.15/scan, 2000+: $0.12/scan. Each scan includes a second enhanced copy.",
-      k: ["price","cost","pricing","rates","how much","per scan","minimum","discount"] },
-    { q: "How long does it take?", 
-      a: "Typical turnaround is 5–10 days depending on volume, plus shipping time for mail-in orders.",
-      k: ["turnaround","time","how long","days","ready","lead time"] },
-    { q: "Pickup & drop-off", 
-      a: "Free pickup/drop-off in Hamburg, NY; $20 fee for surrounding areas. Or mail your photos from anywhere in the U.S.",
-      k: ["pickup","dropoff","drop-off","deliver","collect","buffalo","hamburg"] },
-    { q: "Do you return my originals?", 
-      a: "Absolutely. We carefully return all originals after digitizing.",
-      k: ["return","originals","send back","get photos back"] },
-    { q: "Scan quality / DPI", 
-      a: "We scan at high-resolution 600 DPI. Enhancements (color/contrast/clarity) are included.",
-      k: ["dpi","resolution","quality","high res","enhance","color correction"] },
-    { q: "Delivery options", 
-      a: "Choose secure cloud delivery (FREE) or USB drive for $20.",
-      k: ["cloud","usb","flash","thumb drive","google drive","download","delivery"] },
-    { q: "Fragile photos / albums", 
-      a: "We handle fragile prints and albums with care. Polaroids, slides, and large prints are included at no extra charge.",
-      k: ["fragile","album","polaroid","slides","negatives","big","large","special"] },
-    { q: "How to mail in", 
-      a: "Pack photos snugly between cardboard, add a note with your name, email, and phone, and ship with tracking. We’ll confirm receipt and begin scanning.",
-      k: ["mail","ship","post","address","how to send"] },
-    { q: "Where are you located?", 
-      a: "We’re in Hamburg, NY (Buffalo area). Address: 5309 Roberts Road, Hamburg, NY 14075.",
-      k: ["where","address","location","map","near me","buffalo"] },
-    { q: "Get a quote", 
-      a: "Use the pricing section on our site for an estimate, or message us how many photos you have and we’ll quote it.",
-      k: ["quote","estimate","calculator","how much for 1000 photos"] },
-    { q: "Payment methods", 
-      a: "We accept common payment methods at drop-off or before return shipping for mail-in jobs.",
-      k: ["pay","payment","card","cash","venmo","zelle"] },
-    { q: "Contact", 
-      a: "Email photoscanningstudio@gmail.com or use the Contact form. We’re happy to help.",
+    // Pricing & Discounts
+    { q: "What are your prices?",
+      a: "Simple pricing: Minimum order $50 (covers first 250 scans). 250–1000: $0.20/scan. 1000–2000: $0.15/scan. Over 2000: $0.12/scan. Very large jobs (10,000+) are capped at a minimum of $0.10/scan. Each scan includes a second enhanced copy (automatic improvements).",
+      k: ["price","cost","pricing","rates","per scan","minimum","cheap","bulk","discount"] },
+    { q: "Do you have discounts?",
+      a: "Yes! Our Bring‑a‑Friend deal gives **you 15% off** and **your friend 15% off** their order too. We also run occasional seasonal specials—ask what's active today.",
+      k: ["discount","bring a friend","coupon","promo","deal","15%"] },
+    { q: "Is there a bulk price for 10,000 photos?",
+      a: "We can handle 10,000+ photos. For extremely large orders, the minimum price per photo is capped at $0.10/scan.",
+      k: ["bulk","10,000","ten thousand","large order","cap","volume"] },
+
+    // Turnaround
+    { q: "How long does it take?",
+      a: "Typical turnaround is **5–10 days**, depending on volume. Very large orders may take longer—we'll give you an estimate when we see your batch.",
+      k: ["turnaround","time","how long","days","ready","lead time","eta"] },
+
+    // Pickup/Drop-off & Shipping
+    { q: "Do you offer pickup?",
+      a: "Yes. Pickup/drop‑off is **free in Hamburg, NY** and **$20 within a 40‑mile radius** of Hamburg. Prefer to mail? Ship with tracking—we'll confirm receipt and start scanning.",
+      k: ["pickup","dropoff","drop-off","deliver","collect","buffalo","hamburg","40 miles"] },
+    { q: "How do I mail my photos?",
+      a: "Pack photos snugly between cardboard, place in a sturdy box, and add a note with your name, email, and phone. Ship with tracking to our Hamburg address. We'll confirm when received.",
+      k: ["mail","ship","address","postal","send","package","tracking"] },
+
+    // What we scan
+    { q: "What types of photos do you scan?",
+      a: "We scan **printed photos** (including Polaroids and large-format prints) and can work from album pages. We **do not** scan slides or negatives.",
+      k: ["types","prints","polaroid","album","slides","negatives","film"] },
+
+    // Quality & Enhancements
+    { q: "Do you do restoration?",
+      a: "We include **automatic enhancements** from our scanner (color, contrast, clarity). We don't offer manual retouching or advanced restoration.",
+      k: ["restore","restoration","repair","retouch","fix","rip","crease"] },
+    { q: "What DPI do you scan at?",
+      a: "We scan at **600 DPI** for crisp, high‑resolution results.",
+      k: ["dpi","resolution","quality","high res","600"] },
+
+    // Delivery & Files
+    { q: "How do I receive my files?",
+      a: "Every order includes **free cloud delivery**—you'll get a secure download link active for **1 month**. You can also choose a **USB drive for $20**, or provide your own USB for free.",
+      k: ["cloud","usb","download","drive","thumb drive","flash","one month"] },
+    { q: "Do files stay online forever?",
+      a: "No. For your privacy, cloud links expire after **1 month**. Please download and back up your files promptly.",
+      k: ["expire","delete","privacy","how long online","link duration"] },
+    { q: "What file format do I get?",
+      a: "Standard delivery is **JPEG (sRGB)**. If you need something else, ask and we'll see what's possible.",
+      k: ["format","jpeg","jpg","png","tiff","color space","sRGB"] },
+    { q: "Do you keep my photos in order?",
+      a: "We keep batches together and aim to preserve the order we receive. If strict sequencing is important, bundle groups with rubber bands and add notes.",
+      k: ["order","sequence","arrange","group","bundle","sort"] },
+
+    // Originals
+    { q: "Do I get my originals back?",
+      a: "Absolutely. All originals are safely returned after digitizing.",
+      k: ["return","originals","send back","after","keep"] },
+
+    // Payment
+    { q: "When do I pay?",
+      a: "You can pay at drop‑off/pick‑up or prior to return shipping for mail‑in orders.",
+      k: ["pay","payment","when","deposit","due"] },
+
+    // Policies / Edge cases
+    { q: "What if some photos are too damaged?",
+      a: "If a photo is too damaged to scan well, we’ll let you know and **it won’t count** toward your total.",
+      k: ["damaged","blurry","torn","bad","unreadable"] },
+    { q: "Do you handle fragile albums?",
+      a: "Yes—please note fragile sections. We handle with care and can scan pages as‑is when removal could cause damage.",
+      k: ["fragile","album","delicate","old","crumble","care"] },
+
+    // Contact
+    { q: "How do I contact you?",
+      a: "Email **photoscanningstudio@gmail.com** or use the **Contact** form below. We're happy to help.",
       k: ["contact","email","phone","call","reach"] }
   ];
 
@@ -471,7 +515,7 @@
     const q = (input||"").toLowerCase();
     let best = {score:0, item:null};
     for(const item of PSS_FAQ){
-      const hay = (item.q + " " + item.a + " " + item.k.join(" ")).toLowerCase();
+      const hay = (item.q + " " + item.a + " " + (item.k||[]).join(" ")).toLowerCase();
       const tokens = q.split(/\s+/).filter(Boolean);
       let score = hay.includes(q) ? 6 : 0;
       for(const t of tokens){ if(hay.includes(t)) score += 1; }
@@ -491,10 +535,10 @@
 
   const SUGGESTIONS = [
     "What are your prices?",
+    "Do you have discounts?",
     "How long does it take?",
-    "Do you return my originals?",
     "Pickup & drop-off options",
-    "Delivery options (USB vs cloud)"
+    "USB vs cloud delivery"
   ];
 
   function addBubble(text, who='bot'){
@@ -511,7 +555,7 @@
     const found = findAnswer(text);
     if(found){ addBubble(found.a,'bot'); }
     else{
-      addBubble("I’m not sure yet. Try asking about pricing, turnaround, or pickup. Or reach us at photoscanningstudio@gmail.com or the Contact form.",'bot');
+      addBubble("I’m not sure yet. Try asking about pricing, turnaround, or pickup. Or reach us at photoscanningstudio@gmail.com or the Contact form.", 'bot');
     }
   }
 
