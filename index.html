@@ -73,9 +73,30 @@
     gtag('js', new Date());
     gtag('config', 'G-0R4SLKFN9S');
   </script>
+
+  <!-- Appointment-only banner styles -->
+  <style>
+    .appointment-banner{
+      background-color:#fff3e3;
+      color:#5c3b1e;
+      text-align:center;
+      padding:10px 16px;
+      border-bottom:1px solid #e4c99b;
+      font-size:0.95rem;
+      font-weight:600;
+    }
+    .appointment-banner span{
+      font-weight:700;
+      text-decoration:underline;
+    }
+  </style>
 </head>
 
 <body>
+<div class="appointment-banner">
+  📌 All pickup &amp; drop-off is <span>BY APPOINTMENT ONLY</span> — please contact us to schedule. No walk-ins.
+</div>
+
 <header class="banner" id="top">
   <div class="banner-overlay">
     <div class="branding">
@@ -115,7 +136,7 @@
     <li>High-resolution 600 DPI photo scanning</li>
     <li>Automatic color/contrast/clarity enhancement included (no manual restoration)</li>
     <li>USB ($20) or secure cloud delivery (FREE, files kept online 1 month)</li>
-    <li>Pickup/drop-off in WNY (see radius below)</li>
+    <li>Pickup/drop-off in WNY <strong>by appointment only</strong> (see radius below)</li>
     <li>Mail-in options available</li>
   </ul>
   <p>Curious about costs? See our <a href="#pricing">photo scanning pricing</a> and try the price calculator. Want examples? Visit our <a href="#gallery">enhancement gallery</a>.</p>
@@ -245,7 +266,7 @@
 
   <div class="faq-item">
     <h3>Can I drop off my photos?</h3>
-    <p>Yes — free pickup/drop-off is available in Hamburg NY; $20 within a 40-mile radius of Hamburg.</p>
+    <p>Yes — but <strong>by appointment only</strong>. Pickup/drop-off is free in Hamburg, NY and $20 within a 40-mile radius. Because I work from my home studio and am not always on-site, please schedule a time before coming. <strong>No walk-ins, please.</strong></p>
   </div>
 
   <div class="faq-item">
@@ -301,7 +322,8 @@
 </section>
 
 <section class="pickup-service">
-  <h2>Pickup &amp; Drop-off Service</h2>
+  <h2>Pickup &amp; Drop-off Service (By Appointment Only – No Walk-ins)</h2>
+  <p><strong>All pickup and drop-off is strictly by appointment only.</strong> I work from my home studio and am not always at the house, so please contact me to schedule a time before arriving.</p>
   <ul>
     <li><strong>Free</strong> within Hamburg, NY</li>
     <li><strong>$20</strong> within a <strong>40-mile radius</strong> of Hamburg</li>
@@ -348,12 +370,12 @@
     <li><a href="blog/week-14.html">Week 14 - Why Local Scanning Beats Big Box</a></li>
     <li><a href="blog/week-15.html">Week 15 - Common Mistakes When Scanning</a></li>
     <li><a href="blog/week-16.html">Week 16 - How to Store Originals After Scanning</a></li>
-    <li><a href="blog/week-17.html">Week 17 - Tips for Mailing in Your Photos</a></li>
-    <li><a href="blog/week-18.html">Week 18 - Creating Custom Family Albums</a></li>
-    <li><a href="blog/week-19.html">Week 19 - Best USB Drives for Photo Storage</a></li>
-    <li><a href="blog/week-20.html">Week 20 - Backing Up to the Cloud</a></li>
-    <li><a href="blog/week-21.html">Week 21 - Digitizing Wedding Memories</a></li>
-    <li><a href="blog/week-22.html">Week 22 - Memorial Slideshows Made Easy</a></li>
+    <li><a href="blog/week-17.html">Tips for Mailing in Your Photos</a></li>
+    <li><a href="blog/week-18.html">Creating Custom Family Albums</a></li>
+    <li><a href="blog/week-19.html">Best USB Drives for Photo Storage</a></li>
+    <li><a href="blog/week-20.html">Backing Up to the Cloud</a></li>
+    <li><a href="blog/week-21.html">Digitizing Wedding Memories</a></li>
+    <li><a href="blog/week-22.html">Memorial Slideshows Made Easy</a></li>
     <li><a href="blog/week-23.html">Photo Organization Tools We Love</a></li>
     <li><a href="blog/week-24.html">Scanning on a Budget</a></li>
     <li><a href="blog/week-25.html">Enhancing Childhood Photos</a></li>
@@ -453,7 +475,7 @@
       a: "Simple pricing: Minimum order $50 (covers first 250 scans). 250–1000: $0.20/scan. 1000–2000: $0.15/scan. Over 2000: $0.12/scan. Very large jobs (10,000+) are capped at a minimum of $0.10/scan. Each scan includes a second enhanced copy (automatic improvements).",
       k: ["price","cost","pricing","rates","per scan","minimum","cheap","bulk","discount"] },
     { q: "Do you have discounts?",
-      a: "Yes! Our Bring‑a‑Friend deal gives **you 15% off** and **your friend 15% off** their order too. We also run occasional seasonal specials—ask what's active today.",
+      a: "Yes! Our Bring-a-Friend deal gives **you 15% off** and **your friend 15% off** their order too. We also run occasional seasonal specials—ask what's active today.",
       k: ["discount","bring a friend","coupon","promo","deal","15%"] },
     { q: "Is there a bulk price for 10,000 photos?",
       a: "We can handle 10,000+ photos. For extremely large orders, the minimum price per photo is capped at $0.10/scan.",
@@ -466,8 +488,8 @@
 
     // Pickup/Drop-off & Shipping
     { q: "Do you offer pickup?",
-      a: "Yes. Pickup/drop‑off is **free in Hamburg, NY** and **$20 within a 40‑mile radius** of Hamburg. Prefer to mail? Ship with tracking—we'll confirm receipt and start scanning.",
-      k: ["pickup","dropoff","drop-off","deliver","collect","buffalo","hamburg","40 miles"] },
+      a: "Yes. Pickup/drop-off is **free in Hamburg, NY** and **$20 within a 40-mile radius** of Hamburg. All pickup and drop-off is **by appointment only** since we work from a home studio—please schedule a time before arriving. No walk-ins.",
+      k: ["pickup","dropoff","drop-off","deliver","collect","buffalo","hamburg","40 miles","appointment","walk in","walk-in"] },
     { q: "How do I mail my photos?",
       a: "Pack photos snugly between cardboard, place in a sturdy box, and add a note with your name, email, and phone. Ship with tracking to our Hamburg address. We'll confirm when received.",
       k: ["mail","ship","address","postal","send","package","tracking"] },
@@ -482,7 +504,7 @@
       a: "We include **automatic enhancements** from our scanner (color, contrast, clarity). We don't offer manual retouching or advanced restoration.",
       k: ["restore","restoration","repair","retouch","fix","rip","crease"] },
     { q: "What DPI do you scan at?",
-      a: "We scan at **600 DPI** for crisp, high‑resolution results.",
+      a: "We scan at **600 DPI** for crisp, high-resolution results.",
       k: ["dpi","resolution","quality","high res","600"] },
 
     // Delivery & Files
@@ -506,7 +528,7 @@
 
     // Payment
     { q: "When do I pay?",
-      a: "You can pay at drop‑off/pick‑up or prior to return shipping for mail‑in orders.",
+      a: "You can pay at drop-off/pick-up or prior to return shipping for mail-in orders.",
       k: ["pay","payment","when","deposit","due"] },
 
     // Policies / Edge cases
@@ -514,7 +536,7 @@
       a: "If a photo is too damaged to scan well, we’ll let you know and **it won’t count** toward your total.",
       k: ["damaged","blurry","torn","bad","unreadable"] },
     { q: "Do you handle fragile albums?",
-      a: "Yes—please note fragile sections. We handle with care and can scan pages as‑is when removal could cause damage.",
+      a: "Yes—please note fragile sections. We handle with care and can scan pages as-is when removal could cause damage.",
       k: ["fragile","album","delicate","old","crumble","care"] },
 
     // Contact
