@@ -4,131 +4,281 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DIY Photo Scanning & Video Conversion | Photo Scanning Studio</title>
+  <meta name="description" content="DIY guide to digitizing old photos and home videos. Learn about photo scanners, VHS-to-digital converters, archival storage, and long-term backup options." />
+  <meta name="author" content="Photo Scanning Studio" />
+
+  <!-- Canonical URL for this page -->
+  <link rel="canonical" href="https://www.photoscanningstudio.com/DIY.html" />
+
+  <!-- Favicon / Icons -->
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Google Font - same as index -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  </noscript>
+
+  <!-- Global site CSS (same as index) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Appointment-only banner styles (same as index) -->
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+    .appointment-banner{
+      background-color:#fff3e3;
+      color:#5c3b1e;
+      text-align:center;
+      padding:10px 16px;
+      border-bottom:1px solid #e4c99b;
+      font-size:0.95rem;
+      font-weight:600;
     }
-    /* Container to center content and add padding */
-    .container {
-      max-width: 800px;
+    .appointment-banner span{
+      font-weight:700;
+      text-decoration:underline;
+    }
+
+    /* DIY ARTICLE-SPECIFIC STYLES – namespaced to avoid conflicts */
+    .diy-wrapper{
+      max-width: 900px;
       margin: 0 auto;
-      padding: 1em 2em;
+      padding: 2.5rem 1.5rem 3rem;
+      background: rgba(255,255,255,0.96);
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
-    header {
-      background: #f4f4f4;
-      padding: 1em 2em;
+    .diy-breadcrumb{
+      font-size:0.9rem;
+      margin-bottom:0.75rem;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.8em;
+    .diy-breadcrumb a{
+      color:#0ea5e9;
+      text-decoration:none;
     }
-    nav {
-      margin-top: 0.5em;
+    .diy-breadcrumb a:hover{
+      text-decoration:underline;
     }
-    nav a {
-      margin-right: 1em;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
+    .diy-title{
+      font-family:"Playfair Display",serif;
+      font-size:2rem;
+      margin:0 0 0.5rem;
+      color:#2c1810;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .diy-subtitle{
+      font-size:1.05rem;
+      color:#4b3b2c;
+      margin-bottom:1.5rem;
     }
-    h2 {
-      color: #2c5e5e;
-      margin-top: 1.5em;
-      font-size: 1.4em;
+    .diy-section-title{
+      color:#2c5e5e;
+      margin-top:1.9rem;
+      margin-bottom:0.6rem;
+      font-size:1.4rem;
     }
-    /* Style for affiliate link buttons */
-    .aff-button {
-      display: inline-block;
-      background: #0073bb;
-      color: #fff;
-      padding: 0.5em 1em;
-      margin-top: 0.5em;
-      text-decoration: none;
-      border-radius: 4px;
+    .diy-text{
+      line-height:1.7;
+      color:#2b2b2b;
+      margin-bottom:0.9rem;
+      font-size:1rem;
     }
-    .aff-button:hover {
-      background: #005f95;
+    .diy-aff-button{
+      display:inline-block;
+      background:#0073bb;
+      color:#fff;
+      padding:0.55em 1.2em;
+      margin-top:0.35em;
+      margin-bottom:0.8em;
+      text-decoration:none;
+      border-radius:6px;
+      font-weight:600;
+      font-size:0.98rem;
     }
-    /* Callout warning style */
-    .warning {
-      background: #fff3cd;
-      border-left: 5px solid #ffa500;
-      padding: 0.8em;
-      margin: 1em 0;
+    .diy-aff-button:hover{
+      background:#005f95;
     }
-    .warning strong {
-      display: block;
-      margin-bottom: 0.3em;
+    .diy-warning{
+      background:#fff3cd;
+      border-left:5px solid #ffa500;
+      padding:0.85em 1em;
+      margin:1.1em 0;
+      border-radius:6px;
+      font-size:0.95rem;
+      color:#3b2e12;
     }
-    footer {
-      margin: 2em 0 1em;
-      padding-top: 1em;
-      border-top: 1px solid #ccc;
-      text-align: center;
-      color: #666;
-      font-size: 0.9em;
+    .diy-warning strong{
+      display:block;
+      margin-bottom:0.3em;
     }
-    /* Comparison table */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1.5em;
-      font-size: 0.9em;
+    .diy-list{
+      padding-left:1.3rem;
+      margin:0.4rem 0 0.9rem;
     }
-    .comparison-table th,
-    .comparison-table td {
-      border: 1px solid #ccc;
-      padding: 0.5em;
-      text-align: left;
+    .diy-list li{
+      margin-bottom:0.25rem;
     }
-    .comparison-table th {
-      background: #f4f4f4;
+    .diy-comparison-table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:1.5em;
+      font-size:0.9em;
     }
-    .comparison-note {
-      font-size: 0.85em;
-      color: #555;
-      margin-top: 0.5em;
+    .diy-comparison-table th,
+    .diy-comparison-table td{
+      border:1px solid #ccc;
+      padding:0.5em 0.6em;
+      text-align:left;
+    }
+    .diy-comparison-table th{
+      background:#f4f4f4;
+    }
+    .diy-comparison-note{
+      font-size:0.85em;
+      color:#555;
+      margin-top:0.5em;
+    }
+    .diy-footer-note{
+      margin-top:2rem;
+      font-size:0.9rem;
+      color:#555;
+      text-align:center;
+    }
+
+    @media (max-width: 768px){
+      .diy-wrapper{
+        padding:1.8rem 1rem 2.4rem;
+        margin:1rem;
+      }
     }
   </style>
+
+  <!-- Google Analytics (same ID as main site) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0R4SLKFN9S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0R4SLKFN9S');
+  </script>
 </head>
 <body>
-  <header>
-    <h1>DIY Photo &amp; Video Digitization Guide</h1>
-    <nav>
-      <a href="index.html" target="_blank" rel="noopener">Home</a>
-      <a href="blog.html" target="_blank" rel="noopener">Blog</a>
-      <a href="contact.html" target="_blank" rel="noopener">Contact</a>
+
+<!-- Appointment banner (same as index) -->
+<div class="appointment-banner">
+  📌 All pickup &amp; drop-off is <span>BY APPOINTMENT ONLY</span> — please contact us to schedule. No walk-ins.
+</div>
+
+<!-- Shared banner/header copied from index for consistent branding -->
+<header class="banner" id="top">
+  <div class="banner-overlay">
+    <div class="branding">
+      <picture>
+        <source srcset="logo.webp" type="image/webp">
+        <img src="logo.png" alt="Photo Scanning Studio Logo" class="hero-logo" loading="lazy" width="150" height="150" />
+      </picture>
+      <div class="banner-text">
+        <h1>Photo Scanning Studio</h1>
+        <h2 class="banner-subheading">Digitize Old Photos in Hamburg, WNY &amp; US by Mailorder</h2>
+        <p>Buffalo, NY | Digitizing Your Memories</p>
+      </div>
+    </div>
+
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a href="index.html#services" rel="noopener">Services</a></li>
+        <li><a href="index.html#pricing" rel="noopener">Pricing</a></li>
+        <li><a href="index.html#gallery" rel="noopener">Gallery</a></li>
+        <li><a href="index.html#testimonials" rel="noopener">Testimonials</a></li>
+        <li><a href="DIY.html" aria-current="page">DIY Tools</a></li>
+        <li><a href="index.html#contact" rel="noopener">🖼️ Digitize My Photos</a></li>
+      </ul>
     </nav>
-  </header>
-  <main class="container">
-    <p>Welcome to the DIY resource page of Photo Scanning Studio! This guide is for anyone looking to digitize their old photos and home videos on their own. We’ve curated some of the best tools and tips to help you convert your memories to digital format. Whether you have shoeboxes of family photos or a stack of VHS tapes, the recommendations below will make your DIY project easier and more effective. Let’s get started!</p>
-    
-    <h2>Epson FastFoto Scanner – High-Speed Photo Scanning</h2>
-    <p>If you have a lot of prints to scan, the <strong>Epson FastFoto FF-680W / FF-60W family</strong> is a game-changer. It’s one of the fastest personal photo scanners available, able to scan a photo in about one second at 300 dpi. This feeder-based scanner lets you load a stack of prints at once, including mixed sizes, so you can digitize entire albums in a fraction of the time it would take with a flatbed. It also automatically enhances and color-corrects old photos, and even scans both sides of a print (so you can capture handwritten notes on the back!). When you’re done with your photo project, the FastFoto can double as a document scanner (it handles documents and receipts too). It’s a bit of an investment, but if you have thousands of photos to preserve, it can save you countless hours while producing great results.</p>
-    <p><a href="https://amzn.to/4q8CArT" target="_blank" rel="noopener noreferrer" class="aff-button">View Epson FastFoto on Amazon</a></p>
-    
-    <h2>VHS-to-Digital Converter – Transfer Your Tapes</h2>
-    <p>For converting old VHS tapes or camcorder tapes, a dedicated <strong>VHS-to-digital converter</strong> is your best friend. A good converter lets you connect your VCR or camcorder and capture the footage as digital MP4 files. Many units record directly to a USB flash drive or SD card and include a small preview screen, so you can see exactly what’s being recorded. This type of all-in-one solution is perfect if you want to digitize a few tapes without fussing with complicated software. (Just remember, you do need a working VCR or camcorder to play the tapes into the converter.)</p>
-    <p><a href="https://amzn.to/3MxCSda" target="_blank" rel="noopener noreferrer" class="aff-button">View VHS-to-Digital Converter on Amazon</a></p>
-    
-    <h2>USB Flash Drives – Easy Sharing (Short-Term Storage: ~2–10 Years)</h2>
-    <p>Once you’ve scanned your photos or converted your videos, you’ll need a way to store and share those digital files. <strong>USB flash drives</strong> are a convenient option for copying files and giving them to family members. They’re inexpensive and portable – you can load up a thumb drive with all your JPEGs or video files and send it to relatives or friends. We recommend getting a multi-pack of decent capacity drives (for example, a set of 64GB USB 3.0 drives) so you have plenty to go around. Using USB drives is much faster and easier than burning a bunch of DVDs.</p>
-    <p><a href="https://amzn.to/4pyIm69" target="_blank" rel="noopener noreferrer" class="aff-button">Find USB Flash Drive Packs on Amazon</a></p>
-    <aside class="warning">
+  </div>
+</header>
+
+<main>
+  <!-- DIY ARTICLE CONTENT -->
+  <section class="diy-wrapper">
+    <div class="diy-breadcrumb">
+      <a href="index.html">← Back to Home</a>
+    </div>
+    <h1 class="diy-title">DIY Photo &amp; Video Digitization Guide</h1>
+    <p class="diy-subtitle">
+      Prefer to do it yourself? This guide walks you through recommended tools for scanning photos,
+      converting VHS tapes, and backing everything up for the long term — while still keeping your
+      options open to hire us if you change your mind.
+    </p>
+
+    <p class="diy-text">
+      Welcome to the DIY resource page of Photo Scanning Studio! This guide is for anyone looking to digitize
+      their old photos and home videos on their own. We’ve curated some of the best tools and tips to help you
+      convert your memories to digital format. Whether you have shoeboxes of family photos or a stack of VHS tapes,
+      the recommendations below will make your DIY project easier and more effective. Let’s get started!
+    </p>
+
+    <h2 class="diy-section-title">Epson FastFoto Scanner – High-Speed Photo Scanning</h2>
+    <p class="diy-text">
+      If you have a lot of prints to scan, the <strong>Epson FastFoto FF-680W / FF-60W family</strong> is a game-changer.
+      It’s one of the fastest personal photo scanners available, able to scan a photo in about one second at 300 dpi.
+      This feeder-based scanner lets you load a stack of prints at once, including mixed sizes, so you can digitize
+      entire albums in a fraction of the time it would take with a flatbed. It also automatically enhances and
+      color-corrects old photos, and even scans both sides of a print (so you can capture handwritten notes on the back!).
+      When you’re done with your photo project, the FastFoto can double as a document scanner (it handles documents and
+      receipts too). It’s a bit of an investment, but if you have thousands of photos to preserve, it can save you
+      countless hours while producing great results.
+    </p>
+    <p>
+      <a href="https://amzn.to/4q8CArT" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        View Epson FastFoto on Amazon
+      </a>
+    </p>
+
+    <h2 class="diy-section-title">VHS-to-Digital Converter – Transfer Your Tapes</h2>
+    <p class="diy-text">
+      For converting old VHS tapes or camcorder tapes, a dedicated <strong>VHS-to-digital converter</strong> is your best friend.
+      A good converter lets you connect your VCR or camcorder and capture the footage as digital MP4 files. Many units record
+      directly to a USB flash drive or SD card and include a small preview screen, so you can see exactly what’s being recorded.
+      This type of all-in-one solution is perfect if you want to digitize a few tapes without fussing with complicated software.
+      (Just remember, you do need a working VCR or camcorder to play the tapes into the converter.)
+    </p>
+    <p>
+      <a href="https://amzn.to/3MxCSda" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        View VHS-to-Digital Converter on Amazon
+      </a>
+    </p>
+
+    <h2 class="diy-section-title">USB Flash Drives – Easy Sharing (Short-Term Storage: ~2–10 Years)</h2>
+    <p class="diy-text">
+      Once you’ve scanned your photos or converted your videos, you’ll need a way to store and share those digital files.
+      <strong>USB flash drives</strong> are a convenient option for copying files and giving them to family members.
+      They’re inexpensive and portable – you can load up a thumb drive with all your JPEGs or video files and send it to relatives
+      or friends. We recommend getting a multi-pack of decent capacity drives (for example, a set of 64GB USB 3.0 drives) so you
+      have plenty to go around. Using USB drives is much faster and easier than burning a bunch of DVDs.
+    </p>
+    <p>
+      <a href="https://amzn.to/4pyIm69" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        Find USB Flash Drive Packs on Amazon
+      </a>
+    </p>
+
+    <div class="diy-warning">
       <strong>Important:</strong>
-      USB sticks are handy for transferring files, but they are <em>not</em> reliable for long-term storage. Flash drives can fail or lose data without warning, especially if they’re left in drawers for years. Always keep permanent backups of your digitized photos and videos on more reliable media (like archival DVDs, M-Disc, and/or an external drive) and ideally in cloud storage too. Don’t rely on a single USB copy as your only archive.
-    </aside>
-    
-    <h2>Video Tape Transfer Service – Digital MP4 (Turnaround ~10 Business Days)</h2>
-    <p>If you don’t have a VCR, don’t want to deal with cables and capture devices, or just prefer a hands-off option, a <strong>professional video tape transfer service</strong> can be a great alternative. With this type of service, you mail in your tapes and receive modern digital files back.</p>
-    <p>This particular <strong>Video Tape Transfer Service (VHS, Hi8, Video 8, 8mm, VHS-C, MiniDV) to Digital MP4</strong> includes:</p>
-    <ul>
+      USB sticks are handy for transferring files, but they are <em>not</em> reliable for long-term storage.
+      Flash drives can fail or lose data without warning, especially if they’re left in drawers for years.
+      Always keep permanent backups of your digitized photos and videos on more reliable media (like archival DVDs,
+      M-Disc, and/or an external drive) and ideally in cloud storage too. Don’t rely on a single USB copy as your only archive.
+    </div>
+
+    <h2 class="diy-section-title">Video Tape Transfer Service – Digital MP4 (Turnaround ~10 Business Days)</h2>
+    <p class="diy-text">
+      If you don’t have a VCR, don’t want to deal with cables and capture devices, or just prefer a hands-off option,
+      a <strong>professional video tape transfer service</strong> can be a great alternative. With this type of service,
+      you mail in your tapes and receive modern digital files back.
+    </p>
+    <p class="diy-text">
+      This particular <strong>Video Tape Transfer Service (VHS, Hi8, Video 8, 8mm, VHS-C, MiniDV) to Digital MP4</strong> includes:
+    </p>
+    <ul class="diy-list">
       <li><strong>1 tape per transfer</strong> (VHS, VHS-C, 8mm, Video-8, Hi-8, Digital 8, or MiniDV).</li>
       <li><strong>Digital MP4 file delivery</strong> that you can play on phones, tablets, computers, or smart TVs.</li>
       <li><strong>About 10 business days</strong> turnaround after they receive your tapes.</li>
@@ -137,13 +287,26 @@
       <li>Standard transfer at <strong>640×480 resolution</strong>, which matches the native quality of most legacy tape formats.</li>
       <li>Clear mailing instructions provided by <strong>Time To Remember</strong> shortly after purchase.</li>
     </ul>
-    <p>If you only have a few tapes or don’t want to set up hardware and software yourself, this kind of service can be an easy, stress-free way to get everything into MP4 format.</p>
-    <p><a href="https://amzn.to/4ac0nm0" target="_blank" rel="noopener noreferrer" class="aff-button">Video Tape Transfer Service – MP4 Delivery</a></p>
-    
-    <h2>Fireproof Photo Storage Box – Protect & Organize Originals (Fire & Water-Resistant)</h2>
-    <p>Once your photos are digitized, your original prints are still incredibly valuable. Instead of leaving them in old shoeboxes, you can upgrade to a <strong>fireproof, water-resistant photo storage box</strong> that keeps everything organized and adds an extra layer of physical protection.</p>
-    <p>This <strong>Fireproof Photo Storage Box with 16 Inner 4&quot; x 6&quot; Photo Cases</strong> is designed specifically for photo collections:</p>
-    <ul>
+    <p class="diy-text">
+      If you only have a few tapes or don’t want to set up hardware and software yourself, this kind of service can be an easy,
+      stress-free way to get everything into MP4 format.
+    </p>
+    <p>
+      <a href="https://amzn.to/4ac0nm0" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        Video Tape Transfer Service – MP4 Delivery
+      </a>
+    </p>
+
+    <h2 class="diy-section-title">Fireproof Photo Storage Box – Protect &amp; Organize Originals</h2>
+    <p class="diy-text">
+      Once your photos are digitized, your original prints are still incredibly valuable. Instead of leaving them in old shoeboxes,
+      you can upgrade to a <strong>fireproof, water-resistant photo storage box</strong> that keeps everything organized and adds an
+      extra layer of physical protection.
+    </p>
+    <p class="diy-text">
+      This <strong>Fireproof Photo Storage Box with 16 Inner 4&quot; x 6&quot; Photo Cases</strong> is designed specifically for photo collections:
+    </p>
+    <ul class="diy-list">
       <li>Made with <strong>double-layered, non-itchy silicone coated fiberglass</strong> that can withstand temperatures up to about <strong>2000°F</strong>, plus high water resistance for added protection.</li>
       <li>Includes <strong>16 clear 4&quot; x 6&quot; inner photo cases</strong>, each holding about <strong>100 photos</strong>—so you can store up to <strong>1,600 4&quot; x 6&quot; prints</strong> neatly organized.</li>
       <li>Large outer box size of approximately <strong>14.37&quot; x 10.63&quot; x 6&quot;</strong>, with a zippered pocket in the lid for extra documents or keepsakes.</li>
@@ -151,13 +314,24 @@
       <li>Comfortable carry handle and a rear strap that slides over a suitcase handle, making it easy to take your memories with you or move them to a safer location.</li>
       <li>Collapsible design so you can fold it down when it’s not in use.</li>
     </ul>
-    <p>Nothing is completely fire- or water-proof, but this kind of box offers far better protection than a basic cardboard bin and helps keep your most important photos together in one organized, grab-and-go container.</p>
-    <p><a href="https://amzn.to/4aH1lqj" target="_blank" rel="noopener noreferrer" class="aff-button">Fireproof Photo Storage Box with 16 Inner Cases</a></p>
-    
-    <h2>Archival DVDs – Long-Term Backup (Approx. 20–50 Years)</h2>
-    <p>Digitizing is only half the battle – you also need to make sure those digital files are backed up for the future. One of the most time-tested options is using <strong>archival-quality DVDs</strong>. A good example is <strong>Verbatim DVD+R DL Double Layer 8.5GB</strong> discs.</p>
-    <p>These discs offer:</p>
-    <ul>
+    <p class="diy-text">
+      Nothing is completely fire- or water-proof, but this kind of box offers far better protection than a basic cardboard bin
+      and helps keep your most important photos together in one organized, grab-and-go container.
+    </p>
+    <p>
+      <a href="https://amzn.to/4aH1lqj" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        Fireproof Photo Storage Box with 16 Inner Cases
+      </a>
+    </p>
+
+    <h2 class="diy-section-title">Archival DVDs – Long-Term Backup (Approx. 20–50 Years)</h2>
+    <p class="diy-text">
+      Digitizing is only half the battle – you also need to make sure those digital files are backed up for the future.
+      One of the most time-tested options is using <strong>archival-quality DVDs</strong>. A good example is
+      <strong>Verbatim DVD+R DL Double Layer 8.5GB</strong> discs.
+    </p>
+    <p class="diy-text">These discs offer:</p>
+    <ul class="diy-list">
       <li><strong>8.5GB of storage</strong> per disc (double the capacity of a standard single-layer DVD).</li>
       <li>Up to <strong>4 hours of high-quality video</strong> or a large photo collection on one disc.</li>
       <li><strong>One-time recordable</strong> design, which is ideal for archival backups.</li>
@@ -165,33 +339,61 @@
       <li>Good compatibility with many DVD writers and standalone DVD players.</li>
       <li>Backed by a company that has specialized in data storage for decades.</li>
     </ul>
-    <p>When stored properly (in a cool, dry place and away from sunlight), quality DVD+R DL media is often cited as lasting on the order of <strong>20–50 years</strong>. That makes them a strong choice for long-term backups, especially if you create multiple copies and store them in different locations.</p>
-    <p>Compared to flash-based storage like USB drives, archival DVDs are <em>less</em> prone to silent failure over time, because the data is written in a physical layer that doesn’t depend on a powered controller. They’re also inexpensive, so you can create multiple sets and spread the risk.</p>
-    <p><a href="https://amzn.to/4pwMweF" target="_blank" rel="noopener noreferrer" class="aff-button">Verbatim DVD+R DL Double Layer (Archival DVDs)</a></p>
-    
-    <h2>M-Disc Archival Blu-Ray – Ultra-Long-Term Storage (Approx. 50–100+ Years)</h2>
-    <p>If you want to go even further with preservation, <strong>M-Disc</strong> is one of the best consumer options available for serious archival storage. Unlike regular DVDs that use organic dye layers, <strong>M-Disc BD-R</strong> uses a patented inorganic data layer that is “engraved” by the laser.</p>
-    <p>For example, <strong>Verbatim M-Disc BD-R 25GB 4X Lifetime Archival</strong> discs offer:</p>
-    <ul>
+    <p class="diy-text">
+      When stored properly (in a cool, dry place and away from sunlight), quality DVD+R DL media is often cited as lasting
+      on the order of <strong>20–50 years</strong>. That makes them a strong choice for long-term backups, especially if you
+      create multiple copies and store them in different locations.
+    </p>
+    <p class="diy-text">
+      Compared to flash-based storage like USB drives, archival DVDs are <em>less</em> prone to silent failure over time,
+      because the data is written in a physical layer that doesn’t depend on a powered controller. They’re also inexpensive,
+      so you can create multiple sets and spread the risk.
+    </p>
+    <p>
+      <a href="https://amzn.to/4pwMweF" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        Verbatim DVD+R DL Double Layer (Archival DVDs)
+      </a>
+    </p>
+
+    <h2 class="diy-section-title">M-Disc Archival Blu-Ray – Ultra-Long-Term Storage (Approx. 50–100+ Years)</h2>
+    <p class="diy-text">
+      If you want to go even further with preservation, <strong>M-Disc</strong> is one of the best consumer options available
+      for serious archival storage. Unlike regular DVDs that use organic dye layers, <strong>M-Disc BD-R</strong> uses a patented
+      inorganic data layer that is “engraved” by the laser.
+    </p>
+    <p class="diy-text">
+      For example, <strong>Verbatim M-Disc BD-R 25GB 4X Lifetime Archival</strong> discs offer:
+    </p>
+    <ul class="diy-list">
       <li><strong>25GB of storage</strong> per disc (Blu-ray data capacity).</li>
       <li>A special inorganic write layer that doesn’t fade or break down like normal dyes.</li>
       <li>Resistance to light, heat, humidity, and general environmental exposure.</li>
       <li>White inkjet hub-printable surfaces if you like to print clear labels directly on the disc.</li>
       <li>Design intended for <strong>decades to a century or more</strong> of longevity under proper storage conditions.</li>
     </ul>
-    <p>M-Disc is ideal for your most important, irreplaceable memories: full family archives, weddings, legacy collections, and anything you want to protect for future generations. It does require a compatible Blu-ray burner that supports M-Disc, but once you’ve burned the discs, they are among the most stable consumer storage options available.</p>
-    <p><a href="https://amzn.to/4iNyFOw" target="_blank" rel="noopener noreferrer" class="aff-button">Verbatim M-Disc BD-R (Lifetime Archival Blu-Ray)</a></p>
-    
-    <h2>How DVDs, M-Disc, SSDs & USB Drives Compare for Long-Term Storage</h2>
-    <p>Different storage types shine in different roles. Here’s a simple way to think about it:</p>
-    <ul>
+    <p class="diy-text">
+      M-Disc is ideal for your most important, irreplaceable memories: full family archives, weddings, legacy collections,
+      and anything you want to protect for future generations. It does require a compatible Blu-ray burner that supports M-Disc,
+      but once you’ve burned the discs, they are among the most stable consumer storage options available.
+    </p>
+    <p>
+      <a href="https://amzn.to/4iNyFOw" target="_blank" rel="noopener noreferrer" class="diy-aff-button">
+        Verbatim M-Disc BD-R (Lifetime Archival Blu-Ray)
+      </a>
+    </p>
+
+    <h2 class="diy-section-title">How DVDs, M-Disc, SSDs &amp; USB Drives Compare for Long-Term Storage</h2>
+    <p class="diy-text">
+      Different storage types shine in different roles. Here’s a simple way to think about it:
+    </p>
+    <ul class="diy-list">
       <li><strong>USB flash drives:</strong> great for quick sharing, not great as your only backup.</li>
       <li><strong>External SSDs or hard drives:</strong> excellent for working copies and everyday use, but they can fail suddenly and shouldn’t be your only long-term backup.</li>
       <li><strong>Archival DVDs:</strong> affordable, stable for decades when stored well, good as a “library” copy.</li>
       <li><strong>M-Disc Blu-Ray:</strong> premium option when you want the longest possible lifespan for your family legacy.</li>
     </ul>
-    
-    <table class="comparison-table">
+
+    <table class="diy-comparison-table">
       <thead>
         <tr>
           <th>Storage Type</th>
@@ -232,19 +434,227 @@
         </tr>
       </tbody>
     </table>
-    <p class="comparison-note">
+    <p class="diy-comparison-note">
       No single storage option is perfect. The safest strategy is to keep <strong>at least two different types of backups</strong>
       (for example: an external drive + archival DVDs, or cloud + M-Disc) stored in <strong>different physical locations</strong>.
     </p>
-    
-    <h2>Used Equipment – Budget-Friendly Tips</h2>
-    <p>You might have noticed that some of the equipment above (like high-speed scanners or specialized converters) can be pricey. If you’re on a tight budget, don’t forget to check second-hand marketplaces. Websites like eBay or local groups on Facebook Marketplace can be goldmines for used scanners, VCRs, and other digitizing gear. Often, people sell their equipment after finishing a project. You could find an older model Epson scanner or a used video capture device for a fraction of the new price. Just be sure to buy from a reputable seller and, if possible, test the item as soon as you receive it. Going the used route can save you a lot of money while still getting the job done.</p>
-    
-    <h2>When to Consider a Professional Service</h2>
-    <p>DIY digitization is rewarding, but it’s not for everyone or every situation. If you’re feeling overwhelmed by a massive collection (say, bins of photos or dozens of tapes), or if you’re concerned about doing it correctly, it might be time to call in a professional. A professional digitization service (like Photo Scanning Studio) has high-end equipment and expertise to handle large volumes and delicate media safely. We can often achieve higher quality scans, and you’ll save a huge amount of personal time. It’s also a good option if you have very fragile photos, tricky formats (like old film reels), or if you simply want the peace of mind that it’s being done right. We’re here to help if you decide you’d rather not DIY – feel free to <a href="contact.html" target="_blank" rel="noopener">contact us</a> for a quote or advice. In the end, the goal is to ensure your memories are preserved, whether you do it yourself or entrust us to assist.</p>
-  </main>
-  <footer class="container">
-    &copy; 2025 Photo Scanning Studio – Helping you preserve your memories
-  </footer>
+
+    <h2 class="diy-section-title">Used Equipment – Budget-Friendly Tips</h2>
+    <p class="diy-text">
+      You might have noticed that some of the equipment above (like high-speed scanners or specialized converters) can be pricey.
+      If you’re on a tight budget, don’t forget to check second-hand marketplaces. Websites like eBay or local groups on Facebook
+      Marketplace can be goldmines for used scanners, VCRs, and other digitizing gear. Often, people sell their equipment after
+      finishing a project. You could find an older model Epson scanner or a used video capture device for a fraction of the new price.
+      Just be sure to buy from a reputable seller and, if possible, test the item as soon as you receive it. Going the used route can
+      save you a lot of money while still getting the job done.
+    </p>
+
+    <h2 class="diy-section-title">When to Consider a Professional Service</h2>
+    <p class="diy-text">
+      DIY digitization is rewarding, but it’s not for everyone or every situation. If you’re feeling overwhelmed by a massive
+      collection (say, bins of photos or dozens of tapes), or if you’re concerned about doing it correctly, it might be time
+      to call in a professional. A professional digitization service (like Photo Scanning Studio) has high-end equipment and
+      expertise to handle large volumes and delicate media safely.
+    </p>
+    <p class="diy-text">
+      We can often achieve higher quality scans, and you’ll save a huge amount of personal time. It’s also a good option if you
+      have very fragile photos, tricky formats (like old film reels), or if you simply want the peace of mind that it’s being done
+      right. We’re here to help if you decide you’d rather not DIY – feel free to
+      <a href="index.html#contact" rel="noopener">contact us</a> for a quote or advice. In the end, the goal is to ensure your
+      memories are preserved, whether you do it yourself or entrust us to assist.
+    </p>
+
+    <p class="diy-footer-note">
+      &copy; 2025 Photo Scanning Studio – Helping you preserve your memories
+    </p>
+  </section>
+</main>
+
+<!-- Same footer style as main site for consistency -->
+<footer class="footer">
+  <nav class="footer-nav" aria-label="Footer">
+    <ul>
+      <li><a href="index.html#services" rel="noopener">Services</a></li>
+      <li><a href="index.html#pricing" rel="noopener">Pricing</a></li>
+      <li><a href="index.html#gallery" rel="noopener">Gallery</a></li>
+      <li><a href="index.html#testimonials" rel="noopener">Testimonials</a></li>
+      <li><a href="index.html#contact" rel="noopener">Contact</a></li>
+    </ul>
+  </nav>
+  <p>© 2025 Photo Scanning Studio — Buffalo, NY</p>
+</footer>
+
+<!-- ============================= -->
+<!-- CHAT WIDGET (copied from index so experience matches) -->
+<!-- ============================= -->
+<style>
+  :root{
+    --pss-icon-desktop: 270px;
+    --pss-icon-mobile: 180px;
+  }
+  .pss-chat-btn{position:fixed;right:18px;bottom:18px;z-index:9999;background:transparent;border:none;padding:0;cursor:pointer}
+  .pss-chat-btn img{width:var(--pss-icon-desktop);height:auto;filter:drop-shadow(0 8px 22px rgba(0,0,0,.28));animation:bob 3.2s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+  .pss-chat-window{position:fixed;right:18px;bottom:calc(18px + var(--pss-icon-desktop) - 60px);width:360px;max-width:92vw;height:520px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;z-index:9999}
+  .pss-chat-header{background:#0284c7;color:#fff;padding:12px 14px;font:600 14px/1.3 system-ui,Arial;display:flex;justify-content:space-between;align-items:center}
+  .pss-chat-body{padding:12px;gap:10px;display:flex;flex-direction:column;overflow:auto}
+  .pss-bubble{max-width:85%;padding:10px 12px;border-radius:12px;font:14px/1.35 system-ui,Arial}
+  .pss-bubble.user{background:#e5f3ff;margin-left:auto}
+  .pss-bubble.bot{background:#f4f6f8;color:#111}
+  .pss-suggest{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+  .pss-chip{background:#eef6ff;border:1px solid #cde6ff;border-radius:9999px;padding:6px 10px;font:12px/1 system-ui,Arial;cursor:pointer}
+  .pss-chat-footer{border-top:1px solid #e5e7eb;padding:10px;display:flex;gap:8px}
+  .pss-input{flex:1;border:1px solid #cbd5e1;border-radius:10px;padding:10px 12px;font:14px/1.2 system-ui,Arial}
+  .pss-send{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:10px 14px;font:600 13px/1.2 system-ui,Arial;cursor:pointer}
+
+  @media (max-width: 768px){
+    .pss-chat-btn{right:12px;bottom:12px}
+    .pss-chat-btn img{width:var(--pss-icon-mobile)}
+    .pss-chat-window{right:12px;bottom:calc(12px + var(--pss-icon-mobile) - 48px);height:72vh;width:92vw}
+  }
+</style>
+
+<button id="pssChatBtn" class="pss-chat-btn" aria-haspopup="dialog" aria-controls="pssChatWin">
+  <img src="waving-photographer.png" alt="Chat with Photo Scanning Studio (friendly photographer icon)">
+</button>
+
+<div id="pssChatWin" class="pss-chat-window" role="dialog" aria-modal="true" aria-label="Photo Scanning Studio Chat">
+  <div class="pss-chat-header">
+    <span>Photo Scanning Q&amp;A</span>
+    <button id="pssClose" style="background:transparent;border:none;color:#fff;font:700 16px/1 system-ui;cursor:pointer" aria-label="Close chat">✕</button>
+  </div>
+  <div id="pssBody" class="pss-chat-body">
+    <div class="pss-bubble bot">
+      Hi! I’m your friendly scanning assistant 👋 Ask me anything about pricing, turnaround, pickup, mail-in, delivery, or anything else!
+    </div>
+    <div id="pssSuggest" class="pss-suggest"></div>
+  </div>
+  <div class="pss-chat-footer">
+    <input id="pssInput" class="pss-input" type="text" placeholder="Type your question…" aria-label="Your question" />
+    <button id="pssSend" class="pss-send">Send</button>
+  </div>
+</div>
+
+<script>
+  const PSS_FAQ = [
+    { q: "What are your prices?",
+      a: "Simple pricing: Minimum order $50 (covers first 250 scans). 250–1000: $0.20/scan. 1000–2000: $0.15/scan. Over 2000: $0.12/scan. Very large jobs (10,000+) are capped at a minimum of $0.10/scan. Each scan includes a second enhanced copy (automatic improvements).",
+      k: ["price","cost","pricing","rates","per scan","minimum","cheap","bulk","discount"] },
+    { q: "Do you have discounts?",
+      a: "Yes! Our Bring-a-Friend deal gives **you 15% off** and **your friend 15% off** their order too. We also run occasional seasonal specials—ask what's active today.",
+      k: ["discount","bring a friend","coupon","promo","deal","15%"] },
+    { q: "Is there a bulk price for 10,000 photos?",
+      a: "We can handle 10,000+ photos. For extremely large orders, the minimum price per photo is capped at $0.10/scan.",
+      k: ["bulk","10,000","ten thousand","large order","cap","volume"] },
+    { q: "How long does it take?",
+      a: "Typical turnaround is **5–10 days**, depending on volume. Very large orders may take longer—we'll give you an estimate when we see your batch.",
+      k: ["turnaround","time","how long","days","ready","lead time","eta"] },
+    { q: "Do you offer pickup?",
+      a: "Yes. Pickup/drop-off is **free in Hamburg, NY** and **$20 within a 40-mile radius** of Hamburg. All pickup and drop-off is **by appointment only** since we work from a home studio—please schedule a time before arriving. No walk-ins.",
+      k: ["pickup","dropoff","drop-off","deliver","collect","buffalo","hamburg","40 miles","appointment","walk in","walk-in"] },
+    { q: "How do I mail my photos?",
+      a: "Pack photos snugly between cardboard, place in a sturdy box, and add a note with your name, email, and phone. Ship with tracking to our Hamburg address. We'll confirm when received.",
+      k: ["mail","ship","address","postal","send","package","tracking"] },
+    { q: "What types of photos do you scan?",
+      a: "We scan **printed photos** (including Polaroids and large-format prints) and can work from album pages. We **do not** scan slides or negatives.",
+      k: ["types","prints","polaroid","album","slides","negatives","film"] },
+    { q: "Do you do restoration?",
+      a: "We include **automatic enhancements** from our scanner (color, contrast, clarity). We don't offer manual retouching or advanced restoration.",
+      k: ["restore","restoration","repair","retouch","fix","rip","crease"] },
+    { q: "What DPI do you scan at?",
+      a: "We scan at **600 DPI** for crisp, high-resolution results.",
+      k: ["dpi","resolution","quality","high res","600"] },
+    { q: "How do I receive my files?",
+      a: "Every order includes **free cloud delivery**—you'll get a secure download link active for **1 month**. You can also choose a **USB drive for $20**, or provide your own USB for free.",
+      k: ["cloud","usb","download","drive","thumb drive","flash","one month"] },
+    { q: "Do files stay online forever?",
+      a: "No. For your privacy, cloud links expire after **1 month**. Please download and back up your files promptly.",
+      k: ["expire","delete","privacy","how long online","link duration"] },
+    { q: "What file format do I get?",
+      a: "Standard delivery is **JPEG (sRGB)**. If you need something else, ask and we'll see what's possible.",
+      k: ["format","jpeg","jpg","png","tiff","color space","sRGB"] },
+    { q: "Do you keep my photos in order?",
+      a: "We keep batches together and aim to preserve the order we receive. If strict sequencing is important, bundle groups with rubber bands and add notes.",
+      k: ["order","sequence","arrange","group","bundle","sort"] },
+    { q: "Do I get my originals back?",
+      a: "Absolutely. All originals are safely returned after digitizing.",
+      k: ["return","originals","send back","after","keep"] },
+    { q: "When do I pay?",
+      a: "You can pay at drop-off/pick-up or prior to return shipping for mail-in orders.",
+      k: ["pay","payment","when","deposit","due"] },
+    { q: "What if some photos are too damaged?",
+      a: "If a photo is too damaged to scan well, we’ll let you know and **it won’t count** toward your total.",
+      k: ["damaged","blurry","torn","bad","unreadable"] },
+    { q: "Do you handle fragile albums?",
+      a: "Yes—please note fragile sections. We handle with care and can scan pages as-is when removal could cause damage.",
+      k: ["fragile","album","delicate","old","crumble","care"] },
+    { q: "How do I contact you?",
+      a: "Email **photoscanningstudio@gmail.com** or use the **Contact** form on our main page. We're happy to help.",
+      k: ["contact","email","phone","call","reach"] }
+  ];
+
+  function findAnswer(input){
+    const q = (input||"").toLowerCase();
+    let best = {score:0, item:null};
+    for(const item of PSS_FAQ){
+      const hay = (item.q + " " + item.a + " " + (item.k||[]).join(" ")).toLowerCase();
+      const tokens = q.split(/\s+/).filter(Boolean);
+      let score = hay.includes(q) ? 6 : 0;
+      for(const t of tokens){ if(hay.includes(t)) score += 1; }
+      if(score > best.score) best = {score, item};
+    }
+    return best.score >= 3 ? best.item : null;
+  }
+
+  const elBtn = document.getElementById('pssChatBtn');
+  const elWin = document.getElementById('pssChatWin');
+  const elClose = document.getElementById('pssClose');
+  const elBody = document.getElementById('pssBody');
+  const elInput = document.getElementById('pssInput');
+  const elSend = document.getElementById('pssSend');
+  const elSuggest = document.getElementById('pssSuggest');
+
+  const SUGGESTIONS = [
+    "What are your prices?",
+    "Do you have discounts?",
+    "How long does it take?",
+    "Pickup & drop-off options",
+    "USB vs cloud delivery"
+  ];
+
+  function addBubble(text, who='bot'){
+    const div = document.createElement('div');
+    div.className = 'pss-bubble ' + who;
+    div.innerText = text;
+    elBody.appendChild(div);
+    elBody.scrollTop = elBody.scrollHeight;
+  }
+
+  function handleAsk(text){
+    if(!text.trim()) return;
+    addBubble(text,'user');
+    const found = findAnswer(text);
+    if(found){ addBubble(found.a,'bot'); }
+    else{
+      addBubble("I’m not sure yet. Try asking about pricing, turnaround, or pickup. Or reach us at photoscanningstudio@gmail.com or the Contact form on the main page.", 'bot');
+    }
+  }
+
+  SUGGESTIONS.forEach(s=>{
+    const chip=document.createElement('button');
+    chip.className='pss-chip';
+    chip.type='button';
+    chip.textContent=s;
+    chip.onclick=()=>handleAsk(s);
+    elSuggest.appendChild(chip);
+  });
+
+  elBtn.onclick=()=>{ elWin.style.display='flex'; };
+  elClose.onclick=()=>{ elWin.style.display='none'; };
+  elSend.onclick=()=>{ handleAsk(elInput.value); elInput.value=''; elInput.focus(); };
+  elInput.addEventListener('keydown',e=>{ if(e.key==='Enter'){ elSend.click(); }});
+</script>
+
 </body>
 </html>
