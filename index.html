@@ -76,6 +76,11 @@
 
   <!-- Appointment-only banner styles -->
   <style>
+    /* Enable smooth scrolling for in-page links */
+    html{
+      scroll-behavior: smooth;
+    }
+
     .appointment-banner{
       background-color:#fff3e3;
       color:#5c3b1e;
@@ -169,12 +174,14 @@
         <li><a href="#pricing" target="_blank" rel="noopener">Pricing</a></li>
         <li><a href="#gallery" target="_blank" rel="noopener">Gallery</a></li>
         <li><a href="#testimonials" target="_blank" rel="noopener">Testimonials</a></li>
-        <li><a href="DIY.html" target="_blank" rel="noopener">DIY Tools</a></li>
+        <!-- Changed: DIY link now scrolls to main-page DIY section instead of opening DIY.html -->
+        <li><a href="#diy-tools">DIY Tools</a></li>
         <li><a href="#contact" target="_blank" rel="noopener">🖼️ Digitize My Photos</a></li>
       </ul>
     </nav>
   </div>
-  <a href="#services" class="scroll-down" aria-label="Scroll to services" target="_blank" rel="noopener">&#x2193;</a>
+  <!-- Changed: remove _blank so this arrow smoothly scrolls down on the same page -->
+  <a href="#services" class="scroll-down" aria-label="Scroll to services">&#x2193;</a>
 </header>
 
 <section class="hero">
@@ -309,9 +316,9 @@
   <a href="all-testimonials.html" class="view-all-link" target="_blank" rel="noopener">→ View All Testimonials</a>
 </section>
 
-<!-- NEW DIY TOOLS SECTION -->
+<!-- UPDATED DIY TOOLS SECTION -->
 <section class="diy-tools" id="diy-tools">
-  <h2>DIY Tools for Scanning &amp; Conversion</h2>
+  <h2>Do It Yourself (DIY) – Tools for Scanning &amp; Conversion</h2>
   <p>
     Prefer to digitize everything yourself at home? Here are some recommended tools to help you
     scan photos, convert VHS tapes, and safely store everything long-term. These are affiliate
