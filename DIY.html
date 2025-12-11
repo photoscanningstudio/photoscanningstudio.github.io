@@ -6,25 +6,24 @@
   <title>DIY Photo Scanning & Video Conversion | Photo Scanning Studio</title>
   <meta name="description" content="DIY guide to digitizing old photos and home videos. Learn about photo scanners, VHS-to-digital converters, archival storage, and long-term backup options." />
   <meta name="author" content="Photo Scanning Studio" />
-
-  <!-- Canonical URL for this page -->
   <link rel="canonical" href="https://www.photoscanningstudio.com/DIY.html" />
 
   <!-- Favicon / Icons -->
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="apple-touch-icon" href="logo.png" />
 
-  <!-- Google Font - same as index -->
+  <!-- Google Font - same as main site -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   </noscript>
 
-  <!-- Global site CSS (same as index) -->
+  <!-- Global site CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Appointment-only banner styles (same as index) -->
+  <!-- Page-specific styles -->
   <style>
+    /* Appointment banner (same as index) */
     .appointment-banner{
       background-color:#fff3e3;
       color:#5c3b1e;
@@ -39,7 +38,48 @@
       text-decoration:underline;
     }
 
-    /* DIY ARTICLE-SPECIFIC STYLES – namespaced to avoid conflicts */
+    /* Slim sub-hero banner for DIY page */
+    .sub-banner{
+      position: relative;
+      width: 100%;
+      min-height: 240px;
+      padding: 40px 20px;
+      background: url('photo3.webp') no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .sub-banner::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.35));
+      z-index:1;
+    }
+    .sub-banner .banner-overlay{
+      position:relative;
+      z-index:2;
+    }
+    .sub-banner .branding{
+      margin-bottom:10px;
+    }
+    .sub-banner .banner-text h1{
+      font-size:2.3rem;
+    }
+    .sub-banner .banner-subheading{
+      font-size:1.2rem;
+    }
+    .sub-banner .banner-text p{
+      font-size:1rem;
+    }
+    .sub-banner .navbar{
+      margin-top:12px;
+    }
+
+    /* DIY ARTICLE-SPECIFIC STYLES */
     .diy-wrapper{
       max-width: 900px;
       margin: 0 auto;
@@ -145,6 +185,16 @@
     }
 
     @media (max-width: 768px){
+      .sub-banner{
+        min-height: 200px;
+        padding: 28px 16px;
+      }
+      .sub-banner .banner-text h1{
+        font-size:1.8rem;
+      }
+      .sub-banner .banner-subheading{
+        font-size:1rem;
+      }
       .diy-wrapper{
         padding:1.8rem 1rem 2.4rem;
         margin:1rem;
@@ -152,7 +202,7 @@
     }
   </style>
 
-  <!-- Google Analytics (same ID as main site) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0R4SLKFN9S"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -163,13 +213,12 @@
 </head>
 <body>
 
-<!-- Appointment banner (same as index) -->
 <div class="appointment-banner">
   📌 All pickup &amp; drop-off is <span>BY APPOINTMENT ONLY</span> — please contact us to schedule. No walk-ins.
 </div>
 
-<!-- Shared banner/header copied from index for consistent branding -->
-<header class="banner" id="top">
+<!-- Slim sub-hero banner (not full-page) -->
+<header class="sub-banner" id="top">
   <div class="banner-overlay">
     <div class="branding">
       <picture>
@@ -177,9 +226,9 @@
         <img src="logo.png" alt="Photo Scanning Studio Logo" class="hero-logo" loading="lazy" width="150" height="150" />
       </picture>
       <div class="banner-text">
-        <h1>Photo Scanning Studio</h1>
-        <h2 class="banner-subheading">Digitize Old Photos in Hamburg, WNY &amp; US by Mailorder</h2>
-        <p>Buffalo, NY | Digitizing Your Memories</p>
+        <h1>DIY Photo &amp; Video Digitization</h1>
+        <h2 class="banner-subheading">Tools &amp; gear to help you preserve your memories at home</h2>
+        <p>Photo Scanning Studio · Hamburg &amp; Buffalo, NY</p>
       </div>
     </div>
 
@@ -470,7 +519,6 @@
   </section>
 </main>
 
-<!-- Same footer style as main site for consistency -->
 <footer class="footer">
   <nav class="footer-nav" aria-label="Footer">
     <ul>
@@ -484,9 +532,7 @@
   <p>© 2025 Photo Scanning Studio — Buffalo, NY</p>
 </footer>
 
-<!-- ============================= -->
-<!-- CHAT WIDGET (copied from index so experience matches) -->
-<!-- ============================= -->
+<!-- CHAT WIDGET (same as main site) -->
 <style>
   :root{
     --pss-icon-desktop: 270px;
