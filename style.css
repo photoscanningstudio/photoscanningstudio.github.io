@@ -485,3 +485,59 @@ footer a:hover {
 .footer-nav a:hover {
   text-decoration: underline;
 }
+
+/* FAQ layout tweaks for readability */
+.faq-full {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  line-height: 1.6;
+}
+
+.faq-full h2 {
+  font-size: 2rem;
+  margin: 0 0 1.25rem;
+  border-bottom: 2px solid #c57a2a;
+  padding-bottom: 0.5rem;
+}
+
+.faq-intro {
+  margin-bottom: 1.5rem;
+}
+
+.faq-item {
+  margin-bottom: 2.25rem;   /* space between questions */
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.35rem;      /* question close to its answer */
+}
+
+/* indent answers slightly under each question */
+.faq-item p,
+.faq-item ul,
+.faq-item ol {
+  margin: 0.2rem 0 0.4rem;
+  margin-left: 1.2rem;
+}
+
+.faq-item ul {
+  padding-left: 1.2rem;
+}
+
+.faq-outro {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* keep things comfortable on small screens */
+@media (max-width: 768px) {
+  .faq-full {
+    padding: 1.5rem 1rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.15rem;
+  }
+}
