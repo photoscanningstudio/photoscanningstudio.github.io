@@ -74,7 +74,7 @@
     gtag('config', 'G-0R4SLKFN9S');
   </script>
 
-  <!-- Appointment-only banner styles -->
+  <!-- Appointment-only banner styles + smooth scroll + DIY section -->
   <style>
     /* Enable smooth scrolling for in-page links */
     html{
@@ -170,24 +170,28 @@
 
     <nav class="navbar" aria-label="Primary">
       <ul>
-        <li><a href="#services" target="_blank" rel="noopener">Services</a></li>
-        <li><a href="#pricing" target="_blank" rel="noopener">Pricing</a></li>
-        <li><a href="#gallery" target="_blank" rel="noopener">Gallery</a></li>
-        <li><a href="#testimonials" target="_blank" rel="noopener">Testimonials</a></li>
-        <!-- Changed: DIY link now scrolls to main-page DIY section instead of opening DIY.html -->
+        <!-- INTERNAL LINKS: no target, no rel -->
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <!-- DIY link scrolls to section on same page -->
         <li><a href="#diy-tools">DIY Tools</a></li>
-        <li><a href="#contact" target="_blank" rel="noopener">🖼️ Digitize My Photos</a></li>
+        <li><a href="#contact">🖼️ Digitize My Photos</a></li>
       </ul>
     </nav>
   </div>
-  <!-- Changed: remove _blank so this arrow smoothly scrolls down on the same page -->
+  <!-- Scroll arrow: same-page scroll, no target -->
   <a href="#services" class="scroll-down" aria-label="Scroll to services">&#x2193;</a>
 </header>
 
 <section class="hero">
   <h2>Scan Your Photos. Save Your Stories.</h2>
   <p>We digitize your printed photos with care and precision. Local pickup available in Western New York — or mail them in from anywhere in the U.S.A</p>
-  <a class="cta-button" href="#contact" target="_blank" rel="noopener"><span class="cta-icon">📸</span><span class="cta-text">Digitize My Photos</span></a>
+  <!-- Hero CTA: internal scroll, no target -->
+  <a class="cta-button" href="#contact">
+    <span class="cta-icon">📸</span><span class="cta-text">Digitize My Photos</span>
+  </a>
 </section>
 
 <section class="services" id="services">
@@ -199,7 +203,12 @@
     <li>Pickup/drop-off in WNY <strong>by appointment only</strong> (see radius below)</li>
     <li>Mail-in options available</li>
   </ul>
-  <p>Curious about costs? See our <a href="#pricing" target="_blank" rel="noopener">photo scanning pricing</a> and try the price calculator. Want examples? Visit our <a href="#gallery" target="_blank" rel="noopener">enhancement gallery</a>.</p>
+  <p>
+    Curious about costs? See our
+    <a href="#pricing">photo scanning pricing</a>
+    and try the price calculator. Want examples? Visit our
+    <a href="#gallery">enhancement gallery</a>.
+  </p>
 </section>
 
 <section class="pricing" id="pricing">
@@ -214,7 +223,13 @@
   <p>Each scan includes a second enhanced copy at no extra charge (automatic improvements from our scanner).</p>
   <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
   <p>Turnaround times typically range from 5–10 days depending on volume.</p>
-  <p>All pricing includes automatic enhancements—see the <a href="#gallery" target="_blank" rel="noopener">before-and-after gallery</a> for real examples. Questions? Visit the <a href="#faq" target="_blank" rel="noopener">FAQ</a> or <a href="#contact" target="_blank" rel="noopener">contact us</a>.</p>
+  <p>
+    All pricing includes automatic enhancements—see the
+    <a href="#gallery">before-and-after gallery</a>
+    for real examples. Questions? Visit the
+    <a href="#faq">FAQ</a> or
+    <a href="#contact">contact us</a>.
+  </p>
 
   <!-- Calculator inside pricing section -->
   <div style="margin-top: 24px; border-top: 1px solid #d8a05e; padding-top: 20px;">
@@ -260,7 +275,8 @@
       total *= 0.85;
     }
 
-    document.getElementById('result').innerHTML = `Estimated Price: $${total.toFixed(2)} (${scans} photos @ $${pricePerScan.toFixed(2)}/scan${applyDiscount?", with 15% Bring-a-Friend discount":""})`;
+    document.getElementById('result').innerHTML =
+      `Estimated Price: $${total.toFixed(2)} (${scans} photos @ $${pricePerScan.toFixed(2)}/scan${applyDiscount ? ", with 15% Bring-a-Friend discount" : ""})`;
   }
 </script>
 
@@ -459,11 +475,12 @@
 <footer class="footer">
   <nav class="footer-nav" aria-label="Footer">
     <ul>
-      <li><a href="#services" target="_blank" rel="noopener" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Services' });">Services</a></li>
-      <li><a href="#pricing" target="_blank" rel="noopener" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Pricing' });">Pricing</a></li>
-      <li><a href="#gallery" target="_blank" rel="noopener" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Gallery' });">Gallery</a></li>
-      <li><a href="#testimonials" target="_blank" rel="noopener" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Testimonials' });">Testimonials</a></li>
-      <li><a href="#contact" target="_blank" rel="noopener" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Contact' });">Contact</a></li>
+      <!-- INTERNAL FOOTER LINKS: same-page scroll, no target -->
+      <li><a href="#services" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Services' });">Services</a></li>
+      <li><a href="#pricing" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Pricing' });">Pricing</a></li>
+      <li><a href="#gallery" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Gallery' });">Gallery</a></li>
+      <li><a href="#testimonials" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Testimonials' });">Testimonials</a></li>
+      <li><a href="#contact" onclick="gtag('event', 'click', { event_category: 'Navigation', event_label: 'Footer Contact' });">Contact</a></li>
     </ul>
   </nav>
   <p>© 2025 Photo Scanning Studio — Buffalo, NY</p>
