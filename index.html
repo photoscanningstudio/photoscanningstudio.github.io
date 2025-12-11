@@ -396,12 +396,12 @@
 
   <div class="faq-item">
     <h3>How long does scanning take?</h3>
-    <p>Usually 5–10 days depending on volume, plus shipping if mailed.</p>
+    <p>Usually 5–10 business days depending on volume, plus shipping time if mailed.</p>
   </div>
 
   <div class="faq-item">
     <h3>Can I drop off my photos?</h3>
-    <p>Yes — but <strong>by appointment only</strong>. Pickup/drop-off is free in Hamburg, NY and $20 within a 40-mile radius. Because I work from my home studio and am not always on-site, please schedule a time before coming. <strong>No walk-ins, please.</strong></p>
+    <p>Yes — but <strong>by appointment only</strong>. Pickup and drop-off are <strong>free in Hamburg, NY</strong>. For addresses within about a <strong>40-mile radius</strong>, pickup is typically <strong>$10</strong> and optional drop-off after scanning is another <strong>$10</strong>. Because I work from my home studio and am not always on-site, please schedule a time before coming. <strong>No walk-ins, please.</strong></p>
   </div>
 
   <div class="faq-item">
@@ -461,7 +461,7 @@
   <p><strong>All pickup and drop-off is strictly by appointment only.</strong> I work from my home studio and am not always at the house, so please contact me to schedule a time before arriving.</p>
   <ul>
     <li><strong>Free</strong> within Hamburg, NY</li>
-    <li><strong>$20</strong> within a <strong>40-mile radius</strong> of Hamburg</li>
+    <li><strong>Within ~40 miles of Hamburg:</strong> Pickup is usually <strong>$10</strong>. Optional in-person drop-off after scanning is another <strong>$10</strong>.</li>
   </ul>
 </section>
 
@@ -593,7 +593,7 @@
   </div>
   <div id="pssBody" class="pss-chat-body">
     <div class="pss-bubble bot">
-      Hi! I’m your friendly scanning assistant 👋 Ask me anything about pricing, turnaround, pickup, mail-in, delivery, or anything else!
+      Hi! I’m your friendly scanning assistant 👋 Ask me anything about pricing, turnaround, pickup, mail-in, albums, or delivery options.
     </div>
     <div id="pssSuggest" class="pss-suggest"></div>
   </div>
@@ -604,95 +604,143 @@
 </div>
 
 <script>
-  // --- Expanded knowledge base (initial set). We'll keep growing this. ---
+  // --- Updated knowledge base matching the new FAQ ---
   const PSS_FAQ = [
-    // Pricing & Discounts
-    { q: "What are your prices?",
-      a: "Simple pricing: Minimum order $50 (covers first 250 scans). 250–1000: $0.20/scan. 1000–2000: $0.15/scan. Over 2000: $0.12/scan. Very large jobs (10,000+) are capped at a minimum of $0.10/scan. Each scan includes a second enhanced copy (automatic improvements).",
-      k: ["price","cost","pricing","rates","per scan","minimum","cheap","bulk","discount"] },
-    { q: "Do you have discounts?",
-      a: "Yes! Our Bring-a-Friend deal gives **you 15% off** and **your friend 15% off** their order too. We also run occasional seasonal specials—ask what's active today.",
-      k: ["discount","bring a friend","coupon","promo","deal","15%"] },
-    { q: "Is there a bulk price for 10,000 photos?",
-      a: "We can handle 10,000+ photos. For extremely large orders, the minimum price per photo is capped at $0.10/scan.",
-      k: ["bulk","10,000","ten thousand","large order","cap","volume"] },
+    // Pricing & discounts
+    {
+      q: "What are your prices?",
+      a: "Minimum order is $50, which covers up to 250 scans. 250–1000 photos: $0.20 per scan. 1000–2000: $0.15 per scan. Over 2000: $0.12 per scan. Very large jobs (10,000+ photos) are capped at a minimum of $0.10 per scan.",
+      k: ["price","prices","cost","pricing","rates","per scan","minimum","bulk","large order"]
+    },
+    {
+      q: "Do you have discounts?",
+      a: "Yes. Our Bring-a-Friend deal gives you 15% off and your friend 15% off their order as well. Ask what specials are active when you contact us.",
+      k: ["discount","deal","coupon","promo","bring a friend","15%"]
+    },
+    {
+      q: "Is there a minimum order?",
+      a: "For standard photo scanning, the usual minimum is about $50. If you only have one or two special images that need enhancement or colorization, reach out and we can talk through options.",
+      k: ["minimum","small","few","only 1","only one","tiny order"]
+    },
 
     // Turnaround
-    { q: "How long does it take?",
-      a: "Typical turnaround is **5–10 days**, depending on volume. Very large orders may take longer—we'll give you an estimate when we see your batch.",
-      k: ["turnaround","time","how long","days","ready","lead time","eta"] },
+    {
+      q: "How long does it take?",
+      a: "Most projects are finished in about 5–10 business days once your photos arrive at the Hamburg studio. Mail-in projects add shipping time, so plan on roughly 2 weeks total for typical orders.",
+      k: ["how long","time","turnaround","days","weeks","ready","eta"]
+    },
 
-    // Pickup/Drop-off & Shipping
-    { q: "Do you offer pickup?",
-      a: "Yes. Pickup/drop-off is **free in Hamburg, NY** and **$20 within a 40-mile radius** of Hamburg. All pickup and drop-off is **by appointment only** since we work from a home studio—please schedule a time before arriving. No walk-ins.",
-      k: ["pickup","dropoff","drop-off","deliver","collect","buffalo","hamburg","40 miles","appointment","walk in","walk-in"] },
-    { q: "How do I mail my photos?",
-      a: "Pack photos snugly between cardboard, place in a sturdy box, and add a note with your name, email, and phone. Ship with tracking to our Hamburg address. We'll confirm when received.",
-      k: ["mail","ship","address","postal","send","package","tracking"] },
+    // Pickup / drop-off / mail
+    {
+      q: "Do you offer pickup and drop-off?",
+      a: "Yes. Pickup and drop-off are free in Hamburg, NY by appointment. For addresses within roughly 40 miles of Hamburg, pickup is usually $10 and optional drop-off after scanning is another $10. All visits are by appointment only—no walk-ins.",
+      k: ["pickup","pick up","dropoff","drop-off","deliver","collect","hamburg","40 miles","appointment"]
+    },
+    {
+      q: "Can I mail my photos?",
+      a: "Yes. Many customers ship photos to us. Pack them snugly between cardboard in a sturdy box, include your contact info, and use tracking. We confirm when your box arrives and return everything with tracking after scanning.",
+      k: ["mail","ship","shipping","address","send","post","package","tracking"]
+    },
 
-    // What we scan
-    { q: "What types of photos do you scan?",
-      a: "We scan **printed photos** (including Polaroids and large-format prints) and can work from album pages. We **do not** scan slides or negatives.",
-      k: ["types","prints","polaroid","album","slides","negatives","film"] },
+    // What you scan (and don’t)
+    {
+      q: "What types of photos do you scan?",
+      a: "We scan loose printed photos, Polaroids, and larger prints up to about 8.5\" × 11\". We can also work from albums, though albums have extra handling fees. We don’t currently scan slides or film negatives in-house.",
+      k: ["types","what do you scan","prints","polaroid","8.5","large","media"]
+    },
+    {
+      q: "Do you scan slides or negatives?",
+      a: "We focus on photo prints only, so we don’t scan slides or film negatives in-house. For 35mm slides and negatives, we recommend a dedicated slide & negative scanner you can use at home, such as this one on Amazon: https://amzn.to/493umeB (affiliate link).",
+      k: ["slides","negatives","film","35mm","transparency"]
+    },
 
-    // Quality & Enhancements
-    { q: "Do you do restoration?",
-      a: "We include **automatic enhancements** from our scanner (color, contrast, clarity). We don't offer manual retouching or advanced restoration.",
-      k: ["restore","restoration","repair","retouch","fix","rip","crease"] },
-    { q: "What DPI do you scan at?",
-      a: "We scan at **600 DPI** for crisp, high-resolution results.",
-      k: ["dpi","resolution","quality","high res","600"] },
+    // Preparing photos & albums
+    {
+      q: "How should I prepare my photos?",
+      a: "For the best price and fastest turnaround, photos should be loose and free of tape, glue, and sticky residue. Remove them from plastic sleeves and sticky album pages if you can, and group them into simple bundles with labels (for example by year or event).",
+      k: ["prepare","prep","ready","before","tape","loose","sticky","sleeve"]
+    },
+    {
+      q: "What about albums or sticky photos?",
+      a: "You can bring albums, but they require extra labor. Simple albums where photos slide out easily are cheaper; older sticky or magnetic albums often have glued-down photos that must be scanned one at a time on a flatbed. Album handling typically runs about $20–$50 per album on top of the normal per-photo scanning fee.",
+      k: ["album","albums","scrapbook","magnetic","sticky","pages","extra fee"]
+    },
+    {
+      q: "Do you accept fragile or damaged prints?",
+      a: "Yes. We regularly work with curled, fragile, or lightly damaged prints and handle them with extra care. Very delicate or badly damaged items may need flatbed scanning and will be priced case by case.",
+      k: ["fragile","damaged","torn","old","cracked","curled"]
+    },
 
-    // Delivery & Files
-    { q: "How do I receive my files?",
-      a: "Every order includes **free cloud delivery**—you'll get a secure download link active for **1 month**. You can also choose a **USB drive for $20**, or provide your own USB for free.",
-      k: ["cloud","usb","download","drive","thumb drive","flash","one month"] },
-    { q: "Do files stay online forever?",
-      a: "No. For your privacy, cloud links expire after **1 month**. Please download and back up your files promptly.",
-      k: ["expire","delete","privacy","how long online","link duration"] },
-    { q: "What file format do I get?",
-      a: "Standard delivery is **JPEG (sRGB)**. If you need something else, ask and we'll see what's possible.",
-      k: ["format","jpeg","jpg","png","tiff","color space","sRGB"] },
-    { q: "Do you keep my photos in order?",
-      a: "We keep batches together and aim to preserve the order we receive. If strict sequencing is important, bundle groups with rubber bands and add notes.",
-      k: ["order","sequence","arrange","group","bundle","sort"] },
+    // Delivery, USB, formats
+    {
+      q: "USB vs cloud delivery",
+      a: "Every order includes free secure cloud delivery with a private download link that stays active for about 1 month. You can also choose USB delivery—either provide your own USB, or we can supply one for a flat $20 per USB.",
+      k: ["usb","cloud","download","flash drive","thumb drive","link","online","storage"]
+    },
+    {
+      q: "Do files stay online forever?",
+      a: "No. For your privacy, download links are temporary and are typically kept online for around 1 month. Please download and back up your files soon after you receive the link.",
+      k: ["online","how long","expire","deleted","link duration"]
+    },
+    {
+      q: "What file format do I get?",
+      a: "Standard delivery is high-quality JPEG files in sRGB color space. If you need a different format for a specific project, let us know and we’ll see what’s possible.",
+      k: ["format","jpeg","jpg","png","tiff","file type"]
+    },
+    {
+      q: "Do you keep my photos in order?",
+      a: "We do our best to keep batches together and maintain the order we receive. If strict order is important, bundle photos in groups with simple notes like “1980s vacation” or “Wedding album page 1.”",
+      k: ["order","sequence","sorted","grouped","organized"]
+    },
 
-    // Originals
-    { q: "Do I get my originals back?",
-      a: "Absolutely. All originals are safely returned after digitizing.",
-      k: ["return","originals","send back","after","keep"] },
+    // Enhancements / AI
+    {
+      q: "Do you offer restoration or AI enhancement?",
+      a: "All scans include automatic enhancement from the scanner (color, contrast, clarity). In many cases we can also use AI tools to further enhance, colorize black-and-white photos, or even create short photo-to-video animations. Those custom AI projects are quoted individually after we see your images.",
+      k: ["restoration","restore","ai","enhance","colorize","fix","improve","animation"]
+    },
 
-    // Payment
-    { q: "When do I pay?",
-      a: "You can pay at drop-off/pick-up or prior to return shipping for mail-in orders.",
-      k: ["pay","payment","when","deposit","due"] },
+    // Originals & sharing
+    {
+      q: "Do I get my originals back?",
+      a: "Yes. Your original photos and albums are always returned after scanning—either by pickup/drop-off or by return shipping with tracking for mail-in orders.",
+      k: ["originals","return","send back","keep","get back"]
+    },
+    {
+      q: "Can my family share the digitized photos?",
+      a: "Definitely. You can share your private download link with family members, and you can also add extra USB drives if you'd like physical copies for multiple households.",
+      k: ["family","share","siblings","multiple copies","extra usb"]
+    },
 
-    // Policies / Edge cases
-    { q: "What if some photos are too damaged?",
-      a: "If a photo is too damaged to scan well, we’ll let you know and **it won’t count** toward your total.",
-      k: ["damaged","blurry","torn","bad","unreadable"] },
-    { q: "Do you handle fragile albums?",
-      a: "Yes—please note fragile sections. We handle with care and can scan pages as-is when removal could cause damage.",
-      k: ["fragile","album","delicate","old","crumble","care"] },
-
-    // Contact
-    { q: "How do I contact you?",
-      a: "Email **photoscanningstudio@gmail.com** or use the **Contact** form below. We're happy to help.",
-      k: ["contact","email","phone","call","reach"] }
+    // Payment & contact
+    {
+      q: "What payment methods do you accept?",
+      a: "We accept cash, major credit and debit cards, PayPal, Venmo, and Zelle. You can pay at drop-off/pickup or before return shipping for mail-in projects.",
+      k: ["pay","payment","card","cash","paypal","venmo","zelle"]
+    },
+    {
+      q: "How do I contact you?",
+      a: "You can use the contact form on this page or email photoscanningstudio@gmail.com. We’re happy to answer questions or give a custom quote.",
+      k: ["contact","email","phone","call","reach","message"]
+    }
   ];
 
   // --- Simple fuzzy match ---
   function findAnswer(input){
-    const q = (input||"").toLowerCase();
-    let best = {score:0, item:null};
+    const q = (input || "").toLowerCase();
+    let best = { score: 0, item: null };
     for(const item of PSS_FAQ){
-      const hay = (item.q + " " + item.a + " " + (item.k||[]).join(" ")).toLowerCase();
+      const hay = (item.q + " " + item.a + " " + (item.k || []).join(" ")).toLowerCase();
       const tokens = q.split(/\s+/).filter(Boolean);
       let score = hay.includes(q) ? 6 : 0;
-      for(const t of tokens){ if(hay.includes(t)) score += 1; }
-      if(score > best.score) best = {score, item};
+      for(const t of tokens){
+        if(hay.includes(t)) score += 1;
+      }
+      if(score > best.score){
+        best = { score, item };
+      }
     }
-    return best.score >= 3 ? best.item : null; // threshold
+    return best.score >= 3 ? best.item : null;
   }
 
   // --- UI handlers ---
@@ -706,10 +754,11 @@
 
   const SUGGESTIONS = [
     "What are your prices?",
-    "Do you have discounts?",
     "How long does it take?",
-    "Pickup & drop-off options",
-    "USB vs cloud delivery"
+    "Pickup and drop-off options",
+    "What types of photos do you scan?",
+    "USB vs cloud delivery",
+    "What about albums or sticky photos?"
   ];
 
   function addBubble(text, who='bot'){
@@ -722,28 +771,37 @@
 
   function handleAsk(text){
     if(!text.trim()) return;
-    addBubble(text,'user');
+    addBubble(text, 'user');
     const found = findAnswer(text);
-    if(found){ addBubble(found.a,'bot'); }
-    else{
-      addBubble("I’m not sure yet. Try asking about pricing, turnaround, or pickup. Or reach us at photoscanningstudio@gmail.com or the Contact form.", 'bot');
+    if(found){
+      addBubble(found.a, 'bot');
+    } else {
+      addBubble("I’m not sure yet. Try asking about pricing, turnaround, pickup, photo prep, or delivery. You can also message us directly using the Contact form or email photoscanningstudio@gmail.com.", 'bot');
     }
   }
 
-  // suggestions
-  SUGGESTIONS.forEach(s=>{
-    const chip=document.createElement('button');
-    chip.className='pss-chip';
-    chip.type='button';
-    chip.textContent=s;
-    chip.onclick=()=>handleAsk(s);
+  // suggestion chips
+  SUGGESTIONS.forEach(s => {
+    const chip = document.createElement('button');
+    chip.className = 'pss-chip';
+    chip.type = 'button';
+    chip.textContent = s;
+    chip.onclick = () => handleAsk(s);
     elSuggest.appendChild(chip);
   });
 
-  elBtn.onclick=()=>{ elWin.style.display='flex'; };
-  elClose.onclick=()=>{ elWin.style.display='none'; };
-  elSend.onclick=()=>{ handleAsk(elInput.value); elInput.value=''; elInput.focus(); };
-  elInput.addEventListener('keydown',e=>{ if(e.key==='Enter'){ elSend.click(); }});
+  elBtn.onclick = () => { elWin.style.display = 'flex'; };
+  elClose.onclick = () => { elWin.style.display = 'none'; };
+  elSend.onclick = () => {
+    handleAsk(elInput.value);
+    elInput.value = '';
+    elInput.focus();
+  };
+  elInput.addEventListener('keydown', e => {
+    if(e.key === 'Enter'){
+      elSend.click();
+    }
+  });
 </script>
 
 </body>
