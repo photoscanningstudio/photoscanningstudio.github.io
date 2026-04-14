@@ -2,4 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://photoscanningstudio.github.io/sitemap.xml
-Sitemap: https://www.photoscanningstudio.com/sitemap.xml
+Sitemap: https://photoscanningstudio.com/sitemap.xml
+Sitemap: https://photoscanningstudio.com/fastfotoguide/sitemap.xml
