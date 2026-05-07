@@ -138,8 +138,6 @@ Make text/call easy. **Text preferred, calls welcome.**
 
 **Phone (single source of truth): 716-713-6537**
 
-⚠️ **Known issue: the live site currently shows `716-716-6537` somewhere in the top bar — this is wrong and a top-priority fix.**
-
 ### Anti-Goal: Walk-Ins
 This business runs out of my home office. I'm not always here. Visitors must **not show up unannounced** — but communicate this professionally, not as a scary warning bar.
 
@@ -190,13 +188,12 @@ If a change might affect SEO, schema, tracking, affiliate links, or form behavio
 
 Reference these when relevant. Don't fix them in passing — wait for me to direct work on each.
 
-1. **Phone number fix** — replace `716-716-6537` with `716-713-6537` site-wide. Top priority.
-2. **Hero section redesign** — multiple competing bars (phone, slideshow promo, appointment warning) before the actual hero. Cluttered, dated. Goal: clear headline, trust signal, simple CTA, text/call options, appointment language handled gracefully, mobile-first.
-3. **Add 35mm slides ($0.35) and negatives services** across homepage, services page, pricing, calculator, FAQ, schema/OfferCatalog, internal links, blog mentions where appropriate.
-4. **Chatbot upgrade** — current "Ask me!" mascot is non-AI and weak. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
-5. **Lead capture mechanism** — currently inadequate. Add without cluttering design.
-6. **Form improvements** — UX work on existing contact/quote form. Inspect current form before changing fields.
-7. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
+1. **Hero section redesign** — multiple competing bars (phone, slideshow promo, appointment warning) before the actual hero. Cluttered, dated. Goal: clear headline, trust signal, simple CTA, text/call options, appointment language handled gracefully, mobile-first.
+2. **Add 35mm slides ($0.35) and negatives services** across homepage, services page, pricing, calculator, FAQ, schema/OfferCatalog, internal links, blog mentions where appropriate.
+3. **Chatbot upgrade** — current "Ask me!" mascot is non-AI and weak. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
+4. **Lead capture mechanism** — currently inadequate. Add without cluttering design.
+5. **Form improvements** — UX work on existing contact/quote form. Inspect current form before changing fields.
+6. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
 
 ---
 
