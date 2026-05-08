@@ -1,0 +1,10 @@
+# PDF build tooling — kept locally, not pushed to GitHub
+_build_pdf.py
+_pdf_preview.png
+
+# Python artifacts
+__pycache__/
+*.pyc
+
+# Claude Code local session files
+.claude/
