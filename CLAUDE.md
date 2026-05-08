@@ -107,7 +107,6 @@ Use this section as the working source of truth. If a price isn't documented her
 | Slideshow service | Upsell offering |
 | USB delivery | $20 |
 | Cloud delivery | Free |
-| Bring-a-Friend discount | 15% off both orders |
 | Turnaround | 5–10 days, ~7 day average |
 
 ### Album Pricing Nuance
@@ -172,15 +171,42 @@ Flag clearly before any change that could affect these:
 - Alt text on key images
 - Internal links
 - Real Google review snippets on testimonials page
-- Pricing calculator + Bring-a-Friend 15% logic
+- Pricing calculator (tiered: $0.20/scan up to 1000, $0.15/scan to 2000, $0.12/scan to 10000, $0.10/scan above; $50 minimum)
 - Affiliate links and IDs on DIY Tools / blog pages — preserve exactly
 - Weekly SEO blog structure (`/blog/week-N.html`) and any rotation logic
-- Contact / quote form behavior
+- Contact / quote form behavior (see Live Form & Lead Capture Setup below)
+- Email signup form behavior (see Live Form & Lead Capture Setup below)
 - Google Analytics or other tracking scripts
 - Google Maps integration, favicon, logo references
 - Performance optimizations (lazy loading, preloads, etc.)
 
 If a change might affect SEO, schema, tracking, affiliate links, or form behavior, **flag it before editing**.
+
+---
+
+## Live Form & Lead Capture Setup
+
+The site has two Formspree-backed forms on the homepage:
+
+**Contact form** (Formspree endpoint `movwkjde`)
+- Fields: name, email, phone (optional), message
+- AJAX submit via `fetch()`; on success, JS redirects visitor to `thank-you.html`
+- **Why:** Formspree's free tier silently ignores `_next` and `_redirect` hidden fields. JS-redirect is the only working pattern. Don't add `_next`/`_redirect` back — they will be ignored and add noise.
+- Failure fallback: inline red error message asking visitor to text 716-713-6537
+
+**Email signup form** (Formspree endpoint `mwvynnkz`)
+- Single field: email
+- AJAX submit via `fetch()`; on success, the form swaps to an inline green "Thanks — you're on the list!" message (no navigation)
+- `_next` field included as a fallback only — kicks in if JS fails (rare)
+- Honeypot `_gotcha` field for basic spam protection
+- Fires `generate_lead` Google Analytics event on success
+
+**Lead magnet:** `5-tips-keep-old-photos-alive.pdf` is linked from `thank-you.html`. Regenerable locally via `_build_pdf.py` (gitignored — kept local, never pushed).
+
+**Do not break:**
+- Either Formspree endpoint (forms post directly to those IDs)
+- The AJAX scripts that intercept submit and call `fetch()`
+- The `_subject`, `_gotcha`, and existing `name=` attributes (Formspree depends on these)
 
 ---
 
@@ -191,9 +217,8 @@ Reference these when relevant. Don't fix them in passing — wait for me to dire
 1. **Hero section redesign** — multiple competing bars (phone, slideshow promo, appointment warning) before the actual hero. Cluttered, dated. Goal: clear headline, trust signal, simple CTA, text/call options, appointment language handled gracefully, mobile-first.
 2. **Add 35mm slides ($0.35) and negatives services** across homepage, services page, pricing, calculator, FAQ, schema/OfferCatalog, internal links, blog mentions where appropriate.
 3. **Chatbot upgrade** — current "Ask me!" mascot is non-AI and weak. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
-4. **Lead capture mechanism** — currently inadequate. Add without cluttering design.
-5. **Form improvements** — UX work on existing contact/quote form. Inspect current form before changing fields.
-6. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
+4. **Email list growth & nurture** — basic capture is now live (homepage banner + lead magnet PDF). Open work: add capture surfaces in more places (footer signup, exit-intent, blog-post inline CTAs), decide cadence and content for what gets sent (seasonal specials, photo tips, restoration before/afters), and eventually wire the list through n8n for automation.
+5. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
 
 ---
 
@@ -207,13 +232,31 @@ Don't add tracking scripts blindly — explain what would be tracked and why fir
 
 ## Files to Know About
 
-- `index.html` — homepage (cluttered hero lives here)
+- `index.html` — homepage (cluttered hero lives here; both Formspree forms live here)
+- `thank-you.html` — landing page after contact-form submission; serves the lead-magnet PDF
+- `5-tips-keep-old-photos-alive.pdf` — the lead-magnet PDF, linked from `thank-you.html`
+- `_build_pdf.py` — local-only Python script that regenerates the PDF (gitignored, never pushed)
 - `faq.html` — FAQ page
 - `all-testimonials.html` — full testimonials with Google review snippets
+- `blog/index.html` — blog landing page
 - `blog/week-N.html` — weekly SEO blog posts
-- Pricing, services, CSS, and JS file structure — **inspect repo to confirm exact names**
+- `blog-rotator.js` — handles featured/recent blog rotation on the homepage
+- `style.css` — main stylesheet
+- `.gitignore` — hides PDF tooling, Python artifacts, and `.claude/` session files
 
 Add newly discovered important files to this section as you encounter them.
+
+### Backup files — IGNORE unless explicitly asked
+
+The repo contains several dated snapshot copies of the homepage that **you should never reference, fix, or worry about** unless I specifically ask you to look at them:
+
+- `index_working_April_2026` (no .html extension)
+- `index_Template_Dec2025_V2` (no .html extension)
+- `index_Template_Dec2025.html`
+- `index_template7.html`
+- `style_template7.css`
+
+These are archives. They are NOT linked from the live site. Treat them as if they don't exist.
 
 ---
 
