@@ -246,6 +246,7 @@
     <input type="email" name="email" placeholder="your@email.com" required aria-label="Email address" />
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
     <input type="hidden" name="_subject" value="New email list signup" />
+    <input type="hidden" name="_next" value="https://photoscanningstudio.com/thank-you.html" />
     <button type="submit" id="emailListBtn">Join the List</button>
   </form>
   <p class="email-list-fineprint">100% free. Unsubscribe anytime.</p>
@@ -313,6 +314,7 @@
   <h2>Contact Us</h2>
   <p style="text-align:center;font-size:1.1rem;margin-bottom:1.5rem;">&#128222; <strong><a href="tel:+17167136537" style="color:#5c3b1e;" onclick="gtag('event','click',{event_category:'Contact',event_label:'Phone Click - Contact Section'});">716-713-6537</a></strong> &nbsp;|&nbsp; &#128231; <a href="mailto:photoscanningstudio@gmail.com?subject=Photo%20Scanning%20Inquiry%20from%3A%20_________&body=Name%3A%0APhone%3A" style="color:#5c3b1e;">photoscanningstudio@gmail.com</a></p>
   <form action="https://formspree.io/f/movwkjde" method="POST" onsubmit="gtag('event','form_submission',{event_category:'Contact',event_label:'Contact Form Submitted',value:1});">
+    <input type="hidden" name="_next" value="https://photoscanningstudio.com/thank-you.html" />
     <label for="name">Name</label><input type="text" id="name" name="name" required />
     <label for="email">Email</label><input type="email" id="email" name="email" required />
     <label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone" placeholder="716-555-1234" />
