@@ -313,17 +313,40 @@
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
   <p style="text-align:center;font-size:1.1rem;margin-bottom:1.5rem;">&#128222; <strong><a href="tel:+17167136537" style="color:#5c3b1e;" onclick="gtag('event','click',{event_category:'Contact',event_label:'Phone Click - Contact Section'});">716-713-6537</a></strong> &nbsp;|&nbsp; &#128231; <a href="mailto:photoscanningstudio@gmail.com?subject=Photo%20Scanning%20Inquiry%20from%3A%20_________&body=Name%3A%0APhone%3A" style="color:#5c3b1e;">photoscanningstudio@gmail.com</a></p>
-  <form action="https://formspree.io/f/movwkjde" method="POST" onsubmit="gtag('event','form_submission',{event_category:'Contact',event_label:'Contact Form Submitted',value:1});">
-    <input type="hidden" name="_next" value="https://photoscanningstudio.com/thank-you.html" />
+  <form id="contactForm" action="https://formspree.io/f/movwkjde" method="POST">
     <label for="name">Name</label><input type="text" id="name" name="name" required />
     <label for="email">Email</label><input type="email" id="email" name="email" required />
     <label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone" placeholder="716-555-1234" />
     <label for="message">Message</label><textarea id="message" name="message" rows="4" required placeholder="Tell us about your project — number of photos, slideshow request, or any questions!"></textarea>
     <input type="hidden" name="_subject" value="New message from Photo Scanning Studio!">
-    <input type="hidden" name="_redirect" value="https://photoscanningstudio.github.io/thank-you.html">
-    <button type="submit">Send Message</button>
+    <button type="submit" id="contactSubmitBtn">Send Message</button>
   </form>
+  <div id="contactError" style="display:none;color:#c62828;margin-top:.8rem;font-size:.95rem;text-align:center;">Something went wrong. Please try again, or text Dan at 716-713-6537.</div>
 </section>
+<script>
+(function(){
+  var form=document.getElementById('contactForm');
+  if(!form)return;
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var btn=document.getElementById('contactSubmitBtn');
+    var err=document.getElementById('contactError');
+    err.style.display='none';
+    if(typeof gtag==='function'){gtag('event','form_submission',{event_category:'Contact',event_label:'Contact Form Submitted',value:1});}
+    btn.disabled=true;btn.textContent='Sending...';
+    try{
+      var res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){
+        window.location.href='/thank-you.html';
+      }else{
+        err.style.display='block';btn.disabled=false;btn.textContent='Send Message';
+      }
+    }catch(_){
+      err.style.display='block';btn.disabled=false;btn.textContent='Send Message';
+    }
+  });
+})();
+</script>
 <section class="pickup-service">
   <h2>Pickup &amp; Drop-off Service (By Appointment Only)</h2>
   <p><strong>All pickup and drop-off is strictly by appointment only.</strong> I work from my home studio, so please contact me to schedule before arriving.</p>
