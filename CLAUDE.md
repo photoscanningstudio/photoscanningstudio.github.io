@@ -103,7 +103,7 @@ Use this section as the working source of truth. If a price isn't documented her
 | Photo prints (tiered) | 1–1000: $0.20 each · 1001–2000: $0.18 · 2001–3000: $0.15 · 3001+: $0.12. 600 DPI scan, free enhanced copy included. |
 | Polaroids & large-format prints | No extra charge (priced as photo prints) |
 | 35mm slides (cardboard or plastic mounted) | $0.35 each, flat |
-| Negatives (35mm, 120, 110, sheet film — any format) | $0.35 each, flat |
+| 35mm negatives (film strips only — NOT 120, 110, or sheet film) | $0.35 each, flat |
 | Minimum order | $50 (any combination of photos, slides, negatives) |
 | Slideshow service | Upsell offering — quoted individually |
 | USB delivery | $20 |
