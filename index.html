@@ -152,11 +152,17 @@
 <section class="pricing" id="pricing">
   <h2>Pricing</h2>
   <ul>
-    <li><strong>Minimum Order:</strong> $50 for 250 scans</li>
-    <li><strong>250 - 1000 scans:</strong> $0.20 per scan</li>
-    <li><strong>1000 - 2000 scans:</strong> $0.15 per scan</li>
-    <li><strong>Over 2000 scans:</strong> $0.12 per scan</li>
-    <li><strong>Very large orders (10,000+):</strong> minimum price capped at $0.10 per scan</li>
+    <li><strong>Minimum Order:</strong> $50 (any combination of photos, slides, and negatives)</li>
+    <li><strong>Photo prints:</strong>
+      <ul>
+        <li>1 &ndash; 1000 scans: $0.20 each</li>
+        <li>1001 &ndash; 2000 scans: $0.18 each</li>
+        <li>2001 &ndash; 3000 scans: $0.15 each</li>
+        <li>3001+ scans: $0.12 each</li>
+      </ul>
+    </li>
+    <li><strong>35mm slides</strong> (cardboard or plastic mounted): <strong>$0.35 each</strong></li>
+    <li><strong>Negatives</strong> (35mm, 120, 110, sheet film &mdash; any format): <strong>$0.35 each</strong></li>
   </ul>
   <p>Each scan includes a second enhanced copy at no extra charge.</p>
   <p>We accept both local drop-offs/pickups in the Buffalo, NY area and mail-in orders nationwide.</p>
@@ -164,15 +170,48 @@
   <p>All pricing includes automatic enhancements. Questions? Visit the <a href="#faq">FAQ</a> or <a href="#contact">contact us</a>.</p>
   <div style="margin-top:24px;border-top:1px solid #d8a05e;padding-top:20px;">
     <h3 style="color:#5c3b1e;margin-bottom:10px;">Estimate Your Price</h3>
-    <label for="scanCount" style="font-weight:bold;">Enter number of photos to scan:</label><br />
-    <input type="number" id="scanCount" placeholder="e.g., 750" style="padding:10px;width:100%;max-width:300px;margin-top:8px;margin-bottom:16px;font-size:1rem;" /><br />
+    <p style="font-size:.95rem;color:#555;margin-bottom:14px;">Enter your quantities below. The $50 minimum applies to the combined order.</p>
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;max-width:360px;margin-bottom:14px;">
+      <div>
+        <label for="photoCount" style="font-weight:bold;">Photo prints:</label><br />
+        <input type="number" id="photoCount" min="0" placeholder="e.g., 750" style="padding:10px;width:100%;font-size:1rem;" />
+      </div>
+      <div>
+        <label for="slideCount" style="font-weight:bold;">35mm slides ($0.35 each):</label><br />
+        <input type="number" id="slideCount" min="0" placeholder="e.g., 100" style="padding:10px;width:100%;font-size:1rem;" />
+      </div>
+      <div>
+        <label for="negativeCount" style="font-weight:bold;">Negatives ($0.35 each):</label><br />
+        <input type="number" id="negativeCount" min="0" placeholder="e.g., 50" style="padding:10px;width:100%;font-size:1rem;" />
+      </div>
+    </div>
     <button onclick="calculatePrice()" style="background-color:#5c3b1e;color:white;padding:10px 20px;border:none;font-size:1rem;cursor:pointer;border-radius:6px;">Calculate</button>
     <div id="result" style="margin-top:20px;font-size:1.1rem;font-weight:bold;"></div>
-    <p style="font-size:.9rem;color:#333;margin-top:10px;"><em>All scans include automatic enhancements. No extra charge for Polaroids or large-format prints. (We do not scan slides or negatives.)</em></p>
+    <p style="font-size:.9rem;color:#333;margin-top:10px;"><em>All scans include automatic enhancements. No extra charge for Polaroids or large-format prints.</em></p>
   </div>
 </section>
 <script>
-  function calculatePrice(){var scans=parseInt(document.getElementById('scanCount').value)||0;var p=0;if(scans<250){document.getElementById('result').innerHTML="Minimum order is $50 for up to 250 scans.";return;}else if(scans>=10000){p=0.10;}else if(scans<=1000){p=0.20;}else if(scans<=2000){p=0.15;}else{p=0.12;}var t=scans*p;document.getElementById('result').innerHTML="Estimated Price: $"+t.toFixed(2)+" ("+scans+" photos @ $"+p.toFixed(2)+"/scan)"}
+  function calculatePrice(){
+    var photos=parseInt(document.getElementById('photoCount').value)||0;
+    var slides=parseInt(document.getElementById('slideCount').value)||0;
+    var negs=parseInt(document.getElementById('negativeCount').value)||0;
+    if(photos+slides+negs===0){document.getElementById('result').innerHTML="Please enter at least one quantity.";return;}
+    var photoRate=0.20;
+    if(photos>3000){photoRate=0.12;}
+    else if(photos>2000){photoRate=0.15;}
+    else if(photos>1000){photoRate=0.18;}
+    var photoTotal=photos*photoRate;
+    var slideTotal=slides*0.35;
+    var negTotal=negs*0.35;
+    var subtotal=photoTotal+slideTotal+negTotal;
+    var total=subtotal<50?50:subtotal;
+    var parts=[];
+    if(photos>0)parts.push(photos+" photos @ $"+photoRate.toFixed(2)+"/scan = $"+photoTotal.toFixed(2));
+    if(slides>0)parts.push(slides+" slides @ $0.35 each = $"+slideTotal.toFixed(2));
+    if(negs>0)parts.push(negs+" negatives @ $0.35 each = $"+negTotal.toFixed(2));
+    var minNote=subtotal<50?"<br><em>$50 minimum order applied.</em>":"";
+    document.getElementById('result').innerHTML="Estimated Price: $"+total.toFixed(2)+"<br><span style=\"font-weight:normal;font-size:.95rem;\">"+parts.join("<br>")+minNote+"</span>";
+  }
 </script>
 <section class="gallery" id="gallery">
   <h2>Sample Enhancements</h2>
@@ -285,7 +324,7 @@
   <div class="diy-grid">
     <div class="diy-card"><h3>High-Speed Photo Scanner</h3><p>Perfect for quickly scanning hundreds of 4x6 and 5x7 prints with automatic front-and-back detection.</p><a href="https://amzn.to/4q8CArT" target="_blank" rel="noopener">View Recommended Photo Scanner</a></div>
     <div class="diy-card"><h3>VHS to Digital Converter</h3><p>Connects your VCR to your computer so you can capture old VHS tapes as digital video files.</p><a href="https://amzn.to/3MxCSda" target="_blank" rel="noopener">View VHS to Digital Converter</a></div>
-    <div class="diy-card"><h3>Slide &amp; Negative Scanner</h3><p>Specialized scanner for 35mm slides and film negatives — something we don't handle in-house.</p><a href="https://amzn.to/493umeB" target="_blank" rel="noopener">View Slide &amp; Negative Scanner</a></div>
+    <div class="diy-card"><h3>Slide &amp; Negative Scanner</h3><p>Prefer to DIY? Specialized home scanner for 35mm slides and film negatives. (We also scan slides and negatives in-house at $0.35 each.)</p><a href="https://amzn.to/493umeB" target="_blank" rel="noopener">View Slide &amp; Negative Scanner</a></div>
     <div class="diy-card"><h3>Reliable USB Drive</h3><p>Store and share your newly digitized photos on a fast, dependable USB flash drive.</p><a href="https://amzn.to/4pyIm69" target="_blank" rel="noopener">View Recommended USB Drive</a></div>
     <div class="diy-card"><h3>Local Backup Drive</h3><p>Keep a full copy of your scans on a dedicated external drive as an extra layer of protection.</p><a href="https://amzn.to/4aamucl" target="_blank" rel="noopener">View Backup Drive Option</a></div>
   </div>
@@ -383,14 +422,14 @@
 </div>
 <script>
   var PSS_FAQ=[
-    {q:"What are your prices?",a:"Minimum order is $50 for up to 250 scans. 250-1000 photos: $0.20/scan. 1000-2000: $0.15/scan. Over 2000: $0.12/scan. 10,000+: capped at $0.10/scan.",k:["price","prices","cost","pricing","rates","per scan","minimum","bulk","large order"]},
+    {q:"What are your prices?",a:"Photo prints: 1-1000 scans $0.20 each, 1001-2000 $0.18, 2001-3000 $0.15, 3001+ $0.12. 35mm slides and negatives (any format): $0.35 each. $50 minimum on any combined order.",k:["price","prices","cost","pricing","rates","per scan","minimum","bulk","large order","slides","negatives"]},
     {q:"Do you have discounts?",a:"No standing discounts right now. But you can join our email list to get notified about future specials &mdash; sign up at the top of our homepage, or just text Dan at 716-713-6537.",k:["discount","deal","coupon","promo","specials","save","email list","newsletter","sale"]},
-    {q:"Is there a minimum order?",a:"The usual minimum is $50 for up to 250 scans. For just one or two special images, reach out and we can talk through options.",k:["minimum","small","few","only 1","only one","tiny order"]},
+    {q:"Is there a minimum order?",a:"Yes, $50 minimum on any order. That can be any combination of photos, slides, and negatives. For just one or two special images, reach out and we can talk through options.",k:["minimum","small","few","only 1","only one","tiny order"]},
     {q:"How long does it take?",a:"Most projects finish in 5-10 business days once your photos arrive. Mail-in orders add shipping time, so plan on about 2 weeks total.",k:["how long","time","turnaround","days","weeks","ready","eta","deadline"]},
     {q:"Do you offer pickup and drop-off?",a:"Yes. Pickup and drop-off are free in Hamburg, NY by appointment. Within ~40 miles: pickup is $10, optional drop-off is another $10. All by appointment only - no walk-ins.",k:["pickup","pick up","dropoff","drop-off","deliver","collect","hamburg","40 miles","appointment","walk in","walk-in"]},
     {q:"Can I mail my photos?",a:"Yes! Pack them snugly between cardboard in a sturdy box with your contact info and tracking. We confirm arrival and return everything with tracking after scanning.",k:["mail","ship","shipping","address","send","post","package","tracking","box"]},
-    {q:"What types of photos do you scan?",a:"We scan loose printed photos, Polaroids, and prints up to 8.5 x 11 inches. We can work from albums too. We don't scan slides or film negatives in-house.",k:["types","what do you scan","prints","polaroid","8.5","large","media","photos"]},
-    {q:"Do you scan slides or negatives?",a:"We focus on photo prints only. For 35mm slides and negatives, we recommend a dedicated scanner on Amazon: https://amzn.to/493umeB (affiliate link).",k:["slides","negatives","film","35mm","transparency","slide","negative"]},
+    {q:"What types of photos do you scan?",a:"We scan loose printed photos, Polaroids, prints up to 8.5 x 11 inches, 35mm slides (any mounting), and negatives (any format). We can work from albums too.",k:["types","what do you scan","prints","polaroid","8.5","large","media","photos","slides","negatives"]},
+    {q:"Do you scan slides or negatives?",a:"Yes! 35mm slides (any mounting) and negatives (35mm, 120, 110, sheet film &mdash; any format) are $0.35 each, with a $50 minimum on any order. Or if you'd rather DIY at home, here's a scanner we recommend: https://amzn.to/493umeB (affiliate link).",k:["slides","negatives","film","35mm","120","110","sheet","transparency","slide","negative"]},
     {q:"Do you transfer VHS or video tapes?",a:"We don't do VHS in-house, but two good options: a USB VHS capture device (https://amzn.to/3MxCSda) or a professional mail-in service (https://amzn.to/48z8PdG). We'll handle your photo prints!",k:["vhs","tape","tapes","video","videotape","hi8","8mm","vhsc","mini dv","minidv","camcorder","cassette"]},
     {q:"USB vs cloud delivery",a:"Every order includes free secure cloud delivery (link active ~1 month). You can also choose USB delivery - provide your own or we supply one for $20.",k:["usb","cloud","download","flash drive","thumb drive","link","online","storage","drive"]},
     {q:"Do you return the originals?",a:"Yes. Your original photos are always returned after scanning - by pickup/drop-off or return shipping with tracking for mail-in orders.",k:["originals","return","send back","keep","get back","original photos"]},
