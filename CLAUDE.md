@@ -100,11 +100,12 @@ Use this section as the working source of truth. If a price isn't documented her
 
 | Service | Price / Notes |
 |---|---|
-| Photo prints | 600 DPI scan, includes free enhanced copy. Priced via on-site calculator |
-| Polaroids & large-format prints | No extra charge |
-| **35mm slides** | **$0.35 each — NEW, needs to be added across site** |
-| **Negatives** | **NEW — pricing TBD, ask me before publishing** |
-| Slideshow service | Upsell offering |
+| Photo prints (tiered) | 1–1000: $0.20 each · 1001–2000: $0.18 · 2001–3000: $0.15 · 3001+: $0.12. 600 DPI scan, free enhanced copy included. |
+| Polaroids & large-format prints | No extra charge (priced as photo prints) |
+| 35mm slides (cardboard or plastic mounted) | $0.35 each, flat |
+| Negatives (35mm, 120, 110, sheet film — any format) | $0.35 each, flat |
+| Minimum order | $50 (any combination of photos, slides, negatives) |
+| Slideshow service | Upsell offering — quoted individually |
 | USB delivery | $20 |
 | Cloud delivery | Free |
 | Turnaround | 5–10 days, ~7 day average |
@@ -171,7 +172,7 @@ Flag clearly before any change that could affect these:
 - Alt text on key images
 - Internal links
 - Real Google review snippets on testimonials page
-- Pricing calculator (tiered: $0.20/scan up to 1000, $0.15/scan to 2000, $0.12/scan to 10000, $0.10/scan above; $50 minimum)
+- Pricing calculator with three inputs (photos, slides, negatives). Photo tiers: $0.20 → $0.18 → $0.15 → $0.12 at 1000 / 2000 / 3000 breakpoints. Slides and negatives flat $0.35. $50 minimum on combined subtotal.
 - Affiliate links and IDs on DIY Tools / blog pages — preserve exactly
 - Weekly SEO blog structure (`/blog/week-N.html`) and any rotation logic
 - Contact / quote form behavior (see Live Form & Lead Capture Setup below)
@@ -215,7 +216,7 @@ The site has two Formspree-backed forms on the homepage:
 Reference these when relevant. Don't fix them in passing — wait for me to direct work on each.
 
 1. **Hero section redesign** — multiple competing bars (phone, slideshow promo, appointment warning) before the actual hero. Cluttered, dated. Goal: clear headline, trust signal, simple CTA, text/call options, appointment language handled gracefully, mobile-first.
-2. **Add 35mm slides ($0.35) and negatives services** across homepage, services page, pricing, calculator, FAQ, schema/OfferCatalog, internal links, blog mentions where appropriate.
+2. **Promote new slides + negatives services in content** — pricing, calculator, FAQ, schema, and chatbot are live (as of May 2026). Open work: write a blog post or two about slide/negative scanning for SEO, mention in any future email campaigns, and add a small visual / before-after to the homepage if good source material is available.
 3. **Chatbot upgrade** — current "Ask me!" mascot is non-AI and weak. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
 4. **Email list growth & nurture** — basic capture is now live (homepage banner + lead magnet PDF). Open work: add capture surfaces in more places (footer signup, exit-intent, blog-post inline CTAs), decide cadence and content for what gets sent (seasonal specials, photo tips, restoration before/afters), and eventually wire the list through n8n for automation.
 5. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
