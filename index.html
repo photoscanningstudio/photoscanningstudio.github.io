@@ -139,11 +139,13 @@
     .google-review-cta a.g-btn{display:inline-block;background:#4285F4;color:#fff;padding:12px 28px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;transition:background .2s ease;}
     .google-review-cta a.g-btn:hover{background:#2c6fda;}
     .google-review-cta p{margin-top:.6rem;font-size:.85rem;color:#888;}
-    :root{--pss-icon-desktop:270px;--pss-icon-mobile:180px;}
-    .pss-chat-btn{position:fixed;right:18px;bottom:18px;z-index:9999;background:transparent;border:none;padding:0;cursor:pointer;}
-    .pss-chat-btn img{width:var(--pss-icon-desktop);height:auto;filter:drop-shadow(0 8px 22px rgba(0,0,0,.28));animation:bob 3.2s ease-in-out infinite;}
+    :root{--pss-icon-desktop:270px;--pss-icon-mobile:180px;--pss-cta-h:42px;}
+    .pss-chat-btn{position:fixed;right:18px;bottom:18px;z-index:9999;background:transparent;border:none;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    .pss-chat-btn img{width:var(--pss-icon-desktop);height:auto;filter:drop-shadow(0 8px 22px rgba(0,0,0,.28));animation:bob 3.2s ease-in-out infinite;display:block;}
+    .pss-chat-cta{background:#5c3b1e;color:#fff;padding:10px 20px;border-radius:24px;font:700 .85rem/1 system-ui,Arial;letter-spacing:.3px;box-shadow:0 5px 16px rgba(92,59,30,.35),0 0 0 2px #fff;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;transition:background .15s ease,transform .15s ease;}
+    .pss-chat-btn:hover .pss-chat-cta{background:#3d2510;transform:translateY(-1px);}
     @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-    .pss-chat-window{position:fixed;right:18px;bottom:calc(18px + var(--pss-icon-desktop) - 60px);width:360px;max-width:92vw;height:520px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;z-index:9999;}
+    .pss-chat-window{position:fixed;right:18px;bottom:calc(18px + var(--pss-cta-h) + var(--pss-icon-desktop) - 60px);width:360px;max-width:92vw;height:520px;background:#fff;border:1px solid #e5e7eb;border-radius:14px;box-shadow:0 12px 36px rgba(0,0,0,.18);display:none;flex-direction:column;overflow:hidden;z-index:9999;}
     .pss-chat-header{background:#0284c7;color:#fff;padding:12px 14px;font:600 14px/1.3 system-ui,Arial;display:flex;justify-content:space-between;align-items:center;}
     .pss-chat-body{padding:12px;gap:10px;display:flex;flex-direction:column;overflow:auto;}
     .pss-bubble{max-width:85%;padding:10px 12px;border-radius:12px;font:14px/1.35 system-ui,Arial;}
@@ -153,7 +155,7 @@
     .pss-chat-footer{border-top:1px solid #e5e7eb;padding:10px;display:flex;gap:8px;}
     .pss-input{flex:1;border:1px solid #cbd5e1;border-radius:10px;padding:10px 12px;font:14px/1.2 system-ui,Arial;}
     .pss-send{background:#0ea5e9;color:#fff;border:none;border-radius:10px;padding:10px 14px;font:600 13px/1.2 system-ui,Arial;cursor:pointer;}
-    @media(max-width:768px){.pss-chat-btn{right:12px;bottom:12px;}.pss-chat-btn img{width:var(--pss-icon-mobile);}.pss-chat-window{right:12px;bottom:calc(12px + var(--pss-icon-mobile) - 48px);height:72vh;width:92vw;}}
+    @media(max-width:768px){.pss-chat-btn{right:12px;bottom:12px;}.pss-chat-btn img{width:var(--pss-icon-mobile);}.pss-chat-cta{padding:8px 15px;font-size:.78rem;}.pss-chat-window{right:12px;bottom:calc(12px + var(--pss-cta-h) + var(--pss-icon-mobile) - 48px);height:72vh;width:92vw;}}
   </style>
 </head>
 <body>
@@ -583,7 +585,10 @@
   <p>&copy; 2026 Photo Scanning Studio — Buffalo, NY</p>
 </footer>
 <script src="blog-rotator.js"></script>
-<button id="pssChatBtn" class="pss-chat-btn" aria-haspopup="dialog" aria-controls="pssChatWin"><img src="waving-photographer.png" alt="Chat with Photo Scanning Studio"></button>
+<button id="pssChatBtn" class="pss-chat-btn" aria-haspopup="dialog" aria-controls="pssChatWin" aria-label="Open chat to ask Dan a question">
+  <img src="waving-photographer.png" alt="" aria-hidden="true">
+  <span class="pss-chat-cta">&#128172; Click here to ask &rarr;</span>
+</button>
 <div id="pssChatWin" class="pss-chat-window" role="dialog" aria-modal="true" aria-label="Photo Scanning Studio Chat">
   <div class="pss-chat-header"><span>Photo Scanning Q&amp;A</span><button id="pssClose" style="background:transparent;border:none;color:#fff;font:700 16px/1 system-ui;cursor:pointer" aria-label="Close chat">&#10005;</button></div>
   <div id="pssBody" class="pss-chat-body"><div class="pss-bubble bot">Hi! I'm your friendly scanning assistant &#128075; Ask me anything about pricing, turnaround, pickup, mail-in, slideshows, albums, VHS options, or delivery.</div><div id="pssSuggest" class="pss-suggest"></div></div>
@@ -613,7 +618,7 @@
   ["What are your prices?","How long does it take?","Pickup and drop-off options","Do you make slideshows?","USB vs cloud delivery","Do you transfer VHS or video tapes?"].forEach(function(s){var c=document.createElement('button');c.className='pss-chip';c.type='button';c.textContent=s;c.onclick=function(){ask(s);};eSu.appendChild(c);});
   function bubble(t,w){var d=document.createElement('div');d.className='pss-bubble '+w;d.innerText=t;eBo.appendChild(d);eBo.scrollTop=eBo.scrollHeight;}
   function ask(t){if(!t.trim())return;bubble(t,'user');var f=findAnswer(t);f?bubble(f.a,'bot'):bubble("I'm not sure about that one. Try asking about pricing, turnaround, pickup, slideshows, VHS, or delivery. Or call/text 716-713-6537 and Dan will help you personally!",'bot');}
-  eB.onclick=function(){eW.style.display='flex';};eC.onclick=function(){eW.style.display='none';};
+  eB.onclick=function(){eW.style.display='flex';if(typeof gtag==='function'){gtag('event','click',{event_category:'Chatbot',event_label:'Chat Opened'});}};eC.onclick=function(){eW.style.display='none';};
   eS.onclick=function(){ask(eI.value);eI.value='';eI.focus();};
   eI.addEventListener('keydown',function(e){if(e.key==='Enter')eS.click();});
 </script>
