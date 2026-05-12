@@ -56,14 +56,43 @@
     .slideshow-cta{text-align:center;margin-top:1.2rem;}
     .slideshow-cta a{display:inline-block;background:#5c3b1e;color:#fff;padding:12px 28px;border-radius:6px;font-weight:700;font-size:1rem;text-decoration:none;transition:background .2s;}
     .slideshow-cta a:hover{background:#3d2510;}
-    .diy-tools{padding:2.5rem 1.5rem;background:#faf5ef;border-top:1px solid #e9d3b5;border-bottom:1px solid #e9d3b5;}
-    .diy-tools h2{margin-bottom:.5rem;}.diy-tools p{max-width:800px;margin-bottom:1rem;}
-    .diy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:1.5rem 0;}
-    .diy-card{background:#fff;border:1px solid #e5d4b8;border-radius:8px;padding:1rem 1.1rem;box-shadow:0 3px 10px rgba(0,0,0,.03);}
-    .diy-card h3{margin-top:0;margin-bottom:.4rem;font-size:1.05rem;}.diy-card a{display:inline-block;margin-top:.4rem;font-weight:600;}
-    .diy-more-link{margin-top:1rem;font-weight:600;}
-    .diy-highlight{margin-top:1.5rem;padding:1rem 1.1rem;border-radius:8px;background:#fff8e6;border:1px solid #f2c66b;box-shadow:0 3px 10px rgba(0,0,0,.03);}
-    .diy-highlight strong{color:#b45309;}
+    .diy-tools{padding:3rem 1.5rem;background:#faf5ef;border-top:1px solid #e9d3b5;border-bottom:1px solid #e9d3b5;}
+    .diy-tools h2{text-align:center;color:#5c3b1e;font-size:1.8rem;margin-bottom:.5rem;}
+    .diy-intro{max-width:780px;margin:0 auto 2rem;text-align:center;font-size:1rem;color:#555;line-height:1.55;}
+    .diy-intro a{color:#5c3b1e;font-weight:700;}
+    .diy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;max-width:1100px;margin:0 auto;}
+    .diy-card{position:relative;background:#fff8ec;border:1px solid #e5d4b8;border-radius:10px;padding:1.4rem 1.3rem 1.2rem;box-shadow:0 3px 10px rgba(0,0,0,.04);display:flex;flex-direction:column;transition:transform .15s ease,box-shadow .15s ease;}
+    .diy-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.08);}
+    .diy-card.diy-featured{border:2px solid #f2c66b;background:linear-gradient(180deg,#fff3d6 0%,#fff8ec 70%);padding-top:1.7rem;}
+    .diy-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:#b45309;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;text-transform:uppercase;box-shadow:0 2px 6px rgba(180,83,9,.3);}
+    .diy-icon{width:54px;height:54px;border-radius:50%;background:#5c3b1e;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;flex-shrink:0;}
+    .diy-icon svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .diy-card h3{margin:0 0 .5rem;color:#3c2a10;font-size:1.1rem;line-height:1.3;}
+    .diy-card-desc{color:#555;font-size:.92rem;line-height:1.5;margin:0 0 .9rem;}
+    .diy-best-for{font-size:.85rem;color:#7a5a35;margin:0 0 .4rem;}
+    .diy-best-for strong{color:#5c3b1e;}
+    .diy-card-alt{font-size:.85rem;color:#b45309;font-weight:600;margin:.1rem 0 .9rem;background:#fff8e6;border-left:3px solid #f2c66b;padding:6px 10px;border-radius:4px;}
+    .diy-btn{display:inline-block;background:#5c3b1e;color:#fff;padding:9px 16px;border-radius:6px;font-weight:600;font-size:.9rem;text-decoration:none;text-align:center;margin-top:auto;transition:background .15s ease;}
+    .diy-btn:hover{background:#3d2510;}
+    .diy-handoff{max-width:1100px;margin:2.2rem auto 0;background:linear-gradient(135deg,#5c3b1e 0%,#7a4d28 100%);color:#fff;padding:1.8rem 1.6rem;border-radius:12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;box-shadow:0 6px 18px rgba(92,59,30,.2);}
+    .diy-handoff-text{flex:1 1 320px;}
+    .diy-handoff-text h3{margin:0 0 .5rem;color:#fff;font-size:1.3rem;}
+    .diy-handoff-text p{margin:0;color:#fff3d6;font-size:.98rem;line-height:1.5;}
+    .diy-handoff-ctas{display:flex;flex-wrap:wrap;gap:10px;flex:0 1 auto;}
+    .diy-handoff-btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:700;font-size:.95rem;text-decoration:none;transition:transform .15s ease,background .15s ease;white-space:nowrap;}
+    .diy-handoff-btn:hover{transform:translateY(-1px);}
+    .diy-handoff-btn.primary{background:#ffd97d;color:#3c2a10;}
+    .diy-handoff-btn.primary:hover{background:#ffc847;}
+    .diy-handoff-btn.secondary{background:transparent;color:#fff;border:2px solid #ffd97d;}
+    .diy-handoff-btn.secondary:hover{background:rgba(255,217,125,.15);}
+    .diy-more-link{text-align:center;margin-top:1.4rem;font-weight:600;font-size:.95rem;}
+    .diy-more-link a{color:#5c3b1e;}
+    @media(max-width:640px){
+      .diy-handoff{flex-direction:column;text-align:center;}
+      .diy-handoff-text{flex:1 1 100%;}
+      .diy-handoff-ctas{justify-content:center;width:100%;}
+      .diy-handoff-btn{flex:1 1 auto;}
+    }
     .testimonials{padding:3rem 1.5rem;background:#fffaf4;border-top:1px solid #e9d3b5;}
     .testimonials h2{text-align:center;color:#5c3b1e;margin-bottom:.5rem;font-size:1.8rem;}
     .google-badge{text-align:center;margin-bottom:2rem;font-size:.95rem;color:#888;}
@@ -329,21 +358,74 @@
 })();
 </script>
 <section class="diy-tools" id="diy-tools">
-  <h2>Do It Yourself (DIY) – Tools for Scanning &amp; Conversion</h2>
-  <p>Prefer to digitize everything yourself at home? Here are some recommended tools. These are affiliate links — I may earn a small commission if you purchase, at no extra cost to you.</p>
+  <h2>Prefer to DIY? Tools Dan Recommends</h2>
+  <p class="diy-intro">If you'd rather digitize your photos and videos yourself, here's the gear Dan recommends. Amazon affiliate links &mdash; we may earn a small commission, at no extra cost to you. <strong>Short on time? <a href="#contact">Have Dan handle it for you &rarr;</a></strong></p>
   <div class="diy-grid">
-    <div class="diy-card"><h3>High-Speed Photo Scanner</h3><p>Perfect for quickly scanning hundreds of 4x6 and 5x7 prints with automatic front-and-back detection.</p><a href="https://amzn.to/4q8CArT" target="_blank" rel="noopener">View Recommended Photo Scanner</a></div>
-    <div class="diy-card"><h3>VHS to Digital Converter</h3><p>Connects your VCR to your computer so you can capture old VHS tapes as digital video files.</p><a href="https://amzn.to/3MxCSda" target="_blank" rel="noopener">View VHS to Digital Converter</a></div>
-    <div class="diy-card"><h3>Slide &amp; Negative Scanner</h3><p>Prefer to DIY? Specialized home scanner for 35mm slides and film negatives. (We also scan slides and negatives in-house at $0.35 each.)</p><a href="https://amzn.to/493umeB" target="_blank" rel="noopener">View Slide &amp; Negative Scanner</a></div>
-    <div class="diy-card"><h3>Reliable USB Drive</h3><p>Store and share your newly digitized photos on a fast, dependable USB flash drive.</p><a href="https://amzn.to/4pyIm69" target="_blank" rel="noopener">View Recommended USB Drive</a></div>
-    <div class="diy-card"><h3>Local Backup Drive</h3><p>Keep a full copy of your scans on a dedicated external drive as an extra layer of protection.</p><a href="https://amzn.to/4aamucl" target="_blank" rel="noopener">View Backup Drive Option</a></div>
+
+    <article class="diy-card diy-featured">
+      <span class="diy-badge">&#9733; Most Popular</span>
+      <div class="diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="11" rx="1.5"/><line x1="6" y1="13" x2="18" y2="13"/><rect x="7" y="3" width="10" height="4" rx="1"/></svg></div>
+      <h3>High-Speed Photo Scanner</h3>
+      <p class="diy-card-desc">Scan hundreds of 4x6 and 5x7 prints quickly with automatic front-and-back detection.</p>
+      <p class="diy-best-for"><strong>Best for:</strong> Loose photo prints in volume</p>
+      <a class="diy-btn" href="https://amzn.to/4q8CArT" target="_blank" rel="noopener sponsored" onclick="gtag('event','click',{event_category:'Affiliate',event_label:'Photo Scanner'});">View on Amazon &rarr;</a>
+    </article>
+
+    <article class="diy-card">
+      <div class="diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><rect x="6" y="8" width="12" height="8"/><line x1="3" y1="9" x2="5" y2="9"/><line x1="3" y1="15" x2="5" y2="15"/><line x1="19" y1="9" x2="21" y2="9"/><line x1="19" y1="15" x2="21" y2="15"/></svg></div>
+      <h3>Slide &amp; Negative Scanner</h3>
+      <p class="diy-card-desc">Specialized home scanner for 35mm slides and film negatives.</p>
+      <p class="diy-card-alt">Or have us do it &mdash; $0.35 each, in-house.</p>
+      <p class="diy-best-for"><strong>Best for:</strong> A small batch of 35mm slides &amp; negatives</p>
+      <a class="diy-btn" href="https://amzn.to/493umeB" target="_blank" rel="noopener sponsored" onclick="gtag('event','click',{event_category:'Affiliate',event_label:'Slide Negative Scanner'});">View on Amazon &rarr;</a>
+    </article>
+
+    <article class="diy-card">
+      <div class="diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="1.5"/><circle cx="8.5" cy="12" r="2.5"/><circle cx="15.5" cy="12" r="2.5"/></svg></div>
+      <h3>VHS to Digital Converter</h3>
+      <p class="diy-card-desc">USB capture device that plugs your VCR into your computer to capture VHS tapes as digital video.</p>
+      <p class="diy-best-for"><strong>Best for:</strong> A few VHS tapes if you still have a VCR</p>
+      <a class="diy-btn" href="https://amzn.to/3MxCSda" target="_blank" rel="noopener sponsored" onclick="gtag('event','click',{event_category:'Affiliate',event_label:'VHS Converter'});">View on Amazon &rarr;</a>
+    </article>
+
+    <article class="diy-card">
+      <div class="diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l9 4.5v9L12 21l-9-4.5v-9z"/><path d="M3 7.5l9 4.5 9-4.5"/><line x1="12" y1="12" x2="12" y2="21"/></svg></div>
+      <h3>Video Tape Transfer Service</h3>
+      <p class="diy-card-desc">Mail in your VHS, Hi8, Video8, 8mm, VHS-C, or MiniDV tapes for professional digitizing &mdash; no VCR or capture software needed.</p>
+      <p class="diy-best-for"><strong>Best for:</strong> Lots of tapes, or no VCR at all</p>
+      <a class="diy-btn" href="https://amzn.to/48z8PdG" target="_blank" rel="noopener sponsored" onclick="gtag('event','click',{event_category:'Affiliate',event_label:'Video Tape Transfer Service'});">View Service &rarr;</a>
+    </article>
+
+    <article class="diy-card">
+      <div class="diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="14" rx="1"/><rect x="10" y="17" width="4" height="4"/><line x1="11" y1="6" x2="11" y2="9"/><line x1="13" y1="6" x2="13" y2="9"/></svg></div>
+      <h3>Reliable USB Drive</h3>
+      <p class="diy-card-desc">Fast, dependable flash drive for storing and sharing your digitized photos with family.</p>
+      <p class="diy-best-for"><strong>Best for:</strong> Sharing scans with kids &amp; grandkids</p>
+      <a class="diy-btn" href="https://amzn.to/4pyIm69" target="_blank" rel="noopener sponsored" onclick="gtag('event','click',{event_category:'Affiliate',event_label:'USB Drive'});">View on Amazon &rarr;</a>
+    </article>
+
+    <article class="diy-card">
+      <div class="diy-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="1.5"/><line x1="6" y1="12" x2="13" y2="12"/><circle cx="17" cy="12" r="1" fill="#fff" stroke="none"/></svg></div>
+      <h3>Local Backup Drive</h3>
+      <p class="diy-card-desc">External hard drive for a full archival backup of your scanned collection &mdash; extra protection against loss.</p>
+      <p class="diy-best-for"><strong>Best for:</strong> Long-term, safe-at-home storage</p>
+      <a class="diy-btn" href="https://amzn.to/4aamucl" target="_blank" rel="noopener sponsored" onclick="gtag('event','click',{event_category:'Affiliate',event_label:'Backup Drive'});">View on Amazon &rarr;</a>
+    </article>
+
   </div>
-  <div class="diy-highlight">
-    <strong>&#11088; Recommended Video Tape Transfer Service:</strong>
-    <p>If you don't own a VCR or don't want to mess with capture software, you can send your VHS, Hi8, Video8, 8mm, VHS-C, or MiniDV tapes to a professional transfer service.</p>
-    <p><a href="https://amzn.to/48z8PdG" target="_blank" rel="noopener">Video Tape Transfer Service (VHS, Hi8, Video 8, 8mm, VHS-C, MiniDV) to Digital Online Service</a></p>
+
+  <div class="diy-handoff">
+    <div class="diy-handoff-text">
+      <h3>Don't have time for the DIY route?</h3>
+      <p>Dan personally handles every photo, slide, and negative &mdash; and you get a free enhanced copy of each scan. Local pickup in Western New York or mail-in from anywhere in the U.S.</p>
+    </div>
+    <div class="diy-handoff-ctas">
+      <a class="diy-handoff-btn primary" href="#contact" onclick="gtag('event','click',{event_category:'CTA',event_label:'DIY Handoff - Quote'});">&#128248; Get a Free Quote</a>
+      <a class="diy-handoff-btn secondary" href="tel:+17167136537" onclick="gtag('event','click',{event_category:'Contact',event_label:'Phone Click - DIY Handoff'});">&#128222; Text Dan: 716-713-6537</a>
+    </div>
   </div>
-  <p class="diy-more-link"><a href="DIY.html" target="_blank" rel="noopener">&#8594; View the full DIY Tools guide for step-by-step recommendations</a></p>
+
+  <p class="diy-more-link"><a href="DIY.html" target="_blank" rel="noopener">&rarr; See the full DIY Tools guide for step-by-step recommendations</a></p>
 </section>
 <section class="faq" id="faq">
   <h2>Top Questions</h2>
