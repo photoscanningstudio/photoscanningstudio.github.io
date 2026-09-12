@@ -144,3 +144,10 @@ summary{cursor:pointer;min-height:32px}summary::marker{color:#8a551d}.home-faq>a
 .verified-testimonials .review-row{row-gap:30px}.testimonial-card footer{background:none;box-shadow:none;color:#5c3b1e;padding:8px 0;font:700 .85rem Arial,sans-serif}.thank-you-container{max-width:700px;width:100%}.thank-you-container a.button{max-width:100%;white-space:normal}.landing-page .contact-strip a{min-height:32px;display:inline-flex;align-items:center}@media(max-width:560px){.thank-you-container{padding:24px!important}.faq-full{padding:24px 20px}.faq-full .faq-item p,.faq-full .faq-item ul{margin-left:0}}
 
 .landing-page .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.landing-page .hero-ctas .cta-button{margin-top:0}
+
+/* Dan's original mascot remains the clickable chat launcher. */
+.pss-chat-btn{display:flex;flex-direction:column;align-items:center;gap:6px;background:transparent!important;border:0!important;padding:0!important;box-shadow:none;border-radius:10px!important}
+.pss-chat-btn img{display:block;width:180px;height:auto;border-radius:12px;filter:drop-shadow(0 5px 10px #3e2a1c33)}
+.pss-chat-cta{display:block;background:var(--brown);color:#fff;padding:12px 18px;border:1px solid #e4c99b;border-radius:24px;box-shadow:0 3px 12px #3e2a1c22;font:700 .85rem/1.4 Arial,sans-serif}
+.pss-chat-btn:hover .pss-chat-cta{background:#3e2a1c}
+@media(max-width:560px),(max-height:600px){.pss-chat-btn{position:static;flex-direction:row;gap:4px;width:fit-content;margin:16px 12px 12px 0}.pss-chat-btn img{width:64px}.pss-chat-cta{font-size:.75rem;padding:10px 12px}}

@@ -8,7 +8,7 @@
     if (counts.some(function (n) { return !Number.isSafeInteger(n) || n < 0; })) return {error:'Please enter whole numbers of zero or more.'};
     const [photos, slides, negatives] = counts;
     if (photos + slides + negatives === 0) return {error:'Please enter at least one quantity.'};
-    const rate = photos > 3000 ? 12 : photos > 2000 ? 15 : photos > 1000 ? 18 : 20;
+    const rate = photos > 2000 ? 15 : photos > 1000 ? 18 : 20;
     const subtotal = photos * rate + (slides + negatives) * 35;
     if (!Number.isSafeInteger(subtotal)) return {error:'Please contact Dan for an estimate for a collection this large.'};
     return {photos, slides, negatives, rate, subtotal, total:Math.max(5000, subtotal)};

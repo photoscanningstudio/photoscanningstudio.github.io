@@ -1,6 +1,6 @@
 # Photo Scanning Studio — Chatbot Test Results
 
-**Generated:** 2026-05-13T02:08:20.947Z
+**Generated:** 2026-09-12T01:08:23.590Z
 **FAQ entries loaded:** 145
 **Total questions tested:** 105
 
@@ -47,7 +47,7 @@
 ### 7. `goodbye`
 **Matched:** Goodbye _(category: greeting)_
 
-> Take care! 👋 Anytime you're ready, you can text Dan at 716-713-6537 or use the contact form on this page. Hope to hear from you!
+> Take care! 👋 Anytime you're ready, you can text Dan at 716-713-6537 or use the contact form on the homepage. Hope to hear from you!
 
 ### 8. `what can you help with`
 **Matched:** What can you do? _(category: greeting)_
@@ -57,17 +57,17 @@
 ### 9. `how much does it cost`
 **Matched:** How much does photo scanning cost? _(category: pricing)_
 
-> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001–3000 are $0.15 each, and 3001+ are $0.12 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and every scan includes a free enhanced copy.
+> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001 or more are $0.15 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and photo-print scans include a free enhanced copy.
 
 ### 10. `what's the price`
 **Matched:** How much does photo scanning cost? _(category: pricing)_
 
-> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001–3000 are $0.15 each, and 3001+ are $0.12 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and every scan includes a free enhanced copy.
+> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001 or more are $0.15 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and photo-print scans include a free enhanced copy.
 
 ### 11. `how much for 100 photos`
 **Matched:** How much does photo scanning cost? _(category: pricing)_
 
-> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001–3000 are $0.15 each, and 3001+ are $0.12 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and every scan includes a free enhanced copy.
+> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001 or more are $0.15 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and photo-print scans include a free enhanced copy.
 
 ### 12. `how much for slides`
 **Matched:** How much for 35mm slides? _(category: pricing)_
@@ -82,7 +82,7 @@
 ### 14. `do you have any discounts`
 **Matched:** Do you have bulk discounts? _(category: pricing)_
 
-> The pricing tiers down automatically as you scan more photos: 1–1000 = $0.20 each, 1001–2000 = $0.18, 2001–3000 = $0.15, and 3001+ = $0.12. The bigger the project, the better the per-photo rate.
+> The standard print-volume tiers are shown in our pricing section. Text Dan to ask about any current offers; this guide does not promise additional discounts.
 
 ### 15. `is there a minimum order`
 **Matched:** Is there a minimum order? _(category: pricing)_
@@ -97,37 +97,37 @@
 ### 17. `are there any hidden fees`
 **Matched:** Are there hidden fees? _(category: pricing)_
 
-> No hidden fees. The price is per photo, slide, or negative, plus $20 if you want a USB (cloud is free), plus optional pickup/drop-off if you're 40+ miles from Hamburg ($10 each way). Albums can add a labor fee, always quoted up front.
+> Photo prints: 1–1,000 are $0.20 each; 1,001–2,000 are $0.18; 2,001 or more are $0.15. One rate applies to all photo prints in the order. 35mm slides and 35mm negatives are $0.35 each. The $50 minimum applies to the combined order. Cloud delivery and a second enhanced copy are included; USB is $20. Album work, pickup, and shipping are confirmed separately before work begins.
 
 ### 18. `how much for an album`
 **Matched:** How much for an album? _(category: pricing)_
 
-> Albums add a labor fee on top of the per-photo rate. Simple albums where photos lift out easily are at the lower end. Old sticky or magnetic albums need hand-scanning on a flatbed. Album handling typically runs about $20–$50 per album, on top of the per-photo cost.
+> Loose photos are fastest and most affordable. Album removal and hand-scanning can add labor. Stuck photos and extra-large albums need an individual estimate. Do not force photos off a page. Send Dan a photo of your albums for a quote before work begins.
 
 ### 19. `senior discount`
 **Matched:** Do you have a senior discount? _(category: pricing)_
 
-> No standing senior discount — but the regular volume tiers already work in your favor as the project grows. If budget's a concern, text Dan at 716-713-6537 and we can talk options.
+> The standard print-volume tiers are shown in our pricing section. Text Dan to ask about any current offers; this guide does not promise additional discounts.
 
 ### 20. `veteran discount`
 **Matched:** Do you have a veteran or military discount? _(category: pricing)_
 
-> No standing veteran discount, but Dan takes special care with military photos, uniforms, and tributes. If you'd like to talk through a project, text 716-713-6537.
+> The standard print-volume tiers are shown in our pricing section. Text Dan to ask about any current offers; this guide does not promise additional discounts.
 
 ### 21. `sales tax`
 **Matched:** Do you charge sales tax? _(category: pricing)_
 
-> Yes — standard New York sales tax applies to scanning services. We'll show it on your total before payment.
+> Ask Dan to confirm the complete project total and any applicable charges before work begins. The calculator is an estimate for scanning.
 
 ### 22. `give me an estimate`
 **Matched:** Can you give me an estimate? _(category: pricing)_
 
-> Sure! The fastest way is the price calculator on this page (just plug in your photo, slide, and negative counts). For albums, rush jobs, slideshows, or restoration, text Dan at 716-713-6537 with a quick description for a custom estimate.
+> Sure! The fastest way is the price calculator on the homepage (just plug in your photo, slide, and negative counts). For albums, rush jobs, slideshows, or restoration, text Dan at 716-713-6537 with a quick description for a custom estimate.
 
 ### 23. `how much for restoration`
 **Matched:** How much is restoration? _(category: pricing)_
 
-> Manual photo restoration is quoted per photo because the work varies so much (light fixes vs. deep repair on heavy damage). Text Dan at 716-713-6537 with a picture of the photo and we'll send pricing.
+> Automatic color, contrast, and clarity enhancement is included with scanning. Tears, missing details, colorization, and other restoration requests need a separate assessment. Text Dan at 716-713-6537 with your project details so he can confirm what is possible and the cost before work begins.
 
 ### 24. `do you scan polaroids`
 **Matched:** Do you scan Polaroids? _(category: services)_
@@ -142,7 +142,7 @@
 ### 26. `do you scan 120 film`
 **Matched:** Do you scan 120 film? _(category: services)_
 
-> We don't scan 120, 110, or sheet film in-house — only 35mm. For those formats, we recommend a home scanner: https://amzn.to/493umeB (affiliate link).
+> We do not scan 120, 110, or sheet film. Our film service covers 35mm slides and 35mm film-strip negatives. If you explore a DIY scanner, check its specifications for your exact format: https://amzn.to/493umeB (affiliate link).
 
 ### 27. `do you scan 110 film`
 **Matched:** Do you scan 110 film? _(category: services)_
@@ -172,12 +172,12 @@
 ### 32. `fix torn photos`
 **Matched:** Do you do photo restoration? _(category: services)_
 
-> We include automatic color/contrast/clarity enhancement on every scan (a free enhanced copy with every order). For true manual restoration — tears, missing pieces, heavy damage — we offer AI-powered enhancement quoted individually. Text Dan a picture of the photo and we'll price it.
+> Automatic color, contrast, and clarity enhancement is included with scanning. Tears, missing details, colorization, and other restoration requests need a separate assessment. Text Dan at 716-713-6537 with your project details so he can confirm what is possible and the cost before work begins.
 
 ### 33. `colorize black and white`
 **Matched:** Can you colorize black and white photos? _(category: services)_
 
-> Yes — AI colorization is available for an extra fee, quoted per photo. It works especially well on faces and portraits. Text Dan a picture and we'll let you know what's realistic.
+> Automatic enhancement is included with photo scanning. For colorization or restoration, send Dan a picture for an individual assessment before booking.
 
 ### 34. `crop my photos`
 **Matched:** Can you crop or straighten my photos? _(category: services)_
@@ -192,47 +192,47 @@
 ### 36. `tintype photos`
 **Matched:** What about glass negatives or tintypes? _(category: services)_
 
-> We've handled them before — glass negatives, tintypes, and daguerreotypes all need extra care and hand-scanning on the flatbed. Text Dan a picture first so we can plan the right approach and pricing.
+> Our documented film service is 35mm slides and 35mm film-strip negatives. For glass plates, tintypes, or other unusual originals, contact Dan before bringing or mailing them; acceptance is not guaranteed.
 
 ### 37. `glass negatives`
 **Matched:** What about glass negatives or tintypes? _(category: services)_
 
-> We've handled them before — glass negatives, tintypes, and daguerreotypes all need extra care and hand-scanning on the flatbed. Text Dan a picture first so we can plan the right approach and pricing.
+> Our documented film service is 35mm slides and 35mm film-strip negatives. For glass plates, tintypes, or other unusual originals, contact Dan before bringing or mailing them; acceptance is not guaranteed.
 
 ### 38. `scan from my phone`
 **Matched:** Can I send you photos from my phone? _(category: services)_
 
-> We work from physical photos, slides, and negatives — not digital files. If you already have digital photos and want them organized, restored, or made into a slideshow, that's a different service we can absolutely help with. Text Dan to discuss.
+> Already-digital images do not need scanning. You can use them in a separately quoted slideshow, or text Dan a picture of your physical photos or boxes to discuss scanning.
 
 ### 39. `what dpi do you scan in`
 **Matched:** What resolution do you scan at? _(category: quality)_
 
-> 600 DPI — high enough for archival quality and for reprinting at the original size or even larger. The free enhanced copy on top uses automatic color/contrast/clarity improvement.
+> Photo prints are scanned at 600 DPI. You receive the scan and a second automatically enhanced copy. Results depend on the original. Ask Dan to confirm resolution or format needs for slides, negatives, or special projects.
 
 ### 40. `scan resolution`
 **Matched:** What resolution do you scan at? _(category: quality)_
 
-> 600 DPI — high enough for archival quality and for reprinting at the original size or even larger. The free enhanced copy on top uses automatic color/contrast/clarity improvement.
+> Photo prints are scanned at 600 DPI. You receive the scan and a second automatically enhanced copy. Results depend on the original. Ask Dan to confirm resolution or format needs for slides, negatives, or special projects.
 
 ### 41. `what file format`
 **Matched:** What file format do you deliver? _(category: quality)_
 
-> JPG by default — universally readable on phones, tablets, computers, and TVs. If you need TIFF or another archival format, mention it when you book and we'll sort it out.
+> Standard photo delivery is JPG. If you need TIFF or another format, ask Dan before booking so he can confirm whether it is available.
 
 ### 42. `is 600 dpi enough for printing`
 **Matched:** Will 600 DPI print well? _(category: quality)_
 
-> Yes — 600 DPI lets you reprint photos at their original size or even up to about 2x larger with no visible loss. Perfect for framing or photo books.
+> 600 DPI scans capture detail from photo prints. A useful reprint size depends on the original size, sharpness, and condition. Tell Dan what size you hope to print.
 
 ### 43. `can you scan higher resolution`
 **Matched:** What resolution do you scan at? _(category: quality)_
 
-> 600 DPI — high enough for archival quality and for reprinting at the original size or even larger. The free enhanced copy on top uses automatic color/contrast/clarity improvement.
+> Photo prints are scanned at 600 DPI. You receive the scan and a second automatically enhanced copy. Results depend on the original. Ask Dan to confirm resolution or format needs for slides, negatives, or special projects.
 
 ### 44. `how long does it take`
 **Matched:** How long does scanning take? _(category: timing)_
 
-> Most projects finish in 5–10 business days after we receive your photos (about a week is typical). Mail-in adds a few days for shipping each way, so plan on about 2 weeks total for mail-in.
+> Most projects take 5–10 days, depending on the collection. Shipping adds time for mail-in orders. Dan confirms timing for your project.
 
 ### 45. `rush service available`
 **Matched:** Can you rush a project? _(category: timing)_
@@ -242,7 +242,7 @@
 ### 46. `can you finish by christmas`
 **Matched:** Can you finish by a specific date? _(category: timing)_
 
-> Usually yes, as long as you give us a few weeks of buffer. For tight deadlines (memorial slideshows especially), text Dan at 716-713-6537 with the date and rough project size and we'll let you know what's realistic.
+> Tell Dan your deadline and a rough project size. He will confirm availability before you commit; urgent completion is not guaranteed.
 
 ### 47. `how busy are you`
 **Matched:** How busy are you usually? _(category: timing)_
@@ -252,32 +252,32 @@
 ### 48. `where are you located`
 **Matched:** Where are you located? _(category: location)_
 
-> 5309 Roberts Road, Hamburg, NY 14075 — about 15 minutes south of downtown Buffalo. Dan works from a home studio, so all visits are by appointment (please don't drop by unannounced).
+> Photo Scanning Studio is at 5309 Roberts Road, Hamburg, NY 14075. Visits are by appointment. Text Dan at 716-713-6537 to arrange a time.
 
 ### 49. `what's your address`
 **Matched:** Where are you located? _(category: location)_
 
-> 5309 Roberts Road, Hamburg, NY 14075 — about 15 minutes south of downtown Buffalo. Dan works from a home studio, so all visits are by appointment (please don't drop by unannounced).
+> Photo Scanning Studio is at 5309 Roberts Road, Hamburg, NY 14075. Visits are by appointment. Text Dan at 716-713-6537 to arrange a time.
 
 ### 50. `do you offer pickup`
 **Matched:** Do you pick up photos? _(category: pickup)_
 
-> Yes — free pickup in Hamburg, NY, and about $10 within ~40 miles. All by appointment. Text Dan at 716-713-6537 to set it up.
+> Local pickup and drop-off are available by appointment in the Hamburg/Buffalo area. Text Dan at 716-713-6537 with your town to confirm availability and any pickup cost before booking.
 
 ### 51. `can i drop off my photos`
 **Matched:** Can I drop off my photos? _(category: pickup)_
 
-> Yes — just schedule with Dan first so you don't stop by a locked door (he works from a home studio). Pickup and drop-off are FREE in Hamburg, NY. Within ~40 miles of Hamburg, pickup is typically $10, and optional drop-off after scanning is another $10.
+> Local pickup and drop-off are available by appointment in the Hamburg/Buffalo area. Text Dan at 716-713-6537 with your town to confirm availability and any pickup cost before booking.
 
 ### 52. `what are your hours`
 **Matched:** What are your hours? _(category: location)_
 
-> Our hours vary day to day, so please reach out before stopping by — that way Dan can be ready for you. Text 716-713-6537 to schedule a pickup, drop-off, or visit at a time that works for both of us.
+> Photo Scanning Studio is at 5309 Roberts Road, Hamburg, NY 14075. Visits are by appointment. Text Dan at 716-713-6537 to arrange a time.
 
 ### 53. `how far do you travel`
 **Matched:** How far do you travel for pickup? _(category: pickup)_
 
-> About 40 miles from Hamburg, NY. That covers most of Buffalo, the southtowns, and parts of the southern Erie County area. Within Hamburg itself, pickup and drop-off are free.
+> Local pickup and drop-off are available by appointment in the Hamburg/Buffalo area. Text Dan at 716-713-6537 with your town to confirm availability and any pickup cost before booking.
 
 ### 54. `are you open on weekends`
 **Matched:** Do you work weekends? _(category: timing)_
@@ -287,7 +287,7 @@
 ### 55. `what towns do you serve`
 **Matched:** What's your service area? _(category: pickup)_
 
-> Local pickup/drop-off covers Hamburg, Buffalo, Orchard Park, West Seneca, Cheektowaga, Williamsville, Amherst, Lackawanna, and most of Erie County. Within ~40 miles, $10 pickup. Beyond that, mail-in works great — we serve customers across the U.S.
+> Local pickup and drop-off are available by appointment in the Hamburg/Buffalo area. Text Dan at 716-713-6537 with your town to confirm availability and any pickup cost before booking.
 
 ### 56. `can i mail my photos`
 **Matched:** Can I mail in my photos? _(category: shipping)_
@@ -307,17 +307,17 @@
 ### 59. `what if package gets lost`
 **Matched:** What if my package gets lost? _(category: shipping)_
 
-> Tracking and insurance are your best protection — we'd help you track and file a claim if it ever happened. In years of doing this, it's been very rare. We confirm safe arrival as soon as your package reaches us.
+> If a shipment is delayed or missing, contact Dan and the carrier using the tracking number. Ask the carrier about its coverage and claim process before shipping.
 
 ### 60. `do you ship internationally`
 **Matched:** Do you ship internationally? _(category: shipping)_
 
-> We mostly serve U.S. customers. International orders are possible but customs and return shipping get complicated — text Dan at 716-713-6537 first so we can work through the logistics before you ship.
+> Mail-in service is offered nationwide in the U.S. Contact Dan before considering any international shipment.
 
 ### 61. `my photos are in an album`
 **Matched:** What about photos in albums? _(category: prep)_
 
-> You can bring albums — they just add a labor fee on top of the per-photo rate. Simple albums where photos lift out easily are at the lower end. Old sticky or magnetic albums where images are glued down need hand-scanning on a flatbed and run about $20–$50 per album.
+> Loose photos are fastest and most affordable. Album removal and hand-scanning can add labor. Stuck photos and extra-large albums need an individual estimate. Do not force photos off a page. Send Dan a photo of your albums for a quote before work begins.
 
 ### 62. `what about moldy photos`
 **Matched:** What if my photos have mold or mildew? _(category: prep)_
@@ -327,7 +327,7 @@
 ### 63. `photos have writing on the back`
 **Matched:** My photos have writing on the back. Will I lose it? _(category: prep)_
 
-> Not at all. If you want the backs preserved, just let us know — we can scan both sides at no extra cost. Backs are super valuable for family history (dates, names, places) and worth keeping.
+> Tell Dan which photos have names, dates, or notes on the back. He can confirm how to preserve that information as part of your quote.
 
 ### 64. `should i remove photos from frames`
 **Matched:** Should I remove photos from frames? _(category: prep)_
@@ -357,7 +357,7 @@
 ### 69. `external hard drive option`
 **Matched:** Can you put my photos on an external hard drive? _(category: delivery)_
 
-> Yes — if you bring your own external hard drive, we'll load everything onto it free. We can also provide one at cost if you don't have one. USB sticks are $20 and cloud is free.
+> Free cloud delivery and optional $20 USB delivery are available. If you want to use your own drive, ask Dan to confirm compatibility and arrangements.
 
 ### 70. `do you make slideshows`
 **Matched:** Do you make slideshows? _(category: slideshow)_
@@ -367,7 +367,7 @@
 ### 71. `memorial slideshow`
 **Matched:** My dad recently passed and we want a memorial slideshow. _(category: slideshow)_
 
-> So sorry for your loss. Memorial slideshows are some of the most meaningful work we do, and we treat each one with the care it deserves. Text Dan at 716-713-6537 with the service date and we'll move fast to make it happen.
+> I am sorry for your loss. Text Dan with the service date and the photos you have. He will discuss a tribute and confirm whether the timing is possible.
 
 ### 72. `wedding slideshow`
 **Matched:** Can you do a wedding slideshow? _(category: slideshow)_
@@ -417,7 +417,7 @@
 ### 81. `are my photos safe with you`
 **Matched:** Are my photos safe with you? _(category: trust)_
 
-> Yes — Dan personally handles every project. Your photos stay in our home studio, get scanned with care, and go right back to you. No third-party labs, no overseas shipping, no batch-mixing. These are family memories and we treat them that way.
+> Yes — Dan personally handles every project. Your photos stay in our Hamburg home studio during scanning, get scanned with care, and go right back to you. These are family memories and we treat them that way.
 
 ### 82. `will i get my originals back`
 **Matched:** Do I get my original photos back? _(category: trust)_
@@ -427,27 +427,27 @@
 ### 83. `do you keep copies of my files`
 **Matched:** Will you keep copies of my photos? _(category: trust)_
 
-> We hold scanned files for a short time after delivery (in case you lose the download link), then they're removed from our system. We never share, sell, or use your photos for any other purpose. They belong to your family.
+> The download link is available for about a month. Please download and back up your files. Ask Dan directly about any specific privacy or file-retention requirements before booking.
 
 ### 84. `are you insured`
 **Matched:** Are you insured? _(category: trust)_
 
-> We operate as a careful small business — Dan personally handles every project from start to finish, so there's no third-party handoff where things go missing. For mail-in projects, we strongly recommend shipping insurance from the carrier you choose.
+> Please ask Dan directly about business insurance or any handling requirements before booking. Carrier shipping coverage is a separate matter.
 
 ### 85. `who is dan`
 **Matched:** Who is Dan? _(category: about)_
 
-> Dan Herlehy — owner, operator, and the person who personally handles your photos. He's a Buffalo / Hamburg local who runs Photo Scanning Studio out of his home office. No corporate counter, no rotating staff — just one person who treats your memories like his own family's.
+> Dan Herlehy — owner, operator, and the person who personally handles your photos. He's a Buffalo / Hamburg local who runs Photo Scanning Studio out of his home office, with appointment-based drop-off and pickup for local families.
 
 ### 86. `why should i choose you`
 **Matched:** Why should I choose you over a big-box service? _(category: about)_
 
-> Three reasons: (1) Dan personally handles every photo — no third-party labs, no overseas shipping, no batches of strangers' photos mixed with yours. (2) Local — you can drop off, pick up, and meet the person scanning your memories. (3) Pricing is competitive and tiers down as you scan more.
+> Three reasons: (1) Dan personally handles your project and communicates directly with you. (2) Local — you can schedule drop-off or pickup and know who is scanning your memories. (3) Pricing is clear, competitive, and tiers down as you scan more.
 
 ### 87. `how are you different from legacybox`
 **Matched:** How are you different from Legacybox or other mail-in services? _(category: about)_
 
-> With mail-in mega-services, your photos ship across the country (or overseas), get batched with thousands of others, and you may never speak to the actual person handling them. With us, everything stays with Dan from start to finish. Our pricing also tends to beat the big mail-in services on volume.
+> With large mail-in services, it can feel hard to know who is handling your family photos. With Photo Scanning Studio, you work directly with Dan, get clear local communication, and can choose appointment-based drop-off/pickup in Western New York or mail-in service nationwide.
 
 ### 88. `do you have facebook`
 **Matched:** Do you have a Facebook or social media? _(category: contact)_
@@ -462,12 +462,12 @@
 ### 90. `my mom passed away and i need help`
 **Matched:** My dad recently passed and we want a memorial slideshow. _(category: slideshow)_
 
-> So sorry for your loss. Memorial slideshows are some of the most meaningful work we do, and we treat each one with the care it deserves. Text Dan at 716-713-6537 with the service date and we'll move fast to make it happen.
+> I am sorry for your loss. Text Dan with the service date and the photos you have. He will discuss a tribute and confirm whether the timing is possible.
 
 ### 91. `found a box of photos in the attic`
 **Matched:** I found a box of old photos in the attic. Now what? _(category: about)_
 
-> You're in good company — that's how many of our projects start. Don't worry about sorting them perfectly. Just bring (or mail) the whole box and we'll handle the rest. Text Dan a photo of the box for a quick estimate.
+> That is enough to get started. You do not need to sort everything perfectly. Text Dan a photo of the box or a rough count to arrange a quote and appointment or mail-in instructions.
 
 ### 92. `planning a 50th anniversary`
 **Matched:** We're planning a 50th wedding anniversary party. _(category: slideshow)_
@@ -482,12 +482,12 @@
 ### 94. `what's a good gift for grandma`
 **Matched:** What's the best gift for someone who loves family history? _(category: slideshow)_
 
-> A USB or cloud archive of restored family photos, or a custom slideshow set to music — both make incredible gifts. Especially around birthdays, anniversaries, retirements, or holidays. Text Dan to plan ahead.
+> A digital collection of family photographs or a custom slideshow can help share memories across generations. Text Dan at 716-713-6537 to discuss your idea and timing.
 
 ### 95. `i inherited boxes of old photos`
 **Matched:** I just inherited a box of old photos. What do I do? _(category: about)_
 
-> First — take a breath. You don't have to sort everything yourself. Bring or mail us the whole box and we'll handle the scanning. Loose photos work best, but we can deal with albums, sticky pages, and envelopes too. Text Dan a photo of the box and he'll give you a rough estimate.
+> First — take a breath. You don't have to sort everything yourself. Bring or mail us the whole box and we'll handle the scanning. Loose photos work best, but we can deal with albums, sticky pages, and envelopes too. Contact Dan with a rough idea of what you have and he'll give you a practical next step.
 
 ### 97. `ok thanks`
 **Matched:** Thanks! _(category: greeting)_
@@ -507,17 +507,17 @@
 ### 102. `preserve my family memories`
 **Matched:** My family photos are getting damaged. Help! _(category: about)_
 
-> You're in the right place. Old prints (especially Polaroids and slides) really do fade and degrade over time — heat, humidity, and light all speed it up. The sooner you digitize, the more detail you preserve. Text Dan a photo of a few and we'll talk through what's worth doing first.
+> You're in the right place. Old prints (especially Polaroids and slides) really do fade and degrade over time — heat, humidity, and light all speed it up. The sooner you digitize, the more detail you preserve. Contact Dan and we'll talk through what's worth doing first.
 
 ### 103. `hw much`
 **Matched:** How much does photo scanning cost? _(category: pricing)_
 
-> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001–3000 are $0.15 each, and 3001+ are $0.12 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and every scan includes a free enhanced copy.
+> Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001 or more are $0.15 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and photo-print scans include a free enhanced copy.
 
 ### 104. `wat dpi`
 **Matched:** What resolution do you scan at? _(category: quality)_
 
-> 600 DPI — high enough for archival quality and for reprinting at the original size or even larger. The free enhanced copy on top uses automatic color/contrast/clarity improvement.
+> Photo prints are scanned at 600 DPI. You receive the scan and a second automatically enhanced copy. Results depend on the original. Ask Dan to confirm resolution or format needs for slides, negatives, or special projects.
 
 ### 105. `scan polaroidds`
 **Matched:** What do you scan? _(category: services)_

@@ -100,7 +100,7 @@ Use this section as the working source of truth. If a price isn't documented her
 
 | Service | Price / Notes |
 |---|---|
-| Photo prints (tiered) | 1–1000: $0.20 each · 1001–2000: $0.18 · 2001–3000: $0.15 · 3001+: $0.12. 600 DPI scan, free enhanced copy included. |
+| Photo prints (tiered) | 1–1000: $0.20 each · 1001–2000: $0.18 · 2001 or more: $0.15. 600 DPI scan, free enhanced copy included. |
 | Polaroids & large-format prints | No extra charge (priced as photo prints) |
 | 35mm slides (cardboard or plastic mounted) | $0.35 each, flat |
 | 35mm negatives (film strips only — NOT 120, 110, or sheet film) | $0.35 each, flat |
@@ -172,7 +172,7 @@ Flag clearly before any change that could affect these:
 - Alt text on key images
 - Internal links
 - Real Google review snippets on testimonials page
-- Pricing calculator with three inputs (photos, slides, negatives). Photo tiers: $0.20 → $0.18 → $0.15 → $0.12 at 1000 / 2000 / 3000 breakpoints. Slides and negatives flat $0.35. $50 minimum on combined subtotal.
+- Pricing calculator with three inputs (photos, slides, negatives). Photo tiers: $0.20 → $0.18 → $0.15 at 1000 / 2000 breakpoints; $0.15 is the lowest photo-print rate. Slides and negatives flat $0.35. $50 minimum on combined subtotal.
 - Affiliate links and IDs on DIY Tools / blog pages — preserve exactly
 - Weekly SEO blog structure (`/blog/week-N.html`) and any rotation logic
 - Contact / quote form behavior (see Live Form & Lead Capture Setup below)

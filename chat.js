@@ -2,7 +2,7 @@
 var PSS_FAQ = [
   {
     "q": "How much does photo scanning cost?",
-    "a": "Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001–3000 are $0.15 each, and 3001+ are $0.12 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and photo-print scans include a free enhanced copy.",
+    "a": "Photo prints are tiered: 1–1000 are $0.20 each, 1001–2000 are $0.18 each, 2001 or more are $0.15 each. 35mm slides and 35mm negatives are $0.35 each flat. There's a $50 minimum on any combined order, and photo-print scans include a free enhanced copy.",
     "k": [
       "cost",
       "price",
@@ -126,7 +126,7 @@ var PSS_FAQ = [
   },
   {
     "q": "Are there hidden fees?",
-    "a": "Photo prints: 1–1,000 are $0.20 each; 1,001–2,000 are $0.18; 2,001–3,000 are $0.15; 3,001+ are $0.12. One rate applies to all photo prints in the order. 35mm slides and 35mm negatives are $0.35 each. The $50 minimum applies to the combined order. Cloud delivery and a second enhanced copy are included; USB is $20. Album work, pickup, and shipping are confirmed separately before work begins.",
+    "a": "Photo prints: 1–1,000 are $0.20 each; 1,001–2,000 are $0.18; 2,001 or more are $0.15. One rate applies to all photo prints in the order. 35mm slides and 35mm negatives are $0.35 each. The $50 minimum applies to the combined order. Cloud delivery and a second enhanced copy are included; USB is $20. Album work, pickup, and shipping are confirmed separately before work begins.",
     "k": [
       "hidden fees",
       "extra fees",
@@ -1199,7 +1199,7 @@ var PSS_FAQ = [
   },
   {
     "q": "Do you have any specials or coupons?",
-    "a": "The standard photo tiers are 1–1,000 at $0.20 each, 1,001–2,000 at $0.18, 2,001–3,000 at $0.15, and 3,001+ at $0.12. Ask Dan about any current offers. The email list shares occasional tips and specials.",
+    "a": "The standard photo tiers are 1–1,000 at $0.20 each, 1,001–2,000 at $0.18, 2,001 or more at $0.15. Ask Dan about any current offers. The email list shares occasional tips and specials.",
     "k": [
       "discount",
       "coupon",
@@ -2498,7 +2498,7 @@ var PSS_SYN = [
   ]
 ];
 var PSS_FALLBACK = {
-  "pricing": "Photo prints: 1–1,000 are $0.20 each; 1,001–2,000 are $0.18; 2,001–3,000 are $0.15; 3,001+ are $0.12. One rate applies to all photo prints in the order. 35mm slides and 35mm negatives are $0.35 each. The $50 minimum applies to the combined order. Cloud delivery and a second enhanced copy are included; USB is $20.",
+  "pricing": "Photo prints: 1–1,000 are $0.20 each; 1,001–2,000 are $0.18; 2,001 or more are $0.15. One rate applies to all photo prints in the order. 35mm slides and 35mm negatives are $0.35 each. The $50 minimum applies to the combined order. Cloud delivery and a second enhanced copy are included; USB is $20.",
   "services": "Here's what we scan: loose photo prints (up to 8.5 × 11), Polaroids, 35mm slides (any mount), and 35mm negatives (film strips). We can also work from albums for an extra fee. We don't scan 120, 110, or sheet film — see the DIY Tools section for a home scanner. What were you wondering about?",
   "timing": "Most projects take 5–10 days; shipping adds time. Tell Dan any deadline before booking.",
   "pickup": "Local pickup and drop-off are available by appointment in the Hamburg/Buffalo area. Text Dan at 716-713-6537 with your town to confirm availability and any pickup cost before booking.",
@@ -2609,14 +2609,22 @@ var PSS_SUGGEST_BY_CAT = {
   if (!document.body) return;
   const opener = document.createElement('button');
   opener.id = 'pssChatBtn'; opener.className = 'pss-chat-btn';
-  opener.type = 'button'; opener.textContent = 'Quick questions?';
+  opener.type = 'button';
+  opener.setAttribute('aria-label', 'Open chat to ask a question');
+  const mascot = document.createElement('img');
+  mascot.src = 'waving-photographer.png'; mascot.alt = '';
+  mascot.width = 180; mascot.height = 180; mascot.decoding = 'async';
+  const chatLabel = document.createElement('span');
+  chatLabel.className = 'pss-chat-cta'; chatLabel.textContent = 'Click here to ask →';
+  opener.append(mascot, chatLabel);
   opener.setAttribute('aria-haspopup', 'dialog');
   opener.setAttribute('aria-controls', 'pssChatWin');
   const dialog = document.createElement('dialog');
   dialog.id = 'pssChatWin'; dialog.className = 'pss-chat-window';
   dialog.setAttribute('aria-labelledby', 'pssTitle');
   dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close questions">Close</button></div><div class="pss-chat-body" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form>';
-  document.body.append(opener, dialog);
+  (document.querySelector('.hero-copy') || document.body).appendChild(opener);
+  document.body.appendChild(dialog);
   const contactSection = document.getElementById('contact');
   if (contactSection && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
