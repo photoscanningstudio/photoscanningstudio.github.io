@@ -217,7 +217,7 @@ Reference these when relevant. Don't fix them in passing — wait for me to dire
 
 1. **Homepage refinement** — September 2026 refresh keeps the warm palette and vintage imagery, adds personal handling reassurance, shortens the route to contact, and moves secondary DIY/blog content below lead capture. Continue to evaluate the complete mobile journey.
 2. **Promote new slides + negatives services in content** — pricing, calculator, FAQ, schema, and chatbot are live (as of May 2026). Open work: write a blog post or two about slide/negative scanning for SEO, mention in any future email campaigns, and add a small visual / before-after to the homepage if good source material is available.
-3. **Chatbot upgrade** — the homepage and DIY guide now share an automated Q&A dialog in `chat.js`; its business answers must stay consistent with approved services and prices. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
+3. **Chatbot upgrade** — the homepage and DIY guide now share an automated Q&A dialog in `chat-mascot.js`; its business answers must stay consistent with approved services and prices. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
 4. **Email list growth & nurture** — basic capture is now live (homepage banner + lead magnet PDF). Open work: add capture surfaces in more places (footer signup, exit-intent, blog-post inline CTAs), decide cadence and content for what gets sent (seasonal specials, photo tips, restoration before/afters), and eventually wire the list through n8n for automation.
 5. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
 
@@ -247,7 +247,8 @@ Don't add tracking scripts blindly — explain what would be tracked and why fir
 - `album.css` — homepage album styling, illustrated cards, contrasting gallery/contact panels, and responsive layout
 - `assets/service-prints.svg`, `assets/service-slides.svg`, `assets/service-negatives.svg` — decorative service-format illustrations (not scanning samples)
 - `site.js` — validated price calculator, Formspree handlers, and contact/affiliate tracking
-- `chat.js` — shared Q&A answers and accessible dialog for homepage and DIY guide
+- `chat-mascot.js` — shared Q&A answers, accessible dialog, and contextual mascot poses for the homepage and DIY guide
+- `assets/mascot-v2/pose-1.webp` through `pose-6.webp` — optimized transparent mascot poses
 - `.gitignore` — hides PDF tooling, Python artifacts, and `.Codex/` session files
 
 Add newly discovered important files to this section as you encounter them.

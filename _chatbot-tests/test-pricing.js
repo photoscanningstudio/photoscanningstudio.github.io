@@ -22,7 +22,7 @@ for (const counts of [[0,0,0],[-1,0,0],[1.5,0,0],[Infinity,0,0],[Number.MAX_SAFE
 for (let photos = 1; photos <= 10000; photos++) {
   assert.ok(estimate([photos, 0, 0]).rate >= 15, 'Photo rate must never fall below 15 cents');
 }
-const chat = fs.readFileSync(path.join(root, 'chat.js'), 'utf8');
+const chat = fs.readFileSync(path.join(root, 'chat-mascot.js'), 'utf8');
 vm.runInContext(chat.split('// Native dialog')[0], context);
 for (const answer of [...context.PSS_FAQ.map(item => item.a), ...Object.values(context.PSS_FALLBACK)]) {
   assert.ok(!/\$0\.12|12 cents|12¢/.test(answer), 'No retired pricing in chat');

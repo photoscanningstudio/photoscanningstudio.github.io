@@ -2620,7 +2620,7 @@ var PSS_SUGGEST_BY_CAT = {
     frame.className = 'pss-mascot-frame' + (index === 0 ? ' is-current' : '');
     artwork.appendChild(frame);
   });
-  frames[0].src = 'assets/mascot/pose-1.webp';
+  frames[0].src = 'assets/mascot-v2/pose-1.webp';
   const chatLabel = document.createElement('span');
   chatLabel.className = 'pss-chat-cta'; chatLabel.textContent = 'Ask a question →';
   opener.append(artwork, chatLabel);
@@ -2661,7 +2661,7 @@ var PSS_SUGGEST_BY_CAT = {
         decoded.then(function () { finish(img); }, function () { finish(null); });
       };
       img.onerror = function () { finish(null); };
-      img.src = 'assets/mascot/pose-' + (index + 1) + '.webp';
+      img.src = 'assets/mascot-v2/pose-' + (index + 1) + '.webp';
     });
   }
   // A missing pose never replaces the currently visible, working image.
