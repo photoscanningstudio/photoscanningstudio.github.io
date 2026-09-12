@@ -2620,7 +2620,7 @@ var PSS_SUGGEST_BY_CAT = {
     frame.className = 'pss-mascot-frame' + (index === 0 ? ' is-current' : '');
     artwork.appendChild(frame);
   });
-  frames[0].src = 'waving-photographer.png';
+  frames[0].src = 'assets/mascot/pose-1.webp';
   const chatLabel = document.createElement('span');
   chatLabel.className = 'pss-chat-cta'; chatLabel.textContent = 'Ask a question →';
   opener.append(artwork, chatLabel);
@@ -2639,8 +2639,7 @@ var PSS_SUGGEST_BY_CAT = {
   let activeFrame = 0, poseIndex = 0, busy = false;
   let desiredPose = 0, dwellTimer = null, framePending = false, hoverTarget = null;
   try { userPaused = localStorage.getItem('pss-mascot-paused') === 'true'; } catch (_) {}
-  // Enable only after the finished transparent pose assets are installed.
-  const contextualPosesEnabled = false;
+  const contextualPosesEnabled = true;
   const poses = new Array(6).fill(null);
   function stopped() { return !ready || userPaused || motion.matches || hovered || focused || dialog.open || document.hidden; }
   function syncMotion() {
@@ -2669,7 +2668,7 @@ var PSS_SUGGEST_BY_CAT = {
   if (contextualPosesEnabled) poses.forEach(function (_, index) {
     loadPose(index).then(function (img) {
       poses[index] = img;
-      if (index === 0 && img && activeFrame === 0 && frames[0].src.endsWith('waving-photographer.png')) frames[0].src = img.src;
+      if (index === 0 && img && activeFrame === 0) frames[0].src = img.src;
       if (img && ready) requestContext();
     });
   });
