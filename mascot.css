@@ -1,0 +1,32 @@
+/* Persistent photo guide. Artwork moves; controls remain stable and reachable. */
+.pss-mascot-widget{position:fixed;right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));z-index:1000;width:150px;display:flex;flex-direction:column;align-items:center;gap:6px;isolation:isolate;box-sizing:border-box}
+.pss-mascot-widget[hidden]{display:none!important}
+body .pss-mascot-widget #pssChatBtn{position:static!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:4px!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;transform:none!important;min-height:44px!important;border-radius:8px!important;cursor:pointer}
+.pss-mascot-art{display:block;position:relative;flex-shrink:0;width:140px;height:140px;animation:pssGentleBob 6s ease-in-out infinite;pointer-events:none}
+body .pss-mascot-widget #pssChatBtn .pss-mascot-frame{position:absolute;inset:0;display:block!important;width:100%!important;height:100%!important;object-fit:contain;padding:0;border:0;border-radius:0;background:none;opacity:0;transition:opacity 250ms ease;animation:none!important;transform:none!important;filter:drop-shadow(0 3px 5px #30221624)}
+body .pss-mascot-widget #pssChatBtn .pss-mascot-frame.is-current{opacity:1}
+body .pss-mascot-widget #pssChatBtn .pss-chat-cta{display:flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:44px;background:#5c3b1e;color:#fffaf0;border:1px solid #e5d3b2;border-radius:22px;padding:10px 12px;font:700 12px/1.3 Arial,sans-serif;white-space:nowrap;box-shadow:0 2px 6px #30221620;transform:none!important}
+body .pss-mascot-widget .pss-mascot-pause{display:flex;align-items:center;justify-content:center;flex-shrink:0;box-sizing:border-box;min-height:44px;min-width:44px;margin:0;padding:8px;border:1px solid #b8a080;border-radius:50%;background:#fff8ec;color:#49311e;font:700 16px/1 Arial,sans-serif;box-shadow:none;cursor:pointer}
+body .pss-mascot-widget button:focus-visible{outline:3px solid #977129!important;outline-offset:3px}
+.pss-mascot-widget.is-paused .pss-mascot-art{animation-play-state:paused}
+.pss-mascot-widget.is-paused .pss-mascot-frame{transition:none!important}
+.pss-mascot-widget.is-compact .pss-mascot-art{width:100px;height:100px}
+@keyframes pssGentleBob{0%,100%{translate:0 0}50%{translate:0 -3px}}
+/* Reserve a real right-hand rail, rather than placing the character over forms. */
+@media(min-width:1200px){
+ html:has(.pss-mascot-widget){box-sizing:border-box;padding-right:176px}
+}
+/* Tablets and phones use a shallow dock with separate 44px controls. */
+@media(max-width:1199px){
+ html:has(.pss-mascot-widget){scroll-padding-bottom:calc(100px + env(safe-area-inset-bottom))}
+ body:has(.pss-mascot-widget){padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+ body:has(.pss-mascot-widget) :is(input,textarea,button,a,summary){scroll-margin-bottom:calc(104px + env(safe-area-inset-bottom))}
+ .pss-mascot-widget,.pss-mascot-widget.is-compact{left:0;right:0;bottom:0;width:auto;min-height:80px;flex-direction:row;justify-content:flex-end;gap:10px;padding:7px max(14px,env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));background:#fff8ec;border-top:1px solid #c8b291;box-shadow:0 -3px 14px #44332414}
+ body .pss-mascot-widget #pssChatBtn{flex-direction:row!important;justify-content:flex-end!important;gap:9px!important;width:auto!important;flex:0 1 auto;min-width:0!important}
+ .pss-mascot-art,.pss-mascot-widget.is-compact .pss-mascot-art{width:64px;height:64px}
+ body .pss-mascot-widget #pssChatBtn .pss-chat-cta{font-size:12px;padding:10px 12px}
+}
+@media(prefers-reduced-motion:reduce){.pss-mascot-art{animation:none!important}.pss-mascot-frame{transition:none!important}}
+@media print{.pss-mascot-widget{display:none!important}html:has(.pss-mascot-widget){padding-right:0;scroll-padding-bottom:0}body:has(.pss-mascot-widget){padding-bottom:0}}
+
+.pss-mascot-pause[hidden]{display:none!important}

@@ -2611,26 +2611,170 @@ var PSS_SUGGEST_BY_CAT = {
   opener.id = 'pssChatBtn'; opener.className = 'pss-chat-btn';
   opener.type = 'button';
   opener.setAttribute('aria-label', 'Open chat to ask a question');
-  const mascot = document.createElement('img');
-  mascot.src = 'waving-photographer.png'; mascot.alt = '';
-  mascot.width = 180; mascot.height = 180; mascot.decoding = 'async';
+  const widget = document.createElement('div');
+  widget.className = 'pss-mascot-widget'; widget.hidden = true;
+  const artwork = document.createElement('span'); artwork.className = 'pss-mascot-art';
+  const frames = [document.createElement('img'), document.createElement('img')];
+  frames.forEach(function (frame, index) {
+    frame.alt = ''; frame.width = 180; frame.height = 180; frame.decoding = 'async';
+    frame.className = 'pss-mascot-frame' + (index === 0 ? ' is-current' : '');
+    artwork.appendChild(frame);
+  });
+  frames[0].src = 'waving-photographer.png';
   const chatLabel = document.createElement('span');
-  chatLabel.className = 'pss-chat-cta'; chatLabel.textContent = 'Click here to ask →';
-  opener.append(mascot, chatLabel);
+  chatLabel.className = 'pss-chat-cta'; chatLabel.textContent = 'Ask a question →';
+  opener.append(artwork, chatLabel);
+  const pause = document.createElement('button'); pause.type = 'button';
+  pause.className = 'pss-mascot-pause';
+  widget.append(opener, pause);
   opener.setAttribute('aria-haspopup', 'dialog');
   opener.setAttribute('aria-controls', 'pssChatWin');
   const dialog = document.createElement('dialog');
   dialog.id = 'pssChatWin'; dialog.className = 'pss-chat-window';
   dialog.setAttribute('aria-labelledby', 'pssTitle');
   dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close questions">Close</button></div><div class="pss-chat-body" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form>';
-  (document.querySelector('.hero-copy') || document.body).appendChild(opener);
-  document.body.appendChild(dialog);
+  document.body.append(widget, dialog);
+  const motion = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)') : {matches:false};
+  let userPaused = false, hovered = false, focused = false, ready = false;
+  let activeFrame = 0, poseIndex = 0, busy = false;
+  let desiredPose = 0, dwellTimer = null, framePending = false, hoverTarget = null;
+  try { userPaused = localStorage.getItem('pss-mascot-paused') === 'true'; } catch (_) {}
+  // Enable only after the finished transparent pose assets are installed.
+  const contextualPosesEnabled = false;
+  const poses = new Array(6).fill(null);
+  function stopped() { return !ready || userPaused || motion.matches || hovered || focused || dialog.open || document.hidden; }
+  function syncMotion() {
+    widget.classList.toggle('is-paused', stopped());
+    pause.textContent = userPaused ? '▶' : 'Ⅱ';
+    pause.setAttribute('aria-label', userPaused ? 'Resume mascot animation' : 'Pause mascot animation');
+    pause.setAttribute('aria-pressed', String(userPaused));
+    pause.hidden = motion.matches;
+    if (!stopped()) requestContext();
+  }
+  function loadPose(index) {
+    return new Promise(function (resolve) {
+      const img = new Image();
+      let finished = false;
+      const timeout = setTimeout(function () { finish(null); }, 10000);
+      function finish(value) { if (finished) return; finished = true; clearTimeout(timeout); resolve(value); }
+      img.onload = function () {
+        const decoded = typeof img.decode === 'function' ? img.decode() : Promise.resolve();
+        decoded.then(function () { finish(img); }, function () { finish(null); });
+      };
+      img.onerror = function () { finish(null); };
+      img.src = 'assets/mascot/pose-' + (index + 1) + '.webp';
+    });
+  }
+  // A missing pose never replaces the currently visible, working image.
+  if (contextualPosesEnabled) poses.forEach(function (_, index) {
+    loadPose(index).then(function (img) {
+      poses[index] = img;
+      if (index === 0 && img && activeFrame === 0 && frames[0].src.endsWith('waving-photographer.png')) frames[0].src = img.src;
+      if (img && ready) requestContext();
+    });
+  });
+  const sectionPoses = {top:1,services:3,process:5,gallery:6,pricing:4,contact:4,'email-list':2,testimonials:6,faq:2,slideshow:6,'service-area':5,'diy-tools':1,location:5};
+  function visible(el) {
+    if (!el || typeof el.getBoundingClientRect !== 'function') return false;
+    const rect = el.getBoundingClientRect();
+    return rect.height > 0 && rect.bottom > 0 && rect.top < window.innerHeight;
+  }
+  function explicitPose(el) {
+    if (!el || typeof el.closest !== 'function') return null;
+    if (el.id === 'negativeCount') return 2;
+    const marked = el.closest('[data-mascot-pose]');
+    const value = marked ? Number(marked.getAttribute('data-mascot-pose')) : 0;
+    return value >= 1 && value <= 6 && Number.isInteger(value) ? value - 1 : null;
+  }
+  function chooseContext() {
+    const active = document.activeElement;
+    if (visible(active) && !widget.contains(active) && !dialog.contains(active)) {
+      const focusedPose = explicitPose(active);
+      if (focusedPose !== null) return focusedPose;
+    }
+    if (visible(hoverTarget)) {
+      const hoveredPose = explicitPose(hoverTarget);
+      if (hoveredPose !== null) return hoveredPose;
+    }
+    const openAlbums = document.querySelectorAll('details[open][data-mascot-pose="2"],details.price-note[open]');
+    for (const album of openAlbums) if (visible(album)) return 1;
+    const anchor = window.innerHeight * .35;
+    let best = 0, distance = Infinity;
+    document.querySelectorAll('header#top,main section').forEach(function (section) {
+      if (!visible(section)) return;
+      const rect = section.getBoundingClientRect();
+      const gap = anchor < rect.top ? rect.top - anchor : anchor > rect.bottom ? anchor - rect.bottom : 0;
+      const value = explicitPose(section);
+      const candidate = value === null ? (sectionPoses[section.id] || 1) - 1 : value;
+      if (gap < distance) { best = candidate; distance = gap; }
+    });
+    return best;
+  }
+  async function showContext() {
+    if (stopped() || busy || !poses[desiredPose]) return;
+    const next = desiredPose;
+    if (poseIndex === next && frames[activeFrame].src === poses[next].src) return;
+    busy = true;
+    const target = frames[1 - activeFrame];
+    target.src = poses[next].src;
+    try { if (typeof target.decode === 'function') await target.decode(); }
+    catch (_) { busy = false; return; }
+    if (stopped() || next !== desiredPose) { busy = false; requestContext(); return; }
+    target.classList.add('is-current'); frames[activeFrame].classList.remove('is-current');
+    activeFrame = 1 - activeFrame; poseIndex = next;
+    setTimeout(function () { busy = false; requestContext(); }, 300);
+  }
+  function inspectContext() {
+    framePending = false;
+    const next = chooseContext();
+    if (next !== desiredPose) {
+      desiredPose = next;
+      clearTimeout(dwellTimer); dwellTimer = null;
+    }
+    if (stopped() || dwellTimer !== null || (poseIndex === desiredPose && poses[desiredPose] && frames[activeFrame].src === poses[desiredPose].src)) return;
+    dwellTimer = setTimeout(function () { dwellTimer = null; showContext(); }, 600);
+  }
+  function requestContext() {
+    if (!contextualPosesEnabled || framePending) return;
+    framePending = true;
+    if (typeof window.requestAnimationFrame === 'function') window.requestAnimationFrame(inspectContext);
+    else setTimeout(inspectContext, 16);
+  }
+  window.addEventListener('scroll', requestContext, {passive:true});
+  window.addEventListener('resize', requestContext, {passive:true});
+  document.addEventListener('focusin', requestContext);
+  document.addEventListener('focusout', requestContext);
+  document.addEventListener('toggle', requestContext, true);
+  document.addEventListener('mouseover', function (event) {
+    const target = event.target && typeof event.target.closest === 'function' ? event.target.closest('.service-cards article,[data-mascot-hover]') : null;
+    if (target !== hoverTarget) { hoverTarget = target; requestContext(); }
+  });
+  document.addEventListener('mouseout', function (event) {
+    if (hoverTarget && (!event.relatedTarget || !hoverTarget.contains(event.relatedTarget))) { hoverTarget = null; requestContext(); }
+  });
+  pause.addEventListener('click', function () {
+    userPaused = !userPaused;
+    try { localStorage.setItem('pss-mascot-paused', String(userPaused)); } catch (_) {}
+    syncMotion();
+  });
+  widget.addEventListener('mouseenter', function () { hovered = true; syncMotion(); });
+  widget.addEventListener('mouseleave', function () { hovered = false; syncMotion(); });
+  widget.addEventListener('focusin', function () { focused = true; syncMotion(); });
+  widget.addEventListener('focusout', function () { setTimeout(function () { focused = widget.contains(document.activeElement); syncMotion(); }, 0); });
+  document.addEventListener('visibilitychange', syncMotion);
+  if (typeof motion.addEventListener === 'function') motion.addEventListener('change', syncMotion);
+  else if (typeof motion.addListener === 'function') motion.addListener(syncMotion);
   const contactSection = document.getElementById('contact');
   if (contactSection && 'IntersectionObserver' in window) {
     new IntersectionObserver(function (entries) {
-      opener.hidden = entries[0].isIntersecting && !dialog.open;
+      widget.classList.toggle('is-compact', entries[0].isIntersecting);
     }).observe(contactSection);
   }
+  syncMotion();
+  setTimeout(function () {
+    ready = true; widget.hidden = false; syncMotion();
+    requestContext();
+  }, 4000);
   const body = dialog.querySelector('#pssBody'), input = dialog.querySelector('#pssInput');
   function event(name, label) { if (typeof window.gtag === 'function') window.gtag('event', name, {event_category:'Chatbot',event_label:label}); }
   function bubble(text, who) {
@@ -2668,8 +2812,8 @@ var PSS_SUGGEST_BY_CAT = {
     chip.addEventListener('click',function(){ask(question);});
     dialog.querySelector('#pssSuggest').appendChild(chip);
   });
-  opener.addEventListener('click',function(){dialog.showModal();input.focus();event('click','Chat Opened');});
+  opener.addEventListener('click',function(){dialog.showModal();input.focus();syncMotion();event('click','Chat Opened');});
   dialog.querySelector('#pssClose').addEventListener('click',function(){dialog.close();});
-  dialog.addEventListener('close',function(){opener.focus();});
+  dialog.addEventListener('close',function(){opener.focus();syncMotion();});
   dialog.querySelector('#pssChatForm').addEventListener('submit',function(e){e.preventDefault();ask(input.value);input.value='';input.focus();});
 })();

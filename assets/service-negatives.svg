@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" fill="none">
+  <defs><filter id="shadow" x="-25%" y="-40%" width="150%" height="190%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#694230" flood-opacity=".18"/></filter><pattern id="holes" width="24" height="14" patternUnits="userSpaceOnUse"><rect x="5" y="3" width="10" height="8" rx="2" fill="#e8d7cb"/></pattern></defs>
+  <path fill="#e8d7cb" d="M0 0h600v320H0z"/>
+  <ellipse cx="304" cy="263" rx="199" ry="16" fill="#895d46" opacity=".08"/>
+  <g filter="url(#shadow)" transform="rotate(-8 300 160)">
+    <path d="M93 83h414v157H93z" fill="#664332"/>
+    <path d="M93 87h414v14H93zM93 220h414v14H93z" fill="url(#holes)"/>
+    <path d="M95 104h410M95 217h410" stroke="#aa7350" stroke-opacity=".6"/>
+    <g stroke="#392d25" stroke-width="5">
+      <path fill="#c78c5e" d="M110 113h116v96H110z"/>
+      <path fill="#c78c5e" d="M242 113h116v96H242z"/>
+      <path fill="#c78c5e" d="M374 113h116v96H374z"/>
+    </g>
+    <circle cx="193" cy="137" r="12" fill="#765642"/>
+    <path d="m113 179 33-34 33 37 20-17 24 22v19H113z" fill="#e2b880"/>
+    <path d="M113 192c39-13 70 10 110-2v16H113z" fill="#eccca0"/>
+    <circle cx="326" cy="139" r="12" fill="#775643"/>
+    <path d="m245 183 29-29 27 20 26-27 28 37v22H245z" fill="#ddb07a"/>
+    <path d="M245 195c42-19 65 7 110-7v18H245z" fill="#ebc699"/>
+    <circle cx="460" cy="137" r="12" fill="#775643"/>
+    <path d="m377 182 33-36 36 37 19-18 22 21v20H377z" fill="#e2b880"/>
+    <path d="M377 196c41-15 65 5 110-8v18H377z" fill="#eccca0"/>
+    <path d="M94 84h412" stroke="#bc8a62" stroke-opacity=".7"/>
+  </g>
+</svg>

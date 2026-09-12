@@ -104,3 +104,150 @@ html:has(.studio-home){
 }
 
 @media(min-width:561px) and (min-height:601px){.studio-home .pss-chat-btn img{width:145px;filter:drop-shadow(0 3px 6px #3e2a1c22)}.studio-home .pss-chat-cta{font-size:.78rem;padding:10px 14px}}
+
+/* Distinct album spreads: illustrated collections, dark gallery, clean pricing. */
+.studio-home .services{padding-top:48px;padding-bottom:42px}
+.studio-home .service-cards{gap:25px;align-items:stretch}
+.studio-home .service-cards article{padding:0;overflow:hidden;background:#fffdf6;border:1px solid #bca688;border-radius:6px;box-shadow:0 8px 19px #48301b19;display:flex;flex-direction:column}
+.studio-home .service-art{display:block;width:100%;height:auto;aspect-ratio:600/320;object-fit:cover;border-bottom:1px solid #bdac91}
+.studio-home .service-card-copy{padding:23px;flex:1;display:flex;flex-direction:column}
+.studio-home .service-number{font-size:.68rem;margin-bottom:13px;border:0;padding:0;color:#796044}
+.studio-home .service-card-copy h3{font-family:Georgia,serif;font-size:1.4rem;font-weight:500;line-height:1.2;margin-bottom:13px}
+.studio-home .service-card-copy p{font-size:.94rem;line-height:1.65;margin-bottom:20px}
+.studio-home .service-card-copy a{margin-top:auto;padding-top:13px;border-top:1px solid #dfd0b9;font-size:.86rem}
+.studio-home .process-section{padding:32px;background:#ead5af;border:1px solid #ceb282;border-radius:6px;margin-bottom:36px}
+.studio-home .process-section .section-heading{margin-bottom:24px}
+.studio-home .process-section h2{font-size:1.9rem}
+.studio-home .process-section .eyebrow{color:#6c4e28}
+.studio-home .process-grid{gap:25px}
+.studio-home .process-grid article{display:flex;gap:13px;padding:0;border:0;align-items:flex-start}
+.studio-home .step-number{font:500 2rem/1 Georgia,serif;color:#72532f;border-bottom:2px solid #b58c51;padding:0 0 9px;flex-shrink:0}
+.studio-home .process-grid p{font-size:.88rem;line-height:1.6}
+.studio-home .sample-section{background:#29443a;color:#fff8e9;max-width:none;width:calc(100% - 16px);margin:0 8px 28px;padding:50px max(24px,calc((100% - 1072px)/2));border:0;gap:42px;grid-template-columns:.8fr 1.2fr}
+.studio-home .sample-copy h2{color:#fff8e9}
+.studio-home .sample-copy .eyebrow{color:#e6ca90}
+.studio-home .sample-copy>p{color:#e2e9df}
+.studio-home .sample-copy .fineprint{color:#c9d5cd}
+.studio-home .sample-photo{color:#4d3925;box-shadow:0 12px 24px #112d2540;border:0}
+.studio-home .sample-photo figcaption{color:#6b5135}
+.studio-home .sample-labels{color:#4d3925}
+.studio-home .pricing{padding-top:36px;padding-bottom:40px}
+.studio-home .price-table{background:#fffcf5;border:1px solid #d7c5a7}
+.studio-home .price-table th,.studio-home .price-table td{padding:12px 14px}
+.studio-home .price-table th{background:#dbc5a0}
+.studio-home .price-table td:last-child{font-size:1.12rem;font-weight:700}
+.studio-home .price-table tbody tr:last-child{background:#e0e8db;color:#284133;font-weight:700}
+.studio-home .calculator{border:1px solid #b09b7c;box-shadow:7px 7px 0 #d5c4a7}
+.studio-home .calculator h3{border-bottom:2px solid #b08c52;padding-bottom:14px}
+.studio-home .contact{padding:0;gap:0;grid-template-columns:.92fr 1.08fr;overflow:hidden;border-radius:6px;box-shadow:0 10px 25px #4433241f;border:1px solid #4e3925}
+.studio-home .contact::before{display:none}
+.studio-home .contact-copy{background:#443324;color:#fff7e7;padding:38px 32px}
+.studio-home .contact-copy h2{color:#fff7e7}
+.studio-home .contact-copy .eyebrow{color:#e4c790}
+.studio-home .contact-copy .fineprint{color:#e0d3bd}
+.studio-home .contact-copy a{color:#f4d897}
+.studio-home .contact-copy .cta-button{background:#efcf97;color:#3e2a1c;margin:6px 0 17px}
+.studio-home .contact-copy .cta-button:hover{background:#ffe2b4}
+.studio-home .contact-form-wrap{padding:36px 32px;background:#fffdf8}
+.studio-home .guide-section{grid-template-columns:185px 1fr;gap:14px 40px;padding:35px 40px;background:#dbe2cf;border:1px solid #a3b28e;border-radius:6px;align-items:center;box-shadow:none}
+.studio-home .guide-book{grid-row:1/3;background:#f9efdb;color:#29443a;align-self:center;min-height:252px;padding:20px 20px 18px 25px;border-radius:1px 5px 5px 1px;border:1px solid #b8a280;box-shadow:6px 6px 0 #b0baa3,9px 11px 15px #34412b1c;transform:rotate(-3deg);position:relative;display:flex;flex-direction:column}
+.studio-home .guide-book::before{content:"";position:absolute;left:8px;top:0;bottom:0;border-left:1px solid #c1ad8b}
+.studio-home .book-brand{font-size:.48rem;letter-spacing:.12em;font-weight:700}
+.studio-home .book-number{font:500 4.4rem/.95 Georgia,serif;margin:12px 0 4px;color:#947044}
+.studio-home .book-title{font:500 1.2rem/1.12 Georgia,serif}
+.studio-home .book-rule{width:34px;border-top:2px solid #b89663;margin:15px 0 9px}
+.studio-home .book-foot{font:.58rem/1.5 Arial,sans-serif;color:#52634c}
+.studio-home .guide-description{grid-column:2}
+.studio-home .guide-description p{margin-bottom:10px}
+.studio-home .guide-section>div:last-child{grid-column:2}
+.studio-home .guide-section .email-list-form{max-width:630px}
+.studio-home .testimonials{padding-top:48px;padding-bottom:38px}
+.studio-home .review-row{gap:22px}
+.studio-home .review-row blockquote{background:#fffdf7;border:1px solid #cdb99a;border-top:3px solid #98683f;border-radius:4px;padding:22px;box-shadow:0 5px 12px #48301b10;font-size:1rem;position:relative}
+.studio-home .review-row blockquote::before{content:'“';display:block;font:3.3rem/.65 Georgia,serif;color:#a17a4d;margin-top:8px;margin-bottom:12px}
+.studio-home .review-row cite{font-size:.78rem;border-top:1px solid #e1d3bb;padding-top:12px;color:#61462f}
+.studio-home .home-faq{display:grid;grid-template-columns:.72fr 1.28fr;gap:0 45px;padding-top:24px;padding-bottom:40px}
+.studio-home .home-faq .section-heading{grid-column:1;grid-row:1/7}
+.studio-home .home-faq details{grid-column:2;background:#fffaf0;padding:16px;margin:0 0 9px;border:1px solid #d9c7a9;border-radius:4px}
+.studio-home .home-faq>a{grid-column:2}
+.studio-home .slideshow-section{display:grid;grid-template-columns:1.05fr 1fr;gap:0;padding:0;overflow:hidden;background:#eee0c9;border:1px solid #c4ac84;border-radius:6px;box-shadow:0 7px 18px #44332413;align-items:stretch}
+.studio-home .slideshow-photo{margin:0;min-height:310px;position:relative}
+.studio-home .slideshow-photo img{display:block;position:absolute;width:100%;height:100%;object-fit:cover}
+.studio-home .slideshow-section>div{padding:34px 32px}
+.studio-home .slideshow-section h2{font-size:2rem}
+.studio-home .slideshow-link{display:inline-block;margin-top:8px;font-weight:700;font-size:.9rem}
+.studio-home .service-links a{background:#e4e8d9;border:1px solid #bdc4a8;border-radius:4px;padding:9px 13px;color:#344632;font-size:.85rem}
+.studio-home .resources{border:0;gap:24px;padding-top:10px;padding-bottom:38px}
+.studio-home .resources>div,.studio-home .resources .blog{padding:27px;background:#fffdf5;border:1px solid #cbb897;border-radius:5px;box-shadow:0 4px 12px #4433240d}
+.studio-home .resources .blog{border-top:5px solid #78907b}
+.studio-home .resources h2{font-size:1.65rem}
+.studio-home .map-section{background:#eee4d2;border-top:1px solid #c9b28a75;padding-top:30px;padding-bottom:30px;margin-bottom:35px;border-radius:5px}
+@media(max-width:1100px){
+ .studio-home .process-section,.studio-home .contact,.studio-home .guide-section,.studio-home .slideshow-section,.studio-home .map-section{max-width:calc(100% - 48px)}
+ .studio-home .service-card-copy{padding:19px}
+ .studio-home .guide-section{padding:30px;gap:14px 28px;grid-template-columns:165px 1fr}
+ .studio-home .contact-copy,.studio-home .contact-form-wrap{padding:28px}
+}
+@media(max-width:820px){
+ .studio-home .sample-section{grid-template-columns:1fr;padding:34px 28px;gap:25px}
+ .studio-home .process-grid{grid-template-columns:1fr;gap:22px}
+ .studio-home .contact{grid-template-columns:1fr}
+ .studio-home .home-faq{display:block}
+ .studio-home .slideshow-section{grid-template-columns:1fr 1fr}
+ .studio-home .slideshow-section>div{padding:25px}
+ .studio-home .slideshow-section h2{font-size:1.7rem}
+}
+@media(max-width:560px){
+ .studio-home .services{padding-top:32px;padding-bottom:30px}
+ .studio-home .service-cards article{padding:0;box-shadow:0 5px 13px #48301b17}
+ .studio-home .service-art{height:150px;object-fit:cover;background:#eee5d5}
+ .studio-home .service-card-copy{padding:21px}
+ .studio-home .service-card-copy h3{font-size:1.4rem}
+ .studio-home .service-card-copy p{margin-bottom:14px}
+ .studio-home .process-section,.studio-home .contact,.studio-home .guide-section,.studio-home .slideshow-section,.studio-home .map-section{max-width:calc(100% - 28px)}
+ .studio-home .process-section{padding:25px 21px;margin-bottom:28px}
+ .studio-home .process-section h2{font-size:1.7rem}
+ .studio-home .sample-section{width:100%;margin:0 0 20px;padding:31px 20px}
+ .studio-home .sample-labels{font-size:.67rem;letter-spacing:.02em}
+ .studio-home .contact{border:1px solid #4e3925;overflow:hidden}
+ .studio-home .contact-copy,.studio-home .contact-form-wrap{padding:26px 21px}
+ .studio-home .guide-section{grid-template-columns:1fr;padding:26px 21px;gap:24px;border:1px solid #a3b28e}
+ .studio-home .guide-book{grid-row:auto;grid-column:1;justify-self:center;width:155px;min-height:220px;padding:16px 18px 16px 23px}
+ .studio-home .book-number{font-size:3.4rem}
+ .studio-home .book-title{font-size:1.1rem}
+ .studio-home .book-foot{font-size:.58rem}
+ .studio-home .guide-description,.studio-home .guide-section>div:last-child{grid-column:1}
+ .studio-home .review-row blockquote{padding:22px}
+ .studio-home .home-faq details{padding:14px}
+ .studio-home .slideshow-section{grid-template-columns:1fr;border:1px solid #c4ac84}
+ .studio-home .slideshow-photo{min-height:205px}
+ .studio-home .slideshow-section>div{padding:25px 21px}
+ .studio-home .resources>div,.studio-home .resources .blog{padding:23px}
+ .studio-home .map-section{padding:25px 21px}
+}
+@media print{.studio-home .sample-section,.studio-home .contact-copy{background:#fff;color:#222}.studio-home .sample-copy h2,.studio-home .sample-copy>p,.studio-home .contact-copy h2,.studio-home .contact-copy .fineprint{color:#222}}
+
+/* Final visual review: consistent editorial type and earlier mobile proof. */
+.studio-home .featured-blog-card h3,.studio-home .featured-blog-card h3 a{font:500 1.35rem/1.3 Georgia,serif;color:#443324}
+.studio-home .review-row blockquote{display:flex;flex-direction:column}
+.studio-home .review-row cite{margin-top:auto}
+@media(max-width:560px){
+ .studio-home .service-card-copy{padding:18px}
+ .studio-home .service-number{margin-bottom:8px}
+ .studio-home .service-card-copy h3{margin-bottom:10px}
+ .studio-home .service-card-copy p{margin-bottom:10px}
+ .studio-home .service-card-copy a{padding-top:10px}
+ .studio-home .sample-section{display:flex;flex-direction:column;gap:0;align-items:stretch}
+ .studio-home .sample-copy{display:contents}
+ .studio-home .sample-copy .eyebrow{order:0}
+ .studio-home .sample-copy h2{order:1}
+ .studio-home .sample-photo{order:2;width:100%;margin:6px 0 22px}
+ .studio-home .sample-copy>p:not(.eyebrow){order:3}
+ .studio-home .sample-copy>.fineprint{order:4;margin-bottom:0}
+}
+
+/* Keep the mascot visible without covering cards on intermediate screens. */
+@media(min-width:561px) and (max-width:1340px){
+ .studio-home .pss-chat-btn{position:static;flex-direction:row;gap:8px;width:fit-content;margin:16px 0}
+ .studio-home .pss-chat-btn img{width:72px}
+}

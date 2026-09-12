@@ -244,7 +244,8 @@ Don't add tracking scripts blindly — explain what would be tracked and why fir
 - `blog-rotator.js` — handles featured/recent blog rotation on the homepage
 - `style.css` — original shared stylesheet
 - `studio.css` — September 2026 homepage and shared readability/accessibility refinements
-- `album.css` — homepage heirloom-album art direction: paper texture, photo mounts, logo seal, and responsive styling
+- `album.css` — homepage album styling, illustrated cards, contrasting gallery/contact panels, and responsive layout
+- `assets/service-prints.svg`, `assets/service-slides.svg`, `assets/service-negatives.svg` — decorative service-format illustrations (not scanning samples)
 - `site.js` — validated price calculator, Formspree handlers, and contact/affiliate tracking
 - `chat.js` — shared Q&A answers and accessible dialog for homepage and DIY guide
 - `.gitignore` — hides PDF tooling, Python artifacts, and `.Codex/` session files

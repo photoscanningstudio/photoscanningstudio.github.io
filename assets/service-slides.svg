@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" fill="none">
+  <defs><filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feDropShadow dx="0" dy="9" stdDeviation="8" flood-color="#725738" flood-opacity=".17"/></filter><clipPath id="film"><rect x="295" y="118" width="144" height="96" rx="2"/></clipPath></defs>
+  <path fill="#ede0c4" d="M0 0h600v320H0z"/>
+  <ellipse cx="303" cy="268" rx="183" ry="16" fill="#957744" opacity=".09"/>
+  <g filter="url(#shadow)">
+    <g transform="rotate(-13 217 150)"><rect x="119" y="52" width="196" height="196" rx="9" fill="#f5efdf" stroke="#c7b591"/><rect x="127" y="60" width="180" height="180" rx="5" stroke="#dfd1b6"/><rect x="142" y="95" width="150" height="110" rx="3" fill="#705c40"/><path fill="#b6bea4" d="M147 100h140v100H147z"/><circle cx="252" cy="124" r="13" fill="#f0d6a2"/><path d="m147 171 45-39 38 37 30-18 27 26v23H147z" fill="#7c8a70"/><path d="M147 186c45-19 89 18 140-10v24H147z" fill="#526951"/></g>
+    <g transform="rotate(8 367 165)"><rect x="266" y="64" width="202" height="202" rx="9" fill="#fffaf0" stroke="#c7b591"/><rect x="275" y="73" width="184" height="184" rx="5" stroke="#e7dac2"/><rect x="290" y="113" width="154" height="106" rx="4" fill="#756044"/>
+      <g clip-path="url(#film)"><path fill="#d6c197" d="M295 118h144v96H295z"/><circle cx="399" cy="141" r="13" fill="#f8e6be"/><path d="m289 186 41-35 33 23 27-19 55 40v26H289z" fill="#a4936c"/><path d="M291 194c48-17 94-14 151-5v31H291z" fill="#717d67"/><path d="M312 214c16-10 27-18 46-26 13-5 22-8 38-9-24 11-33 22-43 35" fill="#d7cbaa"/></g>
+      <path d="M348 243h38" stroke="#d8c8aa" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
