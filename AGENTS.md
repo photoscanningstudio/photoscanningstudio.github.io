@@ -215,9 +215,9 @@ The site has two Formspree-backed forms on the homepage:
 
 Reference these when relevant. Don't fix them in passing — wait for me to direct work on each.
 
-1. **Hero section redesign** — multiple competing bars (phone, slideshow promo, appointment warning) before the actual hero. Cluttered, dated. Goal: clear headline, trust signal, simple CTA, text/call options, appointment language handled gracefully, mobile-first.
+1. **Homepage refinement** — September 2026 refresh keeps the warm palette and vintage imagery, adds personal handling reassurance, shortens the route to contact, and moves secondary DIY/blog content below lead capture. Continue to evaluate the complete mobile journey.
 2. **Promote new slides + negatives services in content** — pricing, calculator, FAQ, schema, and chatbot are live (as of May 2026). Open work: write a blog post or two about slide/negative scanning for SEO, mention in any future email campaigns, and add a small visual / before-after to the homepage if good source material is available.
-3. **Chatbot upgrade** — current "Ask me!" mascot is non-AI and weak. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
+3. **Chatbot upgrade** — the homepage and DIY guide now share an automated Q&A dialog in `chat.js`; its business answers must stay consistent with approved services and prices. Strategic intent: smarter responses, clearer "click to ask" affordance, click/usage tracking, eventual AI backend. I run n8n locally via Cloudflare tunnel — that's available for backend logic. Staged approach: Good = better visual CTA + tracking. Better = guided FAQ bot. Best = AI-powered quote/help assistant via n8n. **Don't overbuild without asking. No expensive SaaS dependencies without approval.**
 4. **Email list growth & nurture** — basic capture is now live (homepage banner + lead magnet PDF). Open work: add capture surfaces in more places (footer signup, exit-intent, blog-post inline CTAs), decide cadence and content for what gets sent (seasonal specials, photo tips, restoration before/afters), and eventually wire the list through n8n for automation.
 5. **Conversion analysis** — diagnose where visitors drop off. Think like a local-service CRO expert, not just a developer.
 
@@ -233,7 +233,7 @@ Don't add tracking scripts blindly — explain what would be tracked and why fir
 
 ## Files to Know About
 
-- `index.html` — homepage (cluttered hero lives here; both Formspree forms live here)
+- `index.html` — refreshed homepage; both Formspree forms and the immediate photo-guide signup live here
 - `thank-you.html` — landing page after contact-form submission; serves the lead-magnet PDF
 - `5-tips-keep-old-photos-alive.pdf` — the lead-magnet PDF, linked from `thank-you.html`
 - `_build_pdf.py` — local-only Python script that regenerates the PDF (gitignored, never pushed)
@@ -242,7 +242,10 @@ Don't add tracking scripts blindly — explain what would be tracked and why fir
 - `blog/index.html` — blog landing page
 - `blog/week-N.html` — weekly SEO blog posts
 - `blog-rotator.js` — handles featured/recent blog rotation on the homepage
-- `style.css` — main stylesheet
+- `style.css` — original shared stylesheet
+- `studio.css` — September 2026 homepage and shared readability/accessibility refinements
+- `site.js` — validated price calculator, Formspree handlers, and contact/affiliate tracking
+- `chat.js` — shared Q&A answers and accessible dialog for homepage and DIY guide
 - `.gitignore` — hides PDF tooling, Python artifacts, and `.Codex/` session files
 
 Add newly discovered important files to this section as you encounter them.

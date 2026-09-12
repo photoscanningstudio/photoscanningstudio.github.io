@@ -1,6 +1,6 @@
 // Photo Scanning Studio — Chatbot test harness
 //
-// Reads ../index.html, extracts the chatbot's data and matching functions,
+// Reads ../chat.js, extracts the chatbot's data and matching functions,
 // runs a battery of test questions through pssFindAnswer(), and writes a
 // markdown report to test-results.md.
 //
@@ -10,23 +10,23 @@
 //   node test-chatbot.js
 //
 // Notes:
-// - The harness uses the live chatbot core from index.html, so it always
+// - The harness uses the live chatbot core from chat.js, so it always
 //   tests whatever is currently deployed (or about to be deployed).
 // - To add or change questions, edit the QUESTIONS array below and re-run.
 
 const fs = require('fs');
 const path = require('path');
 
-// --- Locate chatbot core in index.html ---
-const indexPath = path.join(__dirname, '..', 'index.html');
+// --- Locate chatbot core in chat.js ---
+const indexPath = path.join(__dirname, '..', 'chat.js');
 const html = fs.readFileSync(indexPath, 'utf8');
 
 const startMarker = '// Photo Scanning Studio Chatbot v2';
-const endMarker = 'var eB=document.getElementById';
+const endMarker = '// Native dialog';
 const startIdx = html.indexOf(startMarker);
 const endIdx = html.indexOf(endMarker, startIdx);
 if (startIdx === -1 || endIdx === -1) {
-  console.error('ERROR: Could not locate chatbot script section in index.html.');
+  console.error('ERROR: Could not locate chatbot script section in chat.js.');
   console.error('Looked for start marker:', startMarker);
   console.error('Looked for end marker:', endMarker);
   process.exit(1);
