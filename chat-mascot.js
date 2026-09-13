@@ -2622,11 +2622,11 @@ var PSS_SUGGEST_BY_CAT = {
   });
   frames[0].src = 'assets/mascot-v2/pose-1.webp';
   const chatLabel = document.createElement('span');
-  chatLabel.className = 'pss-chat-cta'; chatLabel.textContent = 'Ask a question →';
-  opener.append(artwork, chatLabel);
-  const pause = document.createElement('button'); pause.type = 'button';
-  pause.className = 'pss-mascot-pause';
-  widget.append(opener, pause);
+  const promptText = 'Ask me any questions you need';
+  chatLabel.className = 'pss-chat-cta';
+  chatLabel.setAttribute('aria-hidden', 'true');
+  opener.append(chatLabel, artwork);
+  widget.append(opener);
   opener.setAttribute('aria-haspopup', 'dialog');
   opener.setAttribute('aria-controls', 'pssChatWin');
   const dialog = document.createElement('dialog');
@@ -2635,20 +2635,25 @@ var PSS_SUGGEST_BY_CAT = {
   dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close questions">Close</button></div><div class="pss-chat-body" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form>';
   document.body.append(widget, dialog);
   const motion = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)') : {matches:false};
-  let userPaused = false, hovered = false, focused = false, ready = false;
+  let hovered = false, focused = false, ready = false;
   let activeFrame = 0, poseIndex = 0, busy = false;
   let desiredPose = 0, dwellTimer = null, framePending = false, hoverTarget = null;
-  try { userPaused = localStorage.getItem('pss-mascot-paused') === 'true'; } catch (_) {}
   const contextualPosesEnabled = true;
   const poses = new Array(6).fill(null);
-  function stopped() { return !ready || userPaused || motion.matches || hovered || focused || dialog.open || document.hidden; }
+  function stopped() { return !ready || motion.matches || hovered || focused || dialog.open || document.hidden; }
   function syncMotion() {
     widget.classList.toggle('is-paused', stopped());
-    pause.textContent = userPaused ? '▶' : 'Ⅱ';
-    pause.setAttribute('aria-label', userPaused ? 'Resume mascot animation' : 'Pause mascot animation');
-    pause.setAttribute('aria-pressed', String(userPaused));
-    pause.hidden = motion.matches;
     if (!stopped()) requestContext();
+  }
+  function typePrompt() {
+    if (motion.matches) { chatLabel.textContent = promptText; return; }
+    chatLabel.textContent = '';
+    let index = 0;
+    const timer = setInterval(function () {
+      chatLabel.textContent += promptText.charAt(index);
+      index += 1;
+      if (index >= promptText.length) clearInterval(timer);
+    }, 65);
   }
   function loadPose(index) {
     return new Promise(function (resolve) {
@@ -2751,11 +2756,6 @@ var PSS_SUGGEST_BY_CAT = {
   document.addEventListener('mouseout', function (event) {
     if (hoverTarget && (!event.relatedTarget || !hoverTarget.contains(event.relatedTarget))) { hoverTarget = null; requestContext(); }
   });
-  pause.addEventListener('click', function () {
-    userPaused = !userPaused;
-    try { localStorage.setItem('pss-mascot-paused', String(userPaused)); } catch (_) {}
-    syncMotion();
-  });
   widget.addEventListener('mouseenter', function () { hovered = true; syncMotion(); });
   widget.addEventListener('mouseleave', function () { hovered = false; syncMotion(); });
   widget.addEventListener('focusin', function () { focused = true; syncMotion(); });
@@ -2763,15 +2763,9 @@ var PSS_SUGGEST_BY_CAT = {
   document.addEventListener('visibilitychange', syncMotion);
   if (typeof motion.addEventListener === 'function') motion.addEventListener('change', syncMotion);
   else if (typeof motion.addListener === 'function') motion.addListener(syncMotion);
-  const contactSection = document.getElementById('contact');
-  if (contactSection && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      widget.classList.toggle('is-compact', entries[0].isIntersecting);
-    }).observe(contactSection);
-  }
   syncMotion();
   setTimeout(function () {
-    ready = true; widget.hidden = false; syncMotion();
+    ready = true; widget.hidden = false; typePrompt(); syncMotion();
     requestContext();
   }, 4000);
   const body = dialog.querySelector('#pssBody'), input = dialog.querySelector('#pssInput');
