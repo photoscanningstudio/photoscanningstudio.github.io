@@ -2632,7 +2632,7 @@ var PSS_SUGGEST_BY_CAT = {
   const dialog = document.createElement('dialog');
   dialog.id = 'pssChatWin'; dialog.className = 'pss-chat-window';
   dialog.setAttribute('aria-labelledby', 'pssTitle');
-  dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close questions">Close</button></div><div class="pss-chat-body" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form>';
+  dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close questions">Close</button></div><div class="pss-chat-body ph-no-capture" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form>';
   document.body.append(widget, dialog);
   const motion = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)') : {matches:false};
   let hovered = false, focused = false, ready = false;
@@ -2769,7 +2769,11 @@ var PSS_SUGGEST_BY_CAT = {
     requestContext();
   }, 4000);
   const body = dialog.querySelector('#pssBody'), input = dialog.querySelector('#pssInput');
-  function event(name, label) { if (typeof window.gtag === 'function') window.gtag('event', name, {event_category:'Chatbot',event_label:label}); }
+  function event(name, label) {
+    var details = {event_category:'Chatbot',event_label:label};
+    if (typeof window.pssTrack === 'function') window.pssTrack(name === 'ask' ? 'chat_question' : 'chat_opened', details, {gaName:name});
+    else if (typeof window.gtag === 'function') window.gtag('event', name, details);
+  }
   function bubble(text, who) {
     const el = document.createElement('div'); el.className = 'pss-bubble ' + who;
     if (who !== 'bot') { el.textContent = text; }

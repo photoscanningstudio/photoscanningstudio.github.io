@@ -29,9 +29,10 @@
 
 <link rel="stylesheet" href="studio.css?v=20260912-pricing" />
 <link rel="stylesheet" href="album.css?v=2" />
-<script src="site.js?v=20260912-pricing" defer></script>
-<script src="chat-mascot.js?v=20260912-floating" defer></script>
+<script src="site.js?v=20260929-posthog" defer></script>
+<script src="chat-mascot.js?v=20260929-posthog" defer></script>
 <link rel="stylesheet" href="mascot.css?v=20260912-floating" />
+<script src="analytics.js?v=20260929-posthog" defer></script>
 </head>
 
 <body class="studio-home">
@@ -89,9 +90,9 @@
 <label for="message">Message</label><textarea id="message" name="message" placeholder="Tell Dan what you have. A rough count is fine — or simply ask your question." required="" rows="4"></textarea>
 <input name="_subject" type="hidden" value="New message from Photo Scanning Studio!"/>
 <button data-track="quote_form_submit" id="contactSubmitBtn" type="submit">Send My Question</button>
-</form><p class="fineprint">This sends your question to Dan. It does not sign you up for the email list.</p><div id="contactError" class="form-error" role="alert" hidden>Something went wrong. Please try again, or <a href="sms:+17167136537">text Dan at 716-713-6537</a>.</div></div>
+</form><p class="fineprint">This sends your question to Dan. It does not sign you up for the email list. <a href="privacy.html">Privacy policy</a></p><div id="contactError" class="form-error" role="alert" hidden>Something went wrong. Please try again, or <a href="sms:+17167136537">text Dan at 716-713-6537</a>.</div></div>
 </section>
-<section id="email-list" data-mascot-pose="2" class="guide-section"><div class="guide-book" aria-hidden="true"><span class="book-brand">PHOTO SCANNING STUDIO</span><span class="book-number">5</span><span class="book-title">Tips to Keep<br />Your Old<br />Photos Alive</span><span class="book-rule"></span><span class="book-foot">A little care.<br />A lifetime of memories.</span></div><div class="guide-description"><p class="eyebrow">Not ready to scan yet?</p><h2>Give your old photos a little more life.</h2><p>Get the free guide, <strong>5 Tips to Keep Your Old Photos Alive</strong>, plus occasional photo tips and specials from Dan.</p><p class="fineprint">The guide is available here as soon as you sign up. Unsubscribe from emails anytime.</p></div><div><form action="https://formspree.io/f/mwvynnkz" class="email-list-form" id="emailListForm" method="POST">
+<section id="email-list" data-mascot-pose="2" class="guide-section"><div class="guide-book" aria-hidden="true"><span class="book-brand">PHOTO SCANNING STUDIO</span><span class="book-number">5</span><span class="book-title">Tips to Keep<br />Your Old<br />Photos Alive</span><span class="book-rule"></span><span class="book-foot">A little care.<br />A lifetime of memories.</span></div><div class="guide-description"><p class="eyebrow">Not ready to scan yet?</p><h2>Give your old photos a little more life.</h2><p>Get the free guide, <strong>5 Tips to Keep Your Old Photos Alive</strong>, plus occasional photo tips and specials from Dan.</p><p class="fineprint">The guide is available here as soon as you sign up. Unsubscribe from emails anytime. <a href="privacy.html">Privacy policy</a></p></div><div><form action="https://formspree.io/f/mwvynnkz" class="email-list-form" id="emailListForm" method="POST">
 <input aria-label="Email address" autocomplete="email" name="email" placeholder="your@email.com" required="" type="email"/>
 <input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
 <input name="_subject" type="hidden" value="New email list signup"/>
@@ -111,6 +112,6 @@
 <li><a href="https://amzn.to/4pyIm69" target="_blank" rel="noopener sponsored">Reliable USB Drive</a></li>
 <li><a href="https://amzn.to/4aamucl" target="_blank" rel="noopener sponsored">Local Backup Drive</a></li></ul></details></div><div class="blog" id="blog"><div id="featured-blog-container"><a href="blog/index.html">Read our photo preservation guides</a></div><p><a href="blog/index.html">All photo tips and guides &rarr;</a></p></div></section>
 <section class="map-section" id="location"><div><h2>Arrange your local visit.</h2><p>5309 Roberts Road<br />Hamburg, NY 14075</p><p>Pickup and drop-off are by appointment. Dan will confirm availability and any pickup cost before you book.</p><a href="sms:+17167136537">Text Dan to arrange a time &rarr;</a></div><iframe allowfullscreen="" height="300" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.8414417405637!2d-78.86248142410944!3d42.72048647117765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d374b9d12b6535%3A0xcea569f2bfb7e028!2s5309%20Roberts%20Rd%2C%20Hamburg%2C%20NY%2014075!5e0!3m2!1sen!2sus!4v1718849999999!5m2!1sen!2sus" style="border:0;" title="Map to Photo Scanning Studio" width="100%"></iframe></section>
-</main><footer class="footer"><nav class="footer-nav" aria-label="Footer"><ul><li><a href="#services">Services</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#gallery">Gallery</a></li><li><a href="all-testimonials.html">Reviews</a></li><li><a href="#contact">Contact</a></li><li><a href="partners.html">Partners</a></li></ul></nav><p>Photo Scanning Studio · Personally handled by Dan in Hamburg, NY</p><p>&copy; 2026 Photo Scanning Studio · <a href="tel:+17167136537">Call</a> or <a href="sms:+17167136537">text 716-713-6537</a></p></footer>
+</main><footer class="footer"><nav class="footer-nav" aria-label="Footer"><ul><li><a href="#services">Services</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#gallery">Gallery</a></li><li><a href="all-testimonials.html">Reviews</a></li><li><a href="#contact">Contact</a></li><li><a href="partners.html">Partners</a></li></ul></nav><p>Photo Scanning Studio · Personally handled by Dan in Hamburg, NY</p><p>&copy; 2026 Photo Scanning Studio · <a href="tel:+17167136537">Call</a> or <a href="sms:+17167136537">text 716-713-6537</a> · <a href="privacy.html">Privacy</a></p></footer>
 <script src="blog-rotator.js" defer></script>
 </body></html>

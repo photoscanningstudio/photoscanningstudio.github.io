@@ -1,8 +1,9 @@
-/* Homepage calculator, contact forms and existing analytics events. */
+/* Homepage calculator, contact forms and their analytics events (click tracking lives in analytics.js). */
 (function () {
   'use strict';
-  function track(name, details) {
-    if (typeof window.gtag === 'function') window.gtag('event', name, details);
+  function track(name, details, options) {
+    if (typeof window.pssTrack === 'function') window.pssTrack(name, details, options);
+    else if (typeof window.gtag === 'function') window.gtag('event', name, details);
   }
   function estimate(counts) {
     if (counts.some(function (n) { return !Number.isSafeInteger(n) || n < 0; })) return {error:'Please enter whole numbers of zero or more.'};
@@ -51,7 +52,7 @@
       try {
         const response = await fetch(contact.action, {method:'POST',body:new FormData(contact),headers:{Accept:'application/json'}});
         if (!response.ok) throw new Error('Message was not accepted');
-        track('form_submission', {event_category:'Contact',event_label:'Contact Form Accepted',value:1,transport_type:'beacon'});
+        track('form_submission', {event_category:'Contact',event_label:'Contact Form Accepted',value:1,transport_type:'beacon'}, {beforeLeaving:true});
         window.location.href = 'thank-you.html';
       } catch (_) {
         error.hidden = false;
@@ -82,18 +83,5 @@
       button.disabled = false;
       button.textContent = 'Get the Free Guide';
     }
-  });
-  document.addEventListener('click', function (event) {
-    const el = event.target.closest('a,button');
-    if (!el) return;
-    const href = el.getAttribute('href') || '';
-    if (href.includes('amzn.to/')) {
-      track('click', {event_category:'Affiliate',event_label:el.textContent.trim()});
-      return;
-    }
-    const key = el.dataset.track || (href.startsWith('tel:') ? 'phone_link' : href.startsWith('sms:') ? 'sms_link' : href.endsWith('#contact') ? 'quote_link' : '');
-    if (!key || key === 'quote_form_submit') return;
-    const name = key.startsWith('phone') ? 'phone_click' : key.startsWith('sms') ? 'sms_click' : key.startsWith('email') ? 'email_click' : 'quote_click';
-    track(name, {event_category:name === 'quote_click' ? 'CTA' : 'Contact',event_label:key});
   });
 })();
