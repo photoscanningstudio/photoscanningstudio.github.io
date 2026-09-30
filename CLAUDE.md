@@ -108,6 +108,7 @@ Use this section as the working source of truth. If a price isn't documented her
 | Slideshow service | Upsell offering — quoted individually |
 | USB delivery | $20 |
 | Cloud delivery | Free |
+| Local pickup / drop-off | Free in Hamburg & South Buffalo area; $10 each way elsewhere in Western New York (Dan, 2026-09-29) |
 | Turnaround | 5–10 days, ~7 day average |
 
 ### Album Pricing Nuance

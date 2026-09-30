@@ -21,16 +21,24 @@
 <link rel="icon" href="logo.webp" type="image/webp" />
 <script src="site.js?v=20260929-posthog" defer></script>
 <script src="analytics.js?v=20260929-posthog" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Mail-in photo scanning","serviceType":"Photo, slide, and negative scanning by mail","url":"https://photoscanningstudio.com/mail-in-photo-scanning.html","areaServed":{"@type":"Country","name":"United States"},"provider":{"@type":"LocalBusiness","name":"Photo Scanning Studio","url":"https://photoscanningstudio.com/","telephone":"+1-716-713-6537","address":{"@type":"PostalAddress","addressLocality":"Hamburg","addressRegion":"NY","postalCode":"14075","addressCountry":"US"}},"offers":[{"@type":"Offer","name":"Photo prints, 1 to 1,000","price":"0.20","priceCurrency":"USD"},{"@type":"Offer","name":"Photo prints, 1,001 to 2,000","price":"0.18","priceCurrency":"USD"},{"@type":"Offer","name":"Photo prints, 2,001 or more","price":"0.15","priceCurrency":"USD"},{"@type":"Offer","name":"35mm slides","price":"0.35","priceCurrency":"USD"},{"@type":"Offer","name":"35mm negatives","price":"0.35","priceCurrency":"USD"}]}
+</script>
 </head>
 <body class="landing-page">
-  <div class="contact-strip"><span>Mail-in photo scanning available nationwide.</span><a href="tel:+17167136537">Call Dan: 716-713-6537</a><a href="sms:+17167136537">Text Dan</a></div>
+  <div class="contact-strip"><span>Mail-in photo scanning available nationwide.</span><a href="tel:+17167136537" data-track="phone_contact">Call Dan: 716-713-6537</a><a href="sms:+17167136537" data-track="sms_contact">Text Dan</a></div>
   <header class="landing-hero">
     <p class="eyebrow">Mail-in photo scanning</p>
     <h1>Ship your photos safely and get easy-to-share digital files back.</h1>
     <p>If you are outside Western New York, Photo Scanning Studio can still help. Text Dan before shipping so he knows what is coming, can confirm the project, and can give you packing tips for irreplaceable family photos.</p>
-    <div class="hero-ctas"><a class="cta-button primary-cta" href="index.html#contact">Start a Mail-In Quote</a><a class="cta-button secondary-cta" href="sms:+17167136537">Ask Before Shipping</a></div>
+    <div class="hero-ctas"><a class="cta-button primary-cta" href="sms:+17167136537" data-track="sms_contact">Text Dan before you ship</a><a class="cta-button secondary-cta" href="index.html#contact">Start a Mail-In Quote by Email</a></div>
   </header>
   <main>
+    <section class="landing-section">
+      <h2>Mail-in scanning prices</h2>
+      <table class="price-table"><caption>Scanning prices are the same for mail-in and local customers</caption><thead><tr><th scope="col">What you have</th><th scope="col">Price</th></tr></thead><tbody><tr><td>Photo prints, 1&ndash;1,000</td><td>$0.20 each</td></tr><tr><td>Photo prints, 1,001&ndash;2,000</td><td>$0.18 each</td></tr><tr><td>Photo prints, 2,001 or more</td><td>$0.15 each</td></tr><tr><td>35mm slides (cardboard or plastic mounts)</td><td>$0.35 each</td></tr><tr><td>35mm negatives (film strips)</td><td>$0.35 each</td></tr><tr><td>Private cloud delivery</td><td>Free</td></tr><tr><td>USB drive</td><td>$20</td></tr></tbody></table>
+      <p>The $50 minimum applies to your combined scanning total. Dan confirms shipping and return costs before you send anything, so there are no surprises.</p>
+    </section>
 <section class="landing-section"><h2>Agree on the details before you ship</h2><p>Dan will confirm your collection, packing approach, estimated turnaround, and shipping and return costs before you send your originals. Local scanning typically takes 5–10 days; shipping adds time.</p><p>Keep existing groups together and include your contact details inside the box. For fragile, stuck, or moldy items, send a picture and ask about acceptance before packing them.</p></section>
     <section class="landing-section">
       <h2>Mail-in process</h2>
@@ -46,12 +54,28 @@
       <h2>What can be mailed?</h2>
       <p>Loose photo prints, Polaroids, 35mm slides, 35mm negatives, postcards, and many album projects can be mailed. Very fragile or moldy items should be discussed before shipping.</p>
     </section>
+    <section class="landing-section">
+      <h2>What customers say</h2>
+      <blockquote><p>&ldquo;Dan is the best in the business. He is an expert, easy to communicate with and passionate about photography. He walks you through the process and works with you step by step.&rdquo;</p><cite>Ron DePasquale</cite></blockquote>
+      <blockquote><p>&ldquo;Amazing service! I had over 1,000 old family photos that I wanted scanned to digital format.&rdquo;</p><cite>Kevin Dispensa</cite></blockquote>
+      <blockquote><p>&ldquo;You won't be sorry! First rate business. Excellent quality scanning and best value. I'll be a repeat customer for sure.&rdquo;</p><cite>Ken Salhany</cite></blockquote>
+      <p><a href="all-testimonials.html">Read more customer reviews &rarr;</a></p>
+    </section>
     <section class="landing-cta">
       <h2>Let Dan help you plan your mail-in project.</h2>
       <p>A quick message helps protect your photos and prevents surprises.</p>
       <a href="sms:+17167136537">Text Dan</a><a href="index.html#faq">Read FAQ</a>
     </section>
-  <aside class="landing-section"><p>Not ready yet? <a href="index.html#email-list">Get the free photo-care guide</a>.</p></aside>
+    <section id="email-list" class="landing-section guide-section">
+      <div class="guide-description"><p class="eyebrow">Not ready to scan yet?</p><h2>Get the free photo-care guide.</h2><p>Get <strong>5 Tips to Keep Your Old Photos Alive</strong>, plus occasional photo tips and specials from Dan.</p><p class="fineprint">The guide is available here as soon as you sign up. Unsubscribe from emails anytime. <a href="privacy.html">Privacy policy</a></p></div>
+      <div><form action="https://formspree.io/f/mwvynnkz" class="email-list-form" id="emailListForm" method="POST">
+<input aria-label="Email address" autocomplete="email" name="email" placeholder="your@email.com" required="" type="email"/>
+<input autocomplete="off" name="_gotcha" style="display:none" tabindex="-1" type="text"/>
+<input name="_subject" type="hidden" value="New email list signup"/>
+<input name="_next" type="hidden" value="https://photoscanningstudio.com/thank-you.html"/>
+<button id="emailListBtn" type="submit">Get the Free Guide</button>
+</form><div id="emailListSuccess" class="form-success" role="status" tabindex="-1" hidden><strong>Thanks &mdash; you're on the list!</strong><p>Your guide is ready.</p><a href="5-tips-keep-old-photos-alive.pdf" download>Download your free photo-care guide &rarr;</a></div><div id="emailListError" class="form-error" role="alert" hidden>Something went wrong. Please try again, or <a href="sms:+17167136537">text Dan at 716-713-6537</a>.</div></div>
+    </section>
 </main>
   <footer class="footer"><p>&copy; 2026 Photo Scanning Studio - Hamburg &amp; Buffalo, NY</p><p><a href="index.html">Home</a> | <a href="faq.html">FAQ</a> | <a href="all-testimonials.html">Reviews</a></p></footer>
 </body>
