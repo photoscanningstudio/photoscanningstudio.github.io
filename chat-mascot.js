@@ -2620,19 +2620,38 @@ var PSS_SUGGEST_BY_CAT = {
     frame.className = 'pss-mascot-frame' + (index === 0 ? ' is-current' : '');
     artwork.appendChild(frame);
   });
-  frames[0].src = 'assets/mascot-v2/pose-1.webp';
   const chatLabel = document.createElement('span');
   const promptText = 'Ask me any questions you need';
   chatLabel.className = 'pss-chat-cta';
   chatLabel.setAttribute('aria-hidden', 'true');
   opener.append(chatLabel, artwork);
-  widget.append(opener);
-  opener.setAttribute('aria-haspopup', 'dialog');
-  opener.setAttribute('aria-controls', 'pssChatWin');
+  // Minimize shrinks the full-size guide to a small round face; the face still opens the chat.
+  const minBtn = document.createElement('button');
+  minBtn.type = 'button'; minBtn.className = 'pss-mascot-min';
+  minBtn.setAttribute('aria-label', 'Minimize chat helper'); minBtn.title = 'Minimize';
+  minBtn.innerHTML = '<span aria-hidden="true"></span>';
+  const mini = document.createElement('button');
+  mini.type = 'button'; mini.className = 'pss-chat-mini';
+  mini.setAttribute('aria-label', 'Open chat to ask a question'); mini.title = 'Ask a question';
+  mini.innerHTML = '<img src="assets/mascot-v2/face.webp" alt="" width="64" height="64" decoding="async" /><span class="pss-chat-mini-badge" aria-hidden="true">?</span>';
+  const status = document.createElement('span');
+  status.className = 'pss-sr-only'; status.setAttribute('aria-live', 'polite');
+  widget.append(opener, minBtn, mini, status);
+  [opener, mini].forEach(function (btn) {
+    btn.setAttribute('aria-haspopup', 'dialog');
+    btn.setAttribute('aria-controls', 'pssChatWin');
+  });
+  const MIN_KEY = 'pssMascotMin', MIN_DAYS = 7;
+  let minimized = false;
+  try {
+    const age = Date.now() - Number(localStorage.getItem(MIN_KEY) || 0);
+    minimized = age >= 0 && age < MIN_DAYS * 864e5;
+  } catch (_) {}
+  widget.classList.toggle('is-min', minimized);
   const dialog = document.createElement('dialog');
   dialog.id = 'pssChatWin'; dialog.className = 'pss-chat-window';
   dialog.setAttribute('aria-labelledby', 'pssTitle');
-  dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close questions">Close</button></div><div class="pss-chat-body ph-no-capture" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form>';
+  dialog.innerHTML = '<div class="pss-chat-header"><strong id="pssTitle">Photo Scanning Q&amp;A</strong><button id="pssClose" type="button" aria-label="Close chat" title="Close">&times;</button></div><div class="pss-chat-body ph-no-capture" id="pssBody" role="log" aria-live="polite" aria-label="Question and answer history"><div class="pss-bubble bot">This is an automated guide. Ask about scanning, prices, albums, or delivery. For a personal quote, <a href="sms:+17167136537">text Dan</a>.</div></div><div id="pssSuggest" class="pss-suggest"></div><form class="pss-chat-footer" id="pssChatForm"><input class="pss-input" id="pssInput" aria-label="Your question" placeholder="Type your question…" autocomplete="off" required maxlength="500" /><button class="pss-send" type="submit">Ask</button></form><div class="pss-chat-links"><button class="pss-chat-done" id="pssRestore" type="button" hidden>Show full-size helper</button><button class="pss-chat-done" id="pssDone" type="button">Close chat &times;</button></div>';
   document.body.append(widget, dialog);
   const motion = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)') : {matches:false};
   let hovered = false, focused = false, ready = false;
@@ -2640,7 +2659,7 @@ var PSS_SUGGEST_BY_CAT = {
   let desiredPose = 0, dwellTimer = null, framePending = false, hoverTarget = null;
   const contextualPosesEnabled = true;
   const poses = new Array(6).fill(null);
-  function stopped() { return !ready || motion.matches || hovered || focused || dialog.open || document.hidden; }
+  function stopped() { return !ready || minimized || motion.matches || hovered || focused || dialog.open || document.hidden; }
   function syncMotion() {
     widget.classList.toggle('is-paused', stopped());
     if (!stopped()) requestContext();
@@ -2670,13 +2689,21 @@ var PSS_SUGGEST_BY_CAT = {
     });
   }
   // A missing pose never replaces the currently visible, working image.
-  if (contextualPosesEnabled) poses.forEach(function (_, index) {
-    loadPose(index).then(function (img) {
-      poses[index] = img;
-      if (index === 0 && img && activeFrame === 0) frames[0].src = img.src;
-      if (img && ready) requestContext();
+  // Poses are only downloaded while the full-size guide is showing.
+  let posesRequested = false;
+  function loadPoses() {
+    if (posesRequested) return;
+    posesRequested = true;
+    frames[0].src = 'assets/mascot-v2/pose-1.webp';
+    if (contextualPosesEnabled) poses.forEach(function (_, index) {
+      loadPose(index).then(function (img) {
+        poses[index] = img;
+        if (index === 0 && img && activeFrame === 0) frames[0].src = img.src;
+        if (img && ready) requestContext();
+      });
     });
-  });
+  }
+  if (!minimized) loadPoses();
   const sectionPoses = {top:1,services:3,process:5,gallery:6,pricing:4,contact:4,'email-list':2,testimonials:6,faq:2,slideshow:6,'service-area':5,'diy-tools':1,location:5};
   function visible(el) {
     if (!el || typeof el.getBoundingClientRect !== 'function') return false;
@@ -2809,8 +2836,24 @@ var PSS_SUGGEST_BY_CAT = {
     chip.addEventListener('click',function(){ask(question);});
     dialog.querySelector('#pssSuggest').appendChild(chip);
   });
-  opener.addEventListener('click',function(){dialog.showModal();input.focus();syncMotion();event('click','Chat Opened');});
+  const restoreBtn = dialog.querySelector('#pssRestore');
+  function openChat(){restoreBtn.hidden=!minimized;dialog.showModal();input.focus();syncMotion();event('click','Chat Opened');}
+  opener.addEventListener('click',openChat);
+  mini.addEventListener('click',openChat);
+  minBtn.addEventListener('click',function(){
+    minimized = true; widget.classList.add('is-min');
+    try { localStorage.setItem(MIN_KEY, String(Date.now())); } catch (_) {}
+    hovered = false; mini.focus(); status.textContent = 'Chat helper minimized.'; syncMotion();
+  });
+  restoreBtn.addEventListener('click',function(){
+    minimized = false; widget.classList.remove('is-min');
+    try { localStorage.removeItem(MIN_KEY); } catch (_) {}
+    status.textContent = ''; loadPoses(); dialog.close(); opener.focus(); syncMotion();
+  });
   dialog.querySelector('#pssClose').addEventListener('click',function(){dialog.close();});
-  dialog.addEventListener('close',function(){opener.focus();syncMotion();});
+  dialog.querySelector('#pssDone').addEventListener('click',function(){dialog.close();});
+  // Clicking the dimmed area outside the box also closes it.
+  dialog.addEventListener('click',function(e){if(e.target===dialog)dialog.close();});
+  dialog.addEventListener('close',function(){(minimized ? mini : opener).focus();syncMotion();});
   dialog.querySelector('#pssChatForm').addEventListener('submit',function(e){e.preventDefault();ask(input.value);input.value='';input.focus();});
 })();
